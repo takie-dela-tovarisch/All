@@ -98,12 +98,14 @@ background-image: url("images/5.png");
       top: 120vh;
     }
     .back {
+      display: none;
       position: fixed;
       width: 100vw;
       height: 100vh;
       /* background-image: url("images/cat.jpeg"); */
       background-repeat: no-repeat;
       background-size: cover;
+      animation-play-state: paused;
     }
     .ops * div:hover {
       transform: scale(1.2);
@@ -119,26 +121,103 @@ background-image: url("images/5.png");
       background-image: url("images/text.png");
       background-repeat: no-repeat;
       background-size: contain;
+      top: 0;
+      /* WARNING:  */
+    }
+    .d {
+      position: absolute;
+      width: 1440px;
+      height: 91.35px;
+      background-image: url("images/text.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 100px;
+      /* WARNING:  */
+    }
+    .k {
+      position: absolute;
+      width: 1440px;
+      height: 91.35px;
+      background-image: url("images/text.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 200px;
+      /* WARNING:  */
+    }
+    .o {
+      position: absolute;
+      width: 1440px;
+      height: 91.35px;
+      background-image: url("images/text.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 300px;
+      /* WARNING:  */
+    }
+    .p {
+      position: absolute;
+      width: 1440px;
+      height: 91.35px;
+      background-image: url("images/text.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 400px;
+      /* WARNING:  */
+    }
+    .e {
+      position: absolute;
+      width: 1440px;
+      height: 91.35px;
+      background-image: url("images/text.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 500px;
+      /* WARNING:  */
+    }
+    .s {
+      position: absolute;
+      width: 1440px;
+      height: 91.35px;
+      background-image: url("images/text.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 600px;
       /* WARNING:  */
     }
     .a {
       animation: text 3s infinite linear;
       left: 0;
-      top: 0;
+      /* top: 0; */
     }
     .b {
       left: -100%;
-      top: 0;
       animation: tex 6s infinite linear;
     }
-    /* @keyframes tex {
+    .c {
+      animation: textt 3s infinite linear;
+      left: 0;
+      /* top: 0; */
+    }
+    .z {
+      left: 100%;
+      animation: texx 6s infinite linear;
+    }
+    @keyframes tex {
       0% {left: -100%;}
       100% {left: 100%;}
     }
     @keyframes text {
 0% {left: 0;}
 100% {left: 100%;}
-    } */
+    }
+    @keyframes texx {
+      0% {left: 100%;}
+      100% {left: -100%;}
+    }
+    @keyframes textt {
+0% {left: 0;}
+100% {left: -100%;}
+    }
     /* .two:hover {
       transform: scale(1.2);
     }
@@ -151,6 +230,16 @@ background-image: url("images/5.png");
     .five:hover {
       transform: scale(1.2);
     } */
+    /* .now {
+      position: absolute;
+    }
+    .l {
+      top: 100px;
+    }
+    .n {
+      top: 0;
+    } */
+
   </style>
 
 
@@ -181,22 +270,53 @@ background-image: url("images/5.png");
   });
   </script>
 
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+  $(".one").mouseover(function(){
+    $(".back").css("display", "block");
+    $(".back.div").css("animation-playstate", "running");
+  })
+  $(".one").mouseout(function(){
+    $(".back").css("display", "none");
+  })
+  });
+  </script>
+
   <body>
     <div class="back">
-<div class="t a"></div>
-<div class="t b"></div>
 
+        <div class="t a"></div>
+        <div class="t b"></div>
+
+        <div class="d c"></div>
+        <div class="d z"></div>
+
+        <div class="k a"></div>
+        <div class="k b"></div>
+
+        <div class="o c"></div>
+        <div class="o z"></div>
+
+        <div class="p a"></div>
+        <div class="p b"></div>
+
+        <div class="e c"></div>
+        <div class="e z"></div>
+
+        <div class="s a"></div>
+        <div class="s b"></div>
     </div>
 
 <div class="ops">
-  <div data-depth="0.2" id="backgroun">
-    <div data-depth="0.2" class="one"></div>
-    <div data-depth="0.6" class="two"></div>
-    <div data-depth="0.2" class="three"></div>
+  <div id="backgroun">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
   </div>
-<div data-depth="0.8" id="upper">
-  <div data-depth="0.8" class="four"></div>
-  <div data-depth="0.6" class="five"></div>
+<div id="upper">
+  <div class="four"></div>
+  <div class="five"></div>
 </div>
 
 </div>
