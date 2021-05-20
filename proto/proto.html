@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title></title>
+  </head>
+  <style media="screen">
+    body, html {
+      width: 100vw;
+      height: 100vh;
+      margin: 0 auto;
+    }
+
+    .menu {
+height: 50px;
+width: 100vw;
+position: fixed;
+background: blue;
+    }
+    .up {
+      top: 0;
+    }
+    .down {
+      bottom: 0;
+    }
+    .square {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      position: absolute;
+    }
+    .a {
+      left: 110vw;
+      top: 110vh;
+    }
+    .b {
+      left: 150vw;
+      top: 120vh;
+    }
+    .back {
+      position: absolute;
+      width: 200%;
+      height: 150%;
+      background-image: url("images/cat.jpeg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    let xPrev = 0;
+    let yPrev = 0;
+
+    let value;
+    let valuee;
+    let valueee;
+    let valueeee;
+
+        jQuery(document).ready(function(){
+
+           $(document).mousemove(function(e){
+             xPrev<e.pageX ? $(window).scrollLeft(value) : $(window).scrollLeft(valuee);
+              value = $(window).scrollLeft() + 5;
+              valuee = $(window).scrollLeft() - 5;
+            xPrev=e.pageX;
+
+            yPrev<e.pageY ? $(window).scrollTop(valueee) : $(window).scrollTop(valueeee)
+              valueee = $(window).scrollTop() + 5;
+              valueeee = $(window).scrollTop() - 5;
+            yPrev=e.pageY;
+           });
+        })
+  });
+  </script>
+
+  <!-- <script type="text/javascript">
+  $(document).mousemove(function(e) {
+  let body_size_x = $( window ).width();
+  let body_size_y = $( window ).height();
+  let half_body_size_x = parseInt(body_size_x / 2);
+  let half_body_size_y = parseInt(body_size_y / 2);
+  let left_dir = e.pageX;
+  let top_dir = e.pageY;
+
+  let eq1 = left_dir < half_body_size_x;
+  let eq2 = left_dir > half_body_size_x;
+  let eq3 = top_dir < half_body_size_y;
+  let eq4 = top_dir > half_body_size_y;
+
+  let value = $(window).scrollLeft() + 10;
+  let valuee = $(window).scrollLeft() - 10;
+  let valueee = $(window).scrollTop() + 10;
+  let valueeee = $(window).scrollTop() - 10;
+
+
+
+
+  if (eq2 && eq3) {
+    $(".square").css('background','red')
+    $(window).scrollLeft(value);
+    $(window).scrollTop(valueeee);
+  } else if (eq1 && eq3) {
+    $(".square").css('background','pink')
+    $(window).scrollLeft(valuee);
+    $(window).scrollTop(valueeee);
+  } else if (eq2 && eq4) {
+    $(".square").css('background','green')
+    $(window).scrollLeft(value);
+    $(window).scrollTop(valueee);
+  } else if (eq1 && eq4) {
+    $(".square").css('background','black')
+    $(window).scrollLeft(valuee);
+    $(window).scrollTop(valueeee);
+  }
+  });
+  </script> -->
+  <body>
+    <div class="back">
+
+    </div>
+<div class="square">
+
+</div>
+<div class="square a">
+
+</div>
+<div class="square b">
+
+</div>
+
+<div class="menu up">
+  <p id="lr"></p>
+  <p id="status"></p>
+</div>
+<div class="menu down">
+</div>
+
+  </body>
+</html>
