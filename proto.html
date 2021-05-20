@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+    <title></title>
+  </head>
+  <style media="screen">
+    body, html {
+      width: 100vw;
+      height: 100vh;
+      margin: 0 auto;
+      background-color: black;
+    }
+
+    .menu {
+height: 57px;
+width: 100vw;
+position: fixed;
+font-family: 'PT Mono', monospace;
+display: flex;
+justify-content: space-around;
+font-size: 21px;
+padding-left: 43px;
+padding-right: 43px;
+    }
+    .menu p {
+      margin-top: 18px;
+      color: #8768E1;
+    }
+    .one {
+      position: absolute;
+      width: 402px;
+      height: 226px;
+      left: 315px;
+      top: 188px;
+      background-image: url("images/1.png");
+      background-size: contain;
+    }
+    .two {
+      position: absolute;
+      width: 323px;
+      height: 182px;
+      left: 608px;
+      top: 360px;
+      background-size: contain;
+      background-image: url("images/2.png");
+
+    }
+    .three {
+      position: absolute;
+      width: 248px;
+      height: 152px;
+      left: 1541px;
+      top: 761px;
+      background-size: contain;
+      background-image: url("images/3.png");
+    }
+    .four {
+      position: absolute;
+      width: 372px;
+      height: 264px;
+      left: 2590px;
+      top: 1182px;
+      background-size: contain;
+      background-image: url("images/4.png");
+    }
+    .five {
+      position: absolute;
+width: 319px;
+height: 226px;
+left: 1346px;
+top: 504px;
+background-size: contain;
+background-image: url("images/5.png");
+    }
+    .up {
+      top: 0;
+    }
+    .down {
+      bottom: 0;
+    }
+    .square {
+      width: 200px;
+      height: 200px;
+      background: pink;
+      position: absolute;
+    }
+    .a {
+      left: 110vw;
+      top: 110vh;
+    }
+    .b {
+      left: 150vw;
+      top: 120vh;
+    }
+    .back {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      /* background-image: url("images/cat.jpeg"); */
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .ops * div:hover {
+      transform: scale(1.2);
+      transition: all 0.5s ease;
+    }
+    .one:hover {
+      transform: scale(1.1);
+    }
+    .t {
+      position: absolute;
+      width: 1440px;
+      height: 91.35px;
+      background-image: url("images/text.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    .a {
+      animation: text 3s infinite linear;
+      left: 0;
+      top: 0;
+    }
+    .b {
+      left: -100%;
+      top: 0;
+      animation: tex 6s infinite linear;
+    }
+    /* @keyframes tex {
+      0% {left: -100%;}
+      100% {left: 100%;}
+    }
+    @keyframes text {
+0% {left: 0;}
+100% {left: 100%;}
+    } */
+    /* .two:hover {
+      transform: scale(1.2);
+    }
+    .three:hover {
+      transform: scale(1.2);
+    }
+    .four:hover {
+      transform: scale(1.2);
+    }
+    .five:hover {
+      transform: scale(1.2);
+    } */
+  </style>
+
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    let xPrev = 0;
+    let yPrev = 0;
+
+    let value;
+    let valuee;
+    let valueee;
+    let valueeee;
+
+        jQuery(document).ready(function(){
+
+           $(document).mousemove(function(e){
+             xPrev<e.pageX ? $(window).scrollLeft(value) : $(window).scrollLeft(valuee);
+              value = $(window).scrollLeft() + 5;
+              valuee = $(window).scrollLeft() - 7;
+            xPrev=e.pageX;
+
+            yPrev<e.pageY ? $(window).scrollTop(valueee) : $(window).scrollTop(valueeee)
+              valueee = $(window).scrollTop() + 5;
+              valueeee = $(window).scrollTop() - 7;
+            yPrev=e.pageY;
+           });
+        })
+  });
+  </script>
+
+  <body>
+    <div class="back">
+<div class="t a"></div>
+<div class="t b"></div>
+
+    </div>
+
+<div class="ops">
+  <div data-depth="0.2" id="backgroun">
+    <div data-depth="0.2" class="one"></div>
+    <div data-depth="0.6" class="two"></div>
+    <div data-depth="0.2" class="three"></div>
+  </div>
+<div data-depth="0.8" id="upper">
+  <div data-depth="0.8" class="four"></div>
+  <div data-depth="0.6" class="five"></div>
+</div>
+
+</div>
+
+
+<div class="menu up">
+  <p>о нас</p>
+  <p>история</p>
+  <p>меню</p>
+</div>
+<div class="menu down">
+  <p>афиша</p>
+  <p>бронь</p>
+  <p>секрет</p>
+</div>
+
+  </body>
+</html>
