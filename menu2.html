@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Меню</title>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+        $(".header").click(function(){
+          $(this).siblings(".content").slideToggle();
+          $(this).children(".open").toggleClass("close");
+          if ($(".open").hasClass("close")) {
+            document.body.style.paddingBottom = '7vh'
+          } else {
+            document.body.style.paddingBottom = '0px'
+          }
+        });
+      });
+    </script>
+    <style media="screen">
+    body {
+      width: 100vw;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: auto;
+      background-color: black;
+      padding-top: 8.89vh;
+      padding-bottom: 0;
+    }
+    /* body::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      background: url('images/menu.png');
+      height: 100%;
+      display: block;
+      opacity: .2;
+      margin: 0;
+    } */
+    * {
+      text-decoration: none;
+    }
+    a {
+      color: #8C56B6;
+    }
+      .m {
+        width: 100%;
+        height: 7.44vh;
+        margin-top: 0 auto;
+        display: inline-block;
+        position: fixed;
+        background-color: black;
+        top: 0;
+        z-index: 1;
+      }
+      .pages {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+      }
+      .s {
+        height: 7.44vh;
+        margin-left: 2.78vw;
+        margin-right: 2.78vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        font-family: 'PT Mono', monospace;
+        color: #8C56B6;
+      }
+      .black:hover a {
+        color: #FFCD00;
+      }
+      .s p:hover {
+        color: #FFCD00;
+      }
+      .other {
+        margin: 0 auto;
+      }
+      .pages p {
+        font-size: 1.46vw;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin-top: 2.22vh;
+      }
+      .black {
+        height: 7.44vh;
+        width: 8.747em;
+        text-transform: uppercase;
+        font-size: 2.08vw;
+        letter-spacing: 0.07em;
+      }
+      .white {
+        height: 7.44vh;
+        width: 59.51vw;
+      }
+      .menu {
+        position: relative;
+        margin-left: 2.78vw;
+        margin-right: 2.78vw;
+        border: 1px solid #8C56B6;
+      }
+      .part {
+        position: relative;
+        border-bottom: 1px solid #8C56B6;
+        width: 100%;
+      }
+
+      .part:last-of-type {
+        border: 0;
+      }
+      .anchor {
+        background-color: #8C56B6;
+      }
+      .header {
+        height: 13.92vh;
+        width: 100%;
+      }
+      .header:hover h1 {
+        color: #8C56B6;
+      }
+      .anchor:hover h1 {
+        color: black;
+      }
+      .header h1 {
+        position: absolute;
+        font-size: 2.5vw;
+        font-family: PT Mono;
+        font-weight: normal;
+        line-height: 2.5vw;
+        color: #E0E0E0;
+        top: calc(6.96vh - 1.25vw);
+        margin: 0 auto;
+        left: 2.78vw;
+      }
+      .wider {
+        position: relative;
+        height: 13.92vh;
+        width: 100%;
+        overflow: hidden;
+      }
+      .wider h1 {
+        position: absolute;
+        font-size: 2.5vw;
+        font-family: PT Mono;
+        font-weight: normal;
+        line-height: 2.5vw;
+        color: #E0E0E0;
+        top: calc(6.96vh - 1.25vw);
+        margin: 0 auto;
+        width: 100vw;
+        white-space: nowrap;
+      }
+      .moving {
+        position: absolute;
+        width: auto;
+        height: 13.92vh;
+      }
+      .first {
+        animation: moving 8s infinite linear;
+        left: -110%;
+      }
+      .second {
+        left: -121%;
+        animation: moving 8s infinite linear;
+        animation-delay: 4s;
+      }
+      .third {
+        animation: movingtwo 8s infinite linear;
+        left: 121%;
+      }
+      .fourth {
+        left: 121%;
+        animation: movingtwo 8s infinite linear;
+        animation-delay: 4s;
+      }
+      @keyframes moving {
+        0% {
+          left: -121%;
+        }
+        100% {
+          left: 101%;
+        }
+      }
+      @keyframes movingtwo {
+        0% {
+          left: 101%;
+        }
+        100% {
+          left: -121%;
+        }
+      }
+      .open {
+        position: absolute;
+        width: 1.60vw;
+        height: 1.94vw;
+        top: calc(6.96vh - 0.8vw);
+        background: url("images/open.svg");
+        right: 2.78vw;
+        background-size: cover;
+        transition: transform 0.5s ease;
+      }
+      .header:hover .open {
+        background: url("images/openactive.svg");
+        background-size: cover;
+      }
+      .close {
+        transform: rotate(180deg);
+      }
+      .content {
+        position: relative;
+        margin-left: 2.78vw;
+        margin-right: 2.78vw;
+        display: none;
+        transition: max-height 1.5s;
+        padding-bottom: 2.78vh;
+      }
+      .content h3 {
+        font-family: Open Sans;
+        font-weight: 300;
+        font-size: 1.2vw;
+        line-height: 1.74vw;
+        color: #8C8C8C;
+        /* margin-top: -1vh; */
+        margin-bottom: 5.78vh;
+        margin-left: 0;
+        margin-right: 0;
+        width: 43.82vw;
+      }
+      .food h2 {
+        font-family: PT Mono;
+        font-weight: normal;
+        font-size: 1.46vw;
+        line-height: 1.67vw;
+        color: #E0E0E0;
+        margin-top: 0.3vw;
+        width: 28.13vw;
+      }
+      .food {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+      }
+      .name p, .price p {
+        font-family: Open Sans;
+        font-weight: 300;
+        font-size: 1.46vw;
+        line-height: 1.46vw;
+        color: #E0E0E0;
+        margin-top: 0;
+        margin-bottom: 4.22vh;
+      }
+      .name {
+        width: 48.82vw;
+      }
+      #note {
+        font-family: Open Sans;
+        font-weight: 300;
+        font-size: 1.2vw;
+        line-height: 1.74vw;
+        color: #8C8C8C;
+        width: 28.96vw;
+      }
+      .tab {
+        height: 4.1vw;
+      }
+      .tabs {
+        height: 2.4vw;
+      }
+      #with {
+        margin-bottom: 1.33vh;
+      }
+      .strike {
+    position: relative;
+    display: inline-block;
+}
+      .strike p:hover {
+        color: #8C56B6
+      }
+.strike::before {
+    content: '';
+    border-bottom: 0.3vw solid #FFCD00;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: calc(2.22vh + 0.6vw)
+}
+a:hover {
+  color: #FFCD00;
+}
+    </style>
+  </head>
+  <body>
+    <div class="m">
+      <div class="s">
+        <div class="black">
+          <p><a href="proto.hmtl">boomshh</a></p>
+        </div>
+        <div class="white">
+          <div class="pages">
+            <p>о нас</p>
+            <p>история</p>
+            <div class="strike">
+              <p>меню</p>
+            </div>
+            <p><a href="events.html">афиша</a></p>
+            <p>бронь</p>
+            <p>секрет</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="menu">
+      <div class="part">
+        <div class="header one">
+          <h1>основные блюда</h1>
+          <div class="open"></div>
+        </div>
+        <div class="content closed one">
+          <h3>Все блюда нашего ресторана приготовлены опытными вулканическими поварами на&nbsp;магме, привезённой с&nbsp;Везувия.</h3>
+          <div class="food">
+            <h2>Главные блюда</h2>
+            <div class="name">
+              <p>Цыплёнок на лавовом гриле</p>
+              <p>Стейк в соусе из авокадо</p>
+              <p>Тушеные баклажаны</p>
+              <p>Паста с морепродуктами</p>
+              <p>Сибас на лавовом гриле</p>
+            </div>
+            <div class="price">
+              <p>300 ₽</p>
+              <p>400 ₽</p>
+              <p>280 ₽</p>
+              <p>410 ₽</p>
+              <p>350 ₽</p>
+            </div>
+          </div>
+          <div class="food">
+            <h2>Закуски и салаты</h2>
+            <div class="name">
+              <p id="with">Салат с помидорами черри</p>
+              <p id="note">Помидоры приправлены перцем, обожжённым&nbsp;на&nbsp;раскалённом вулканическом туфе.</p>
+              <p>Тартар из лосося</p>
+              <p>Капрезе</p>
+            </div>
+            <div class="price">
+              <p>200 ₽</p>
+              <div class="tab"></div>
+              <p>390 ₽</p>
+              <p>400 ₽</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="part anchor">
+        <a href="https://takie-dela-tovarisch.github.io/Boomshh/"> <div class="wider">
+          <div class="moving first">
+            <h1>что? каким образом? лавовый гриль? что? каким образом? лавовый гриль?</h1>
+          </div>
+          <div class="moving second">
+            <h1>что? каким образом? лавовый гриль? что? каким образом? лавовый гриль?</h1>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="part">
+        <div class="header">
+          <h1>барная карта</h1>
+          <div class="open"></div>
+        </div>
+        <div class="content closed">
+          <h3>Наши вулканы&nbsp;&mdash; естественные декантеры. Вино насыщается кислородом еще в&nbsp;трубах и&nbsp;окончательно раскрывает вкус во&nbsp;время извержения.</h3>
+          <div class="food">
+            <h2>Безалкогольные напитки</h2>
+            <div class="name">
+              <p>Dr.Pepper</p>
+              <p>Borjomi</p>
+              <p id="with">Морс &laquo;Pompeii&raquo;</p>
+              <p id="note">320мл.<br>Виноградный сок, ягоды можжевельника, мёд.</p>
+              <p>Rich</p>
+            </div>
+            <div class="price">
+              <p>100 ₽</p>
+              <p>110 ₽</p>
+              <p>200 ₽</p>
+              <div class="tab"></div>
+              <p>90 ₽</p>
+            </div>
+          </div>
+          <div class="food">
+            <h2>Алкогольные напитки</h2>
+            <div class="name">
+              <p id="with">Vinho Verde</p>
+              <p id="note">150мл./1л. Италия, 11%.</p>
+              <p id="with">Bud Light</p>
+              <p id="note">320мл. Светлый лагер, 4.2%.</p>
+              <p id="with">Коктейль &laquo;Fagradalsfjall&raquo;</p>
+              <p id="note">290мл. Абсент, Айриш крим, Блю Кюрасао.</p>
+            </div>
+            <div class="price">
+              <p>500/1300 ₽</p>
+              <div class="tabs"></div>
+              <p>400 ₽</p>
+              <div class="tabs"></div>
+              <p>200 ₽</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="part">
+        <div class="header">
+          <h1>десерты</h1>
+          <div class="open"></div>
+        </div>
+        <div class="content closed">
+          <h3>В&nbsp;Boomshh нет классических десертов. Если Вам захотелось сахара, насладитесь извержением одного из&nbsp;наших &laquo;сладких&raquo; вулканов.</h3>
+          <div class="food">
+            <h2>C зефиром/фруктами</h2>
+            <div class="name">
+              <p id="with">Горячий шоколад</p>
+              <p id="note">Пряный, с корицей и кориандром.<br>Особенно хорош с ежевикой.</p>
+              <p id="with">Клубничный крем</p>
+              <p id="note">Нежный и сливочный.<br>Прекрасно подходит ко всему.</p>
+              <p id="with">Crème brûlée</p>
+              <p id="note">Карамельный, с кусочками обожженного сахара.<br>Незаменимое дополнение к фруктам.</p>
+            </div>
+            <div class="price">
+              <p>300 ₽</p>
+              <div class="tab"></div>
+              <p>280 ₽</p>
+              <div class="tab"></div>
+              <p>350 ₽</p>
+              <div class="tab"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="part anchor">
+        <a href="https://takie-dela-tovarisch.github.io/Boomshh/"> <div class="wider">
+          <div class="moving third">
+            <h1>что? каким образом? лавовый гриль? что? каким образом? лавовый гриль?</h1>
+          </div>
+          <div class="moving fourth">
+            <h1>что? каким образом? лавовый гриль? что? каким образом? лавовый гриль?</h1>
+          </div>
+        </div>
+        </a>
+      </div>
+      <div class="part">
+        <div class="header">
+          <h1>детское меню</h1>
+          <div class="open"></div>
+        </div>
+        <div class="content closed">
+          <h3>Мы&nbsp;хотим, чтобы Boomshh был местом, где любой член семьи сможет&nbsp;расслабиться и&nbsp;хорошо провести время.</h3>
+          <div class="food">
+            <h2>С зубами</h2>
+            <div class="name">
+              <p>Яичница в сладком перце с тушеными овощами</p>
+              <p id="with">Морковные котлеты</p>
+              <p id="note">Подаются с зеленым салатом и томатным соусом.</p>
+              <p>Блины с малиной и орехами</p>
+            </div>
+            <div class="price">
+              <p>200 ₽</p>
+              <div class="tabs"></div>
+              <p>260 ₽</p>
+              <p>220 ₽</p>
+            </div>
+          </div>
+          <div class="food">
+            <h2>Без зубов</h2>
+            <div class="name">
+              <p>Картофельное пюре с зеленью</p>
+              <p id="with">Крем-суп из брокколи</p>
+              <p id="note">Мы можем заменить обычное молоко на кокосовое.</p>
+              <p>Творожный пудинг на пару</p>
+            </div>
+            <div class="price">
+              <p>190 ₽</p>
+              <div class="tabs"></div>
+              <p>300 ₽</p>
+              <p>220 ₽</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

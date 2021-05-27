@@ -3,9 +3,8 @@
   <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
     <title></title>
   </head>
   <style media="screen">
@@ -17,6 +16,7 @@
       height: 100vh;
       margin: 0 auto;
       background-color: black;
+      /* cursor: none; */
     }
 
     .menu {
@@ -42,6 +42,7 @@ padding-right: 43px;
       top: 188px;
       background-image: url("images/1.png");
       background-size: contain;
+      animation: spin infinite linear 2s;
     }
     .two {
       position: absolute;
@@ -51,7 +52,17 @@ padding-right: 43px;
       top: 360px;
       background-size: contain;
       background-image: url("images/2.png");
-
+    }
+    .cursor {
+      background-image: url("images/arrow.svg");
+      display: block;
+      position: absolute;
+      width: 1.1vw;
+      height: 2.6vw;
+      background-repeat: no-repeat;
+    }
+    .left {
+      transform: rotate(90deg);
     }
     .three {
       position: absolute;
@@ -92,6 +103,38 @@ background-image: url("images/5.png");
       background: pink;
       position: absolute;
     }
+    @keyframes d {
+      0% {
+        left: 315px;
+        top: 188px;
+      }
+      50% {
+        left: 345px;
+        top: 198px;
+      }
+      100% {
+        left: 315px;
+        top: 188px;
+      }
+    }
+
+    @keyframes spin {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(1%, -1%);
+  }
+  50% {
+    transform: translate(3%, 3%);
+  }
+  75% {
+    transform: translate(-1%, 1%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
     .a {
       left: 110vw;
       top: 110vh;
@@ -245,7 +288,7 @@ background-image: url("images/5.png");
 
   </style>
 
-
+<!-- && $(".cursor")addClass("left") -->
   <script type="text/javascript">
   $(document).ready(function(){
     let xPrev = 0;
@@ -259,7 +302,7 @@ background-image: url("images/5.png");
         jQuery(document).ready(function(){
 
            $(document).mousemove(function(e){
-             xPrev<e.pageX ? $(window).scrollLeft(value) : $(window).scrollLeft(valuee);
+             xPrev<e.pageX ? $(window).scrollLeft(value) && $(".cursor")addClass("left") : $(window).scrollLeft(valuee);
               value = $(window).scrollLeft() + 5;
               valuee = $(window).scrollLeft() - 7;
             xPrev=e.pageX;
@@ -283,6 +326,13 @@ background-image: url("images/5.png");
   $(".one").mouseout(function(){
     $(".back").css("display", "none");
   })
+  });
+
+  $(document).mousemove(function(e) {
+  $(".cursor").css({
+  left:e.pageX - 0,
+  top:e.pageY - 0
+  });
   });
   </script>
 
@@ -315,6 +365,7 @@ background-image: url("images/5.png");
   <div id="backgroun">
     <div class="one"></div>
     <div class="two"></div>
+    <p>О нас</p>
     <div class="three"></div>
   </div>
 <div id="upper">
@@ -334,6 +385,10 @@ background-image: url("images/5.png");
   <p>афиша</p>
   <p>бронь</p>
   <p>секрет</p>
+</div>
+
+<div class="cursor">
+
 </div>
 
   </body>
