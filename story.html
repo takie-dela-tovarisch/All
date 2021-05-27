@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title></title>
+  <script type="text/javascript">
+  $( document ).ready(function() {
+    $(document).mousemove(function(e) {
+    let balls = document.getElementsByClassName("pupil");
+    document.onmousemove = function(){
+    let x = event.clientX * 100 / window.innerWidth + "%";
+    let y = event.clientY * 100 / window.innerHeight + "%";
+
+    for(let i=0;i<2;i++){
+      balls[i].style.left = x;
+      balls[i].style.top = y;
+      balls[i].style.transform = "translate(-"+x+",-"+y+")";
+    }
+    }});
+
+    $(".a").click(function(){
+      $('.b').animate({
+        width:'0'
+      });
+      setTimeout(function(){
+        $( ".b" ).addClass("none");
+      }, 100);
+      $( ".bog" ).addClass("clicked");
+      $( ".cross" ).removeClass("none");
+      $( ".info" ).removeClass("none");
+    });
+
+    $(".cross").click(function(){
+      $( ".b" ).removeClass("none");
+      $('.b').animate({
+        width:'100%'
+      });
+      $( ".cross" ).addClass("none");
+      $( ".info" ).addClass("none");
+    });
+
+});
+  </script>
+    <style media="screen">
+      body {
+        width: 100vw;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        overflow: auto;
+        background-color: black;
+        padding-top: 8.89vh;
+        padding-bottom: 0;
+      }
+      * {
+        text-decoration: none;
+      }
+      .m a {
+        color: #8C56B6;
+      }
+        .m {
+          width: 100%;
+          height: 7.44vh;
+          margin-top: 0 auto;
+          display: inline-block;
+          position: fixed;
+          background-color: black;
+          top: 0;
+          z-index: 1;
+        }
+        .pages {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin: 0;
+        }
+        .s {
+          height: 7.44vh;
+          margin-left: 2.78vw;
+          margin-right: 2.78vw;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: baseline;
+          font-family: 'PT Mono', monospace;
+          color: #8C56B6;
+        }
+        .black:hover a {
+          color: #FFCD00;
+        }
+        .s p:hover {
+          color: #FFCD00;
+        }
+        .other {
+          margin: 0 auto;
+        }
+        .pages p {
+          font-size: 1.46vw;
+          text-transform: uppercase;
+          letter-spacing: 0.07em;
+          margin-top: 2.22vh;
+        }
+        .black {
+          height: 7.44vh;
+          width: 8.747em;
+          text-transform: uppercase;
+          font-size: 2.08vw;
+          letter-spacing: 0.07em;
+        }
+        .white {
+          height: 7.44vh;
+          width: 59.51vw;
+        }
+        .container {
+          position: relative;
+          margin-left: 2.78vw;
+          margin-right: 2.78vw;
+          border: 1px solid #8C56B6;
+          height: 84.29vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .header {
+          height: 13.92vh;
+          width: 100%;
+        }
+        .header h1 {
+          position: relative;
+          font-size: 2.5vw;
+          font-family: PT Mono;
+          font-weight: normal;
+          line-height: 2.5vw;
+          color: #E0E0E0;
+          margin-top: calc(6.5vh - 1.25vw);
+          margin-left: 2.78vw;
+        }
+        .steps {
+          width: 100%;
+          height: 100%;
+          align-self: stretch;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+        .step {
+          position: relative;
+          height: 67vh;
+          width: 100%;
+          background-color: black;
+          margin-top: 1vh;
+          border: 1px solid #8C56B6;
+        }
+        .step:hover {
+          background-color: #8C56B6;
+        }
+        .a {
+          margin-left: 2.78vw;
+          margin-right: 2.78vw;
+        }
+        .b {
+          margin-right: 2.78vw;
+        }
+        .none {
+          display: none;
+        }
+        .bog {
+          position: relative;
+          margin-top: calc(33.5vh - 29.5vh);
+          margin-left: auto;
+          margin-right: auto;
+          background: url("images/bog.svg");
+          width: 16.4vw;
+          height: 59vh;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center bottom;
+          transition: margin-right 2s ease-in-out;
+        }
+        .clicked {
+          margin-right: 12vw;
+        }
+        .pant {
+          position: relative;
+          margin-top: calc(33.5vh - 29.5vh);
+          margin-left: auto;
+          margin-right: auto;
+          background: url("images/pant.svg");
+          width: 24.4vw;
+          height: 59vh;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center bottom;
+        }
+        .apple {
+          position: absolute;
+          background: url("images/eye.svg");
+          background-size: contain;
+          width: 9.5vw;
+          height: 9.44vh;
+          overflow: hidden;
+          background-repeat: no-repeat;
+          background-position: center;
+          left: calc(13.2vw - 4.75vw);
+          bottom: calc(16.5vh - 4.72vh);
+        }
+        .movement {
+          position: relative;
+          height: 8vh;
+          width: 8vh;
+          margin-top: 0.2vw;
+          margin-left: calc(4.75vw - 4vh);
+          border-radius: 50%;
+        }
+        .pupil {
+          position: absolute;
+          background-image: url("images/pupil.svg");
+          width: 2.61vw;
+          height: 2.61vw;
+          left: 28%;
+          top: 14%;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        .step h2 {
+          position: absolute;
+          font-size: 2.08vw;
+          font-family: PT Mono;
+          font-weight: bold;
+          color: #FFCD00;
+          left: 1.81vw;
+          top: 2.89vh;
+        }
+        .info h3 {
+          position: absolute;
+          font-size: 2.08vw;
+          font-family: PT Mono;
+          font-weight: normal;
+          color: #FFCD00;
+          left: 6.81vw;
+          top: 2.89vh;
+        }
+        .info p {
+          position: absolute;
+          font-family: Open Sans;
+          font-weight: 300;
+          font-size: 1.46vw;
+          line-height: 1.99vw;
+          color: #E0E0E0;
+          left: 6.81vw;
+          top: 9.89vh;
+          width: 46.67vw;
+        }
+        .more {
+          position: absolute;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          left: 2vw;
+          top: 38vh;
+        }
+        .info h3 {
+          color: #E0E0E0;
+        }
+        .more h4 {
+          position: relative;
+          font-family: Open Sans;
+          font-weight: 300;
+          font-size: 1.46vw;
+          line-height: 1.99vw;
+          color: #E0E0E0;
+        }
+        a {
+          color: #E0E0E0;
+        }
+        .more:hover a {
+          color: #FFCD00;
+        }
+        .open {
+          position: relative;
+          width: 1.60vw;
+          height: 1.94vw;
+          background: url("images/open.svg");
+          background-size: cover;
+          transform: rotate(-90deg);
+          margin-right: 3.1vw;
+        }
+        .cross {
+          position: absolute;
+          width: 4vw;
+          height: 4vw;
+          right: 4.81vw;
+          top: 14.89vh;
+        }
+        .cross:hover .crosspic {
+          background-size: cover;
+          background: url("images/crossyellow.svg");
+          background-repeat: no-repeat;
+        }
+        .crosspic {
+          position: absolute;
+          right: 0;
+          background-size: cover;
+          background: url("images/cross.svg");
+          width: 2.3vw;
+          height: 2.5vw;
+          background-repeat: no-repeat;
+        }
+        .more:hover .open {
+          background: url("images/openyellow.svg");
+          background-size: cover;
+        }
+        .strike {
+      position: relative;
+      display: inline-block;
+        }
+        .strike p:hover {
+          color: #8C56B6
+        }
+        .strike::before {
+          content: '';
+          border-bottom: 0.3vw solid #FFCD00;
+          width: 100%;
+          position: absolute;
+          right: 0;
+          top: calc(2.22vh + 0.6vw)
+        }
+        a:hover {
+          color: #FFCD00;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="m">
+      <div class="s">
+        <div class="black">
+          <p><a href="proto.hmtl">boomshh</a></p>
+        </div>
+        <div class="white">
+          <div class="pages">
+            <p>о нас</p>
+            <div class="strike">
+              <p>история</p>
+            </div>
+            <p> <a href="menu2.html">меню</a></p>
+            <p><a href="events.html">афиша</a></p>
+            <p>бронь</p>
+            <p>секрет</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <h1>концепция нашего ресторана</h1>
+      </div>
+      <div class="steps">
+        <div class="step a">
+          <h2 class="s1">1.</h2>
+          <div class="info none">
+            <h3>История Бога Вулкана</h3>
+            <p>Вулкан&nbsp;&mdash; античный бог разрушительного и&nbsp;очистительного огня. Не&nbsp;являясь одним из&nbsp;12&nbsp;главных богов Пантеона, обладает тем не&nbsp;менее богатой историей. Он&nbsp;&mdash; покровитель этого ресторана и&nbsp;наше вдохновение.
+            <br> Каждое лето ресторан Boomshh проводит фестиваль &laquo;Vulcanalia&raquo; в&nbsp;честь бога Вулкана.
+           </p>
+           <div class="more">
+             <div class="open"></div>
+             <h4><a href="https://takie-dela-tovarisch.github.io/MAP/">Узнать больше</a></h4>
+           </div>
+          </div>
+          <div class="bog"></div>
+        </div>
+        <div class="step b">
+          <h2>2.</h2>
+          <div class="pant">
+            <div class="apple">
+              <div class="movement">
+                <div class="pupil"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cross none">
+          <div class="crosspic">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

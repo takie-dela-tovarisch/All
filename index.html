@@ -2,9 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=PT+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css">
     <title>Главная</title>
   </head>
   <style media="screen">
@@ -18,7 +18,12 @@
       background-color: black;
       /* cursor: none; */
     }
-
+    * {
+      text-decoration: none;
+    }
+    a:hover {
+      color: #FFCD00;
+    }
     .menu {
 height: 57px;
 width: 100vw;
@@ -32,7 +37,10 @@ padding-right: 43px;
     }
     .menu p {
       margin-top: 18px;
-      color: #8768E1;
+      color: #8C56B6;
+    }
+    a {
+      color: #8C56B6;
     }
     .one {
       position: absolute;
@@ -53,14 +61,14 @@ padding-right: 43px;
       background-size: contain;
       background-image: url("images/2.png");
     }
-    .cursor {
+    /* .cursor {
       background-image: url("images/arrow.svg");
       display: block;
       position: absolute;
       width: 1.1vw;
       height: 2.6vw;
       background-repeat: no-repeat;
-    }
+    } */
     .left {
       transform: rotate(90deg);
     }
@@ -304,18 +312,19 @@ $(document).ready(function(){
 
            if (xPrev<e.pageX){
              $(window).scrollLeft(value);
-             xPrev=e.pageX;
+             xPrev= e.pageX;
            } else {
              $(window).scrollLeft(valuee);
-             xPrev=e.pageX;
+             xPrev= e.pageX;
            }
+
 
            if (yPrev<e.pageY){
              $(window).scrollTop(valueee);
-             yPrev=e.pageY;
+             yPrev= e.pageY;
            } else {
              $(window).scrollTop(valueeee);
-             yPrev=e.pageY;
+             yPrev= e.pageY;
            }
          });
       })
