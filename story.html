@@ -33,13 +33,34 @@
       $( ".info" ).removeClass("none");
     });
 
+    $(".b").click(function(){
+      $('.a').animate({
+        width:'0'
+      });
+      setTimeout(function(){
+        $( ".a" ).addClass("none");
+      }, 100);
+      $(".b").css('margin-left', '2.78vw');
+      $( ".pant" ).removeClass("notclicked");
+      $( ".pant" ).addClass("clickedd");
+      $( ".cross" ).removeClass("none");
+      $( ".info" ).removeClass("none");
+    });
+
     $(".cross").click(function(){
       $( ".b" ).removeClass("none");
+      $( ".a" ).removeClass("none");
       $('.b').animate({
+        width:'100%'
+      });
+      $('.a').animate({
         width:'100%'
       });
       $( ".cross" ).addClass("none");
       $( ".info" ).addClass("none");
+      $( ".bog" ).removeClass("clicked");
+      $( ".pant" ).addClass("notclicked");
+      $( ".pant" ).removeClass("clickedd");
     });
 
 });
@@ -163,6 +184,7 @@
         }
         .b {
           margin-right: 2.78vw;
+          margin-left: 0;
         }
         .none {
           display: none;
@@ -183,11 +205,16 @@
         .clicked {
           margin-right: 12vw;
         }
+        .clickedd {
+          margin-right: 8vw;
+        }
+        .notclicked {
+          margin-right: auto;
+        }
         .pant {
           position: relative;
           margin-top: calc(33.5vh - 29.5vh);
           margin-left: auto;
-          margin-right: auto;
           background: url("images/pant.svg");
           width: 24.4vw;
           height: 59vh;
@@ -373,9 +400,18 @@
           </div>
           <div class="bog"></div>
         </div>
+
         <div class="step b">
           <h2>2.</h2>
-          <div class="pant">
+          <div class="info none">
+            <h3>История кузниц Вулкана</h3>
+            <p>С&nbsp;приходом римской культуры роль бога Вулкана сильно изменилась. Многие его функции перешли к&nbsp;Гефесту. Сам Вулкан стал покровителем кузнецов. Наша подземная кухня с&nbsp;магматическим шаром вдохновленна историей о&nbsp;кузницах Бога, находящихся под каждой горой. Римляне верили, что вулкан извергается, когда работа кипит.</p>
+           <div class="more">
+             <div class="open"></div>
+             <h4><a href="https://takie-dela-tovarisch.github.io/MAP/">Узнать больше</a></h4>
+           </div>
+          </div>
+          <div class="pant notclicked">
             <div class="apple">
               <div class="movement">
                 <div class="pupil"></div>
