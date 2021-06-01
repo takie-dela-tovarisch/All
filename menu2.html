@@ -17,6 +17,13 @@
             document.body.style.paddingBottom = '0px'
           }
         });
+        $(".a").mouseover(function(){
+          $(".a").css('color', '#8C56B6');
+        });
+        $(".a").mouseout(function(){
+          $(".a").css('color', '#E0E0E0');
+        });
+
       });
     </script>
     <style media="screen">
@@ -200,11 +207,12 @@
       .open {
         position: absolute;
         width: 1.60vw;
-        height: 1.94vw;
+        height: 1.6vw;
         top: calc(6.96vh - 0.8vw);
-        background: url("images/open.svg");
+        background: url(images/open.svg);
         right: 2.78vw;
-        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
         transition: transform 0.5s ease;
       }
       .header:hover .open {
@@ -279,44 +287,44 @@
         margin-bottom: 1.33vh;
       }
       .strike {
-    position: relative;
-    display: inline-block;
-}
-      .strike p:hover {
-        color: #8C56B6
+        position: relative;
+        display: inline-block;
       }
-.strike::before {
-    content: '';
-    border-bottom: 0.3vw solid #FFCD00;
-    width: 100%;
-    position: absolute;
-    right: 0;
-    top: calc(2.22vh + 0.6vw)
-}
-a:hover {
-  color: #FFCD00;
-}
+      .strike p:hover {
+        color: #8C56B6;
+      }
+      .strike::before {
+          content: '';
+          border-bottom: 0.3vw solid #FFCD00;
+          width: 100%;
+          position: absolute;
+          right: 0;
+          top: calc(2.22vh + 0.6vw)
+      }
+      a:hover {
+        color: #FFCD00;
+      }
+
     </style>
   </head>
   <body>
     <div class="m">
       <div class="s">
         <div class="black">
-          <p><a href="proto.hmtl">boomshh</a></p>
+          <p><a href="index.html">boomshh</a></p>
         </div>
         <div class="white">
           <div class="pages">
-            <p>о нас</p>
-            <p>история</p>
+            <p><a href="#">о нас</a></p>
+            <p><a href="story.html">история</a></p>
             <div class="strike">
-              <p>меню</p>
+              <p><a href="menu2.html">меню</a></p>
             </div>
             <p><a href="events.html">афиша</a></p>
-            <p>бронь</p>
-            <p>секрет</p>
+            <p><a href="book.html">бронь</a></p>
+            <p><a href="game.html">секрет</a></p>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -331,14 +339,14 @@ a:hover {
           <div class="food">
             <h2>Главные блюда</h2>
             <div class="name">
-              <p>Цыплёнок на лавовом гриле</p>
-              <p>Стейк с соусом из авокадо</p>
+              <p class="a">Цыплёнок на лавовом гриле</p>
+              <p class="b">Стейк с соусом из авокадо</p>
               <p>Тушеные баклажаны</p>
               <p>Паста с морепродуктами</p>
               <p>Сибас на лавовом гриле</p>
             </div>
             <div class="price">
-              <p>300 ₽</p>
+              <p class="a">300 ₽</p>
               <p>400 ₽</p>
               <p>280 ₽</p>
               <p>410 ₽</p>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Бронь</title>
+    <style media="screen">
+    body {
+      width: 100vw;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: auto;
+      background-color: black;
+      padding-top: 8.89vh;
+      padding-bottom: 0;
+    }
+    * {
+      text-decoration: none;
+    }
+    a {
+      color: #8C56B6;
+    }
+      .m {
+        width: 100%;
+        height: 7.44vh;
+        margin-top: 0 auto;
+        display: inline-block;
+        position: fixed;
+        background-color: black;
+        top: 0;
+        z-index: 1;
+      }
+      .pages {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+      }
+      .s {
+        height: 7.44vh;
+        margin-left: 2.78vw;
+        margin-right: 2.78vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        font-family: 'PT Mono', monospace;
+        color: #8C56B6;
+      }
+      .black:hover a {
+        color: #FFCD00;
+      }
+      .s p:hover {
+        color: #FFCD00;
+      }
+      .other {
+        margin: 0 auto;
+      }
+      .pages p {
+        font-size: 1.46vw;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin-top: 2.22vh;
+      }
+      .black {
+        height: 7.44vh;
+        width: 8.747em;
+        text-transform: uppercase;
+        font-size: 2.08vw;
+        letter-spacing: 0.07em;
+      }
+      .white {
+        height: 7.44vh;
+        width: 59.51vw;
+      }
+
+      .container {
+        position: relative;
+        margin-left: 2.78vw;
+        margin-right: 2.78vw;
+        border: 1px solid #8C56B6;
+        height: 84.29vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .header {
+        height: 13.92vh;
+        width: 100%;
+      }
+      .header h1 {
+        position: relative;
+        font-size: 2.5vw;
+        font-family: PT Mono;
+        font-weight: normal;
+        line-height: 2.5vw;
+        color: #E0E0E0;
+        margin-top: calc(6.5vh - 1.25vw);
+        margin-left: 2.78vw;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="password"],
+      select {
+      display: block;
+      width: 460px;
+      position: relative;
+      margin: 10px auto;
+      height: 46px;
+      padding: 0 18px;
+      font-size: 17px;
+      border: 1px solid #8C56B6;
+      background: black;
+      color: #E0E0E0;
+      }
+      .form-split {
+        display: flex;
+        flex-direction: row;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="m">
+      <div class="s">
+        <div class="black">
+          <p><a href="index.html">boomshh</a></p>
+        </div>
+        <div class="white">
+          <div class="pages">
+            <p><a href="#">о нас</a></p>
+            <p><a href="story.html">история</a></p>
+            <div class="strike">
+              <p><a href="menu2.html">меню</a></p>
+            </div>
+            <p><a href="events.html">афиша</a></p>
+            <p><a href="book.html">бронь</a></p>
+            <p><a href="game.html">секрет</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <h1>забронируйте столик</h1>
+      </div>
+      <div class="form-split">
+        <input type="text" name="" value="" placeholder="First name">
+        <input type="text" name="" value="" placeholder="Last name">
+      </div>
+    </div>
+
+
+  </body>
+</html>

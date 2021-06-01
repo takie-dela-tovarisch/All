@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Игра</title>
+    <!-- <script type="text/javascript">
+      $( document ).ready(function() {
+        let deg_temp=0;
+          $(".square").click(function(){
+            deg_temp = deg_temp+30;
+            $(this).rotate(deg_temp);
+          })
+      });
+    </script> -->
+    <script type="text/javascript">
+    $( document ).ready(function() {
+
+      // let deg_temp =0;
+      // $(".square").click(function(){
+      // deg_temp = deg_temp-90;
+      // $(this).css({
+      //   'transform' : 'rotate('+deg_temp+'deg)'
+      // });
+      // })
+
+      // $(".square").click(function(){
+      //   $(this).addClass("s_1");
+      //
+      //   setTimeout(function(){
+      //     if ($(".square").hasClass("s_1")) {
+      //         $(this).removeClass("s_1");
+      //         $(this).addClass("s_2");
+      //       }
+      //   }, 100);
+      //
+      //   setTimeout(function(){
+      //     if ($(".square").hasClass("s_2")) {
+      //           $(this).removeClass("s_2");
+      //           $(this).addClass("s_3");
+      //     }
+      //   }, 200);
+      //
+      //   setTimeout(function(){
+      //     if ($(".square").hasClass("s_3")) {
+      //           $(this).removeClass("s_3");
+      //           $(this).addClass("s_4");
+      //     }
+      //   }, 300);
+      //
+      // })
+
+      var timesClicked = 0;
+
+      $(".square").click(function() {
+        timesClicked++;
+
+        if (timesClicked==2) {
+          $(this).removeClass("s_1");
+          $(this).addClass("s_2");
+        } if (timesClicked==3) {
+          $(this).removeClass("s_2");
+          $(this).addClass("s_3");
+        } if (timesClicked==4) {
+          $(this).removeClass("s_3");
+          $(this).addClass("s_4");
+            setTimeout(function(){
+              timesClicked = 0;
+              }, 100);
+        } if (timesClicked==1) {
+          $(this).addClass("s_1");
+          $(this).removeClass("s_4");
+        }
+      })
+
+
+
+      $(".score").click(function(){
+
+                if ($(".e").hasClass("s_4") && $(".g").hasClass("s_4") && $(".h").hasClass("s_4") && $(".k").hasClass("s_4")) {
+                  $(".yeah").css('display','block');
+
+                  setTimeout(function(){
+                    $(".ah").css('opacity','1');
+                    $(".hh").css('opacity','1');
+                  }, 500);
+
+                  setTimeout(function(){
+                    $(".bh").css('opacity','1');
+                    $(".gh").css('opacity','1');
+                  }, 900);
+
+                  setTimeout(function(){
+                    $(".ch").css('opacity','1');
+                    $(".fh").css('opacity','1');
+                  }, 1300);
+
+                  setTimeout(function(){
+                    $(".dh").css('opacity','1');
+                    $(".eh").css('opacity','1');
+                  }, 1700);
+
+                  setTimeout(function(){
+                    $(".yeah").css('opacity','0');
+                  }, 11900);
+
+                  setTimeout(function(){
+                    $(".yeah").css('display','none');
+                  }, 12000);
+                } else {
+                  $(".fail").css('display','block');
+
+                  setTimeout(function(){
+                    $(".one").css('opacity','1');
+                    $(".fifteen").css('opacity','1');
+                  }, 500);
+
+                  setTimeout(function(){
+                    $(".two").css('opacity','1');
+                    $(".fourteen").css('opacity','1');
+                  }, 700);
+
+                  setTimeout(function(){
+                    $(".three").css('opacity','1');
+                    $(".thirteen").css('opacity','1');
+                  }, 900);
+
+                  setTimeout(function(){
+                    $(".four").css('opacity','1');
+                    $(".twelve").css('opacity','1');
+                  }, 1100);
+
+                  setTimeout(function(){
+                    $(".five").css('opacity','1');
+                    $(".eleven").css('opacity','1');
+                  }, 1300);
+
+                  setTimeout(function(){
+                    $(".six").css('opacity','1');
+                    $(".ten").css('opacity','1');
+                  }, 1500);
+
+                  setTimeout(function(){
+                    $(".seven").css('opacity','1');
+                    $(".nine").css('opacity','1');
+                  }, 1700);
+
+                  setTimeout(function(){
+                    $(".eight").css('opacity','1');
+                  }, 1900);
+
+                  setTimeout(function(){
+                    $(".fail").css('opacity','0');
+                  }, 2900);
+
+                  setTimeout(function(){
+                    $(".fail").css('display','none');
+                  }, 3000);
+                }
+
+        setTimeout(function(){
+          $(".game").css('display','none');
+          $(".redo").css('display','block');
+        }, 2000);
+      })
+
+      $(".redo").click(function(){
+        window.location.reload(); 
+      })
+
+    });
+    </script>
+    <style media="screen">
+    body {
+      width: 100vw;
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: auto;
+      background-color: black;
+      padding-top: 8.89vh;
+      padding-bottom: 0;
+    }
+    * {
+      text-decoration: none;
+    }
+    a {
+      color: #8C56B6;
+    }
+    .m {
+      width: 100%;
+      height: 7.44vh;
+      margin-top: 0 auto;
+      display: inline-block;
+      position: fixed;
+      background-color: black;
+      top: 0;
+      z-index: 1;
+    }
+    .pages {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0;
+    }
+    .s {
+      height: 7.44vh;
+      margin-left: 2.78vw;
+      margin-right: 2.78vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: 'PT Mono', monospace;
+      color: #8C56B6;
+    }
+    .black:hover a {
+      color: #FFCD00;
+    }
+    a:hover {
+      color: #FFCD00;
+    }
+    .s p:hover {
+      color: #FFCD00;
+    }
+    .other {
+      margin: 0 auto;
+    }
+    .pages p {
+      font-size: 1.46vw;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 2.22vh;
+    }
+    .black {
+      height: 7.44vh;
+      width: 8.747em;
+      text-transform: uppercase;
+      font-size: 2.08vw;
+      letter-spacing: 0.07em;
+    }
+    .white {
+      height: 7.44vh;
+      width: 59.51vw;
+    }
+    .events {
+      position: relative;
+      margin-left: 2.78vw;
+      margin-right: 2.78vw;
+      border: 1px solid #8C56B6;
+      height: 84.29vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+    .header {
+      width: inherit;
+      height: 9.96vh;
+      border-bottom: 1px solid #8C56B6;
+      display: flex;
+      flex-direction: row;
+      /* justify-content: space-between; */
+      align-items: baseline;
+      padding-left: 1.74vw;
+    }
+    .moreinfo {
+      width: 100%;
+      height: 7.67vh;
+      border-top: 1px solid #8C56B6;
+    }
+    .header:last-of-type {
+      border-bottom: 0;
+      border-top: 1px solid #8C56B6;
+    }
+    .moving h1, .score h1 {
+      position: relative;
+      font-size: 2.5vw;
+      font-family: PT Mono;
+      font-weight: normal;
+      line-height: 2.5vw;
+      color: #E0E0E0;
+      margin-top: calc(4.98vh - 1.25vw);
+    }
+
+    .score h1 {
+      margin-left: 1.74vw;
+    }
+    .moving {
+      width: 50%;
+      height: 100%;
+      border-right: 1px solid #8C56B6;
+    }
+    .score {
+      height: 100%;
+      width: 50%;
+    }
+    .score:hover {
+      background: #8C56B6;
+    }
+    .moreinfo p {
+      position: absolute;
+      font-family: Open Sans;
+      font-weight: 300;
+      font-size: 1.46vw;
+      line-height: 2vw;
+      color: #E0E0E0;
+      margin-top: calc(3.835vh - 1vw);
+      margin-left: 1.74vw;
+    }
+    .wrapper {
+      height: 66.66vh;
+      width: 100%;
+    }
+    .game {
+      position: relative;
+      background-color: #8C56B6;
+      height: inherit;
+      width: 88.88vh;
+      margin-left: auto;
+      margin-right: auto;
+      border-left: 1px solid #8C56B6;
+      border-right: 1px solid #8C56B6;
+      /* display: none; */
+    }
+    .redo {
+      display: none;
+      position: relative;
+      height: inherit;
+      width: 88.88vh;
+      margin-left: auto;
+      margin-right: auto;
+      border-left: 1px solid #8C56B6;
+      border-right: 1px solid #8C56B6;
+    }
+    .redo:hover {
+      background-color: #8C56B6;
+    }
+    .redo h1 {
+      position: relative;
+      width: 88.88vh;
+      font-size: 2.5vw;
+      font-family: PT Mono;
+      font-weight: normal;
+      line-height: 2.5vw;
+      color: #E0E0E0;
+      padding-top: calc(39% - 1.25vw);
+      text-align: center;
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+    }
+    .square:hover {
+      opacity: 0.5;
+      transition: opacity 0.3s;
+    }
+    .square {
+      height: 22.22vh;
+      width: 22.22vh;
+      background-color: white;
+    }
+    .square:nth-of-type(2) {
+      background-color: blue;
+    }
+    .square:nth-of-type(4) {
+      background-color: blue;
+    }
+    .a {
+      background: url("images/1s.png");
+      background-size: contain;
+      transform: rotate(0deg);
+    }
+    .b {
+      background: url("images/2s.png");
+      background-size: contain;
+      transform: rotate(0deg);
+    }
+    .c {
+      background: url("images/3s.png");
+      background-size: contain;
+      transform: rotate(0deg);
+    }
+    .d {
+      background: url("images/4s.png");
+      background-size: contain;
+      transform: rotate(0deg);
+    }
+    .e {
+      background: url("images/5s.png");
+      background-size: contain;
+      transform: rotate(180deg);
+    }
+    .f {
+      background: url("images/6s.png");
+      background-size: contain;
+      transform: rotate(0deg);
+    }
+    .g {
+      background: url("images/7s.png");
+      background-size: contain;
+      transform: rotate(180deg);
+    }
+    .h {
+      background: url("images/8s.png");
+      background-size: contain;
+      transform: rotate(180deg);
+    }
+    .i {
+      background: url("images/9s.png");
+      background-size: cover;
+      transform: rotate(0deg);
+    }
+    .j {
+      background: url("images/10s.png");
+      background-size: cover;
+      transform: rotate(0deg);
+    }
+    .k {
+      background: url("images/11s.png");
+      background-size: cover;
+      transform: rotate(180deg);
+    }
+    .l {
+      background: url("images/12s.png");
+      background-size: contain;
+      transform: rotate(0deg);
+    }
+    .s_1 {
+      transform: rotate(-90deg);
+    }
+    .s_2 {
+      transform: rotate(-180deg);
+    }
+    .s_3 {
+      transform: rotate(-270deg);
+    }
+    .s_4 {
+      transform: rotate(0deg);
+    }
+    .fail {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    transition: opacity 0.3s ease;
+  }
+  .hor {
+    width: 100%;
+    height: calc(100% / 5);
+    display: flex;
+    flex-direction: row;
+  }
+  .ups {
+    width: calc(100%/3);
+    height: 100%;
+    border: 1px black solid;
+    background: white;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .ups:hover {
+    background: #FFCD00;
+  }
+  h3 {
+    font-family: PT Mono;
+    font-weight: bold;
+    font-size: 2.36vw;
+    line-height: 40px;
+    margin-left: 2.08vw;
+    margin-top: 2.67vh;
+  }
+  h4 {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.25vw;
+    line-height: 2.78vh;
+    margin-left: 2.08vw;
+    margin-top: 1.2vh;
+  }
+    .yeah {
+      position: fixed;
+      background: black;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      display: none;
+      flex-direction: column;
+      transition: opacity 0.3s ease;
+    }
+    .horisontal {
+      height: 50%;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    img {
+      opacity: 0;
+    }
+    img:hover {
+      border: transparent 3px solid;
+      zoom: 3;
+    }
+    .strike {
+  position: relative;
+  display: inline-block;
+}
+    .strike p:hover {
+      color: #8C56B6
+    }
+.strike::before {
+  content: '';
+  border-bottom: 0.3vw solid #FFCD00;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: calc(2.22vh + 0.6vw)
+}
+    </style>
+  </head>
+  <body>
+    <div class="m">
+      <div class="s">
+        <div class="black">
+          <p><a href="index.html">boomshh</a></p>
+        </div>
+        <div class="white">
+          <div class="pages">
+            <p><a href="#">о нас</a></p>
+            <p><a href="story.html">история</a></p>
+            <p><a href="menu2.html">меню</a></p>
+            <p><a href="events.html">афиша</a></p>
+            <p><a href="#">бронь</a></p>
+            <div class="strike">
+              <p><a href="game.html">секрет</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="events">
+      <div class="header">
+        <div class="moving">
+          <h1>собери вулканчик boomshh</h1>
+        </div>
+        <div class="score">
+          <h1>завершить</h1>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="redo">
+          <h1>Попробовать еще раз?</h1>
+        </div>
+        <div class="game">
+          <div class="row">
+            <div class="square a"></div>
+            <div class="square b"></div>
+            <div class="square c"></div>
+            <div class="square d"></div>
+          </div>
+          <div class="row">
+            <div class="square e"></div>
+            <div class="square f"></div>
+            <div class="square g"></div>
+            <div class="square h"></div>
+          </div>
+          <div class="row">
+            <div class="square i"></div>
+            <div class="square j"></div>
+            <div class="square k"></div>
+            <div class="square l"></div>
+          </div>
+        </div>
+      </div>
+      <div class="moreinfo">
+        <div class="val">
+
+        </div>
+          <p>Подбери верное расположение элементов и&nbsp;собери вулкан, чтобы получить доступ к&nbsp;секретной акции.</p>
+      </div>
+    </div>
+
+    <div class="fail">
+      <div class="hor">
+        <div class="ups one">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+        <div class="ups two">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+        <div class="ups three">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+      </div>
+      <div class="hor">
+        <div class="ups four">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+        <div class="ups five">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+        <div class="ups six">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+      </div>
+      <div class="hor">
+        <div class="ups seven">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+        <div class="ups eight">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+        <div class="ups nine">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+      </div>
+      <div class="hor">
+        <div class="ups ten">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+        <div class="ups eleven">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+        <div class="ups twelve">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+      </div>
+      <div class="hor">
+        <div class="ups thirteen">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+        <div class="ups fourteen">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+        <div class="ups fifteen">
+          <h3>Упс!</h3>
+          <h4>Вы сделали худший из возможных выборов. Никаких скидок.</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="yeah">
+      <a href="404.html"><div class="horisontal">
+        <img class="ah" src="https://media.giphy.com/media/wecKdrjdZ2c1tZHH2B/giphy.gif" alt="я джифка">
+        <img class="bh" src="https://media.giphy.com/media/wecKdrjdZ2c1tZHH2B/giphy.gif" alt="я джифка">
+        <img class="ch" src="https://media.giphy.com/media/wecKdrjdZ2c1tZHH2B/giphy.gif" alt="я джифка">
+        <img class="dh" src="https://media.giphy.com/media/wecKdrjdZ2c1tZHH2B/giphy.gif" alt="я джифка">
+      </div></a>
+      <a href="404.html"><div class="horisontal">
+        <img class="eh" src="https://media.giphy.com/media/wecKdrjdZ2c1tZHH2B/giphy.gif" alt="я джифка">
+        <img class="fh" src="https://media.giphy.com/media/wecKdrjdZ2c1tZHH2B/giphy.gif" alt="я джифка">
+        <img class="gh" src="https://media.giphy.com/media/wecKdrjdZ2c1tZHH2B/giphy.gif" alt="я джифка">
+        <img class="hh" src="https://media.giphy.com/media/wecKdrjdZ2c1tZHH2B/giphy.gif" alt="я джифка">
+      </div></a>
+    </div>
+  </body>
+</html>
