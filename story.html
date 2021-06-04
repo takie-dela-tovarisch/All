@@ -25,6 +25,7 @@
       $('.b').animate({
         width:'0'
       });
+      $(".a").removeClass("hov")
       setTimeout(function(){
         $( ".b" ).addClass("none");
       }, 100);
@@ -37,6 +38,7 @@
       $('.a').animate({
         width:'0'
       });
+      $( ".b" ).removeClass("hov");
       setTimeout(function(){
         $( ".a" ).addClass("none");
       }, 100);
@@ -50,6 +52,8 @@
     $(".cross").click(function(){
       $( ".b" ).removeClass("none");
       $( ".a" ).removeClass("none");
+      $( ".a" ).addClass("hov");
+      $( ".b" ).addClass("hov");
       $('.b').animate({
         width:'100%'
       });
@@ -81,6 +85,9 @@
       }
       .m a {
         color: #8C56B6;
+      }
+      .newhov:hover {
+        background: black;
       }
         .m {
           width: 100%;
@@ -175,7 +182,7 @@
           margin-top: 1vh;
           border: 1px solid #8C56B6;
         }
-        .step:hover {
+        .hov:hover {
           background-color: #8C56B6;
         }
         .a {
@@ -274,12 +281,12 @@
           position: absolute;
           font-family: Open Sans;
           font-weight: 300;
-          font-size: 1.46vw;
+          font-size: 1.2vw;
           line-height: 1.99vw;
           color: #E0E0E0;
           left: 6.81vw;
           top: 9.89vh;
-          width: 46.67vw;
+          width: 43.67vw;
         }
         .more {
           position: absolute;
@@ -296,7 +303,7 @@
           position: relative;
           font-family: Open Sans;
           font-weight: 300;
-          font-size: 1.46vw;
+          font-size: 1.2vw;
           line-height: 1.99vw;
           color: #E0E0E0;
         }
@@ -308,37 +315,42 @@
         }
         .open {
           position: relative;
-          width: 1.60vw;
+          width: 1.2vw;
           height: 1.94vw;
           background: url("images/open.svg");
-          background-size: cover;
+          background-size: contain;
           transform: rotate(-90deg);
           margin-right: 3.1vw;
+          background-repeat: no-repeat;
         }
         .cross {
           position: absolute;
           width: 4vw;
           height: 4vw;
           right: 4.81vw;
-          top: 14.89vh;
+          top: 16.2vh;
         }
         .cross:hover .crosspic {
           background-size: cover;
           background: url("images/crossyellow.svg");
           background-repeat: no-repeat;
+          position: absolute;
+          width: 1.7vw;
+          height: 1.7vw;
         }
         .crosspic {
           position: absolute;
           right: 0;
-          background-size: cover;
+          width: 1.7vw;
+          height: 1.7vw;
           background: url("images/cross.svg");
-          width: 2.3vw;
-          height: 2.5vw;
+          background-size: cover;
           background-repeat: no-repeat;
         }
         .more:hover .open {
           background: url("images/openyellow.svg");
-          background-size: cover;
+          background-size: contain;
+          background-repeat: no-repeat;
         }
         .strike {
       position: relative;
@@ -368,13 +380,13 @@
         </div>
         <div class="white">
           <div class="pages">
-            <p><a href="#">о нас</a></p>
+            <p><a href="about.html">о нас</a></p>
             <div class="strike">
               <p><a href="story.html">история</a></p>
             </div>
             <p><a href="menu2.html">меню</a></p>
             <p><a href="events.html">афиша</a></p>
-            <p><a href="#">бронь</a></p>
+            <p><a href="book.html">бронь</a></p>
             <p><a href="game.html">секрет</a></p>
           </div>
         </div>
@@ -386,7 +398,7 @@
         <h1>концепция нашего ресторана</h1>
       </div>
       <div class="steps">
-        <div class="step a">
+        <div class="step a hov">
           <h2 class="s1">1.</h2>
           <div class="info none">
             <h3>История Бога Вулкана</h3>
@@ -401,7 +413,7 @@
           <div class="bog"></div>
         </div>
 
-        <div class="step b">
+        <div class="step b hov">
           <h2>2.</h2>
           <div class="info none">
             <h3>История кузниц Вулкана</h3>

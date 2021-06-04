@@ -16,7 +16,7 @@
       height: 100%;
       margin: 0 auto;
       overflow: auto;
-      background-color: black;
+      /* background-color: black; */
       /* cursor: none; */
     }
     * {
@@ -304,71 +304,56 @@ background-image: url("images/5.png");
   <script type="text/javascript">
   $(document).mousemove(function(e) {
     let body_size_x = $( window ).width();
-    let x_third = parseInt(body_size_x / 3);
-    let x_third_move = x_third + $(window).scrollLeft();
+    let x_half = parseInt(body_size_x / 2);
+    let x_half_move = x_half + $(window).scrollLeft();
 
     let body_size_y = $( window ).height();
-    let y_third = parseInt(body_size_y / 3);
-    let y_third_move = y_third + $(window).scrollTop();
+    let y_half = parseInt(body_size_y / 2);
+    let y_half_move = y_half + $(window).scrollTop();
 
 
     let left_dir = e.pageX;
     let top_dir = e.pageY;
 
-    let abc = $(window).scrollLeft() - 10;
-    let dfg = $(window).scrollTop() - 10;
-    let hij = $(window).scrollLeft() + 10;
-    let klm = $(window).scrollTop() + 10;
-
-    let xup = $(window).scrollLeft() + 1;
-    let yup = $(window).scrollTop() + 1;
+    let abc = $(window).scrollLeft() - 2;
+    let dfg = $(window).scrollTop() - 2;
+    let hij = $(window).scrollLeft() + 2;
+    let klm = $(window).scrollTop() + 2;
 
 
 
-    let eq1 = left_dir < x_third_move;
-    let eq2 = left_dir < parseInt (x_third_move * 2);
-    let eq3 = left_dir < parseInt (x_third_move * 3);
-    let eq4 = top_dir < y_third_move;
-    let eq5 = top_dir < parseInt (y_third_move * 2);
-    let eq6 = top_dir < parseInt (y_third_move * 3);
+    let eq1 = left_dir < x_half_move;
+    let eq2 = left_dir > x_half_move;
+    let eq3 = top_dir < y_half_move;
+    let eq4 = top_dir > y_half_move;
 
 
-    if (eq1 && eq4) {
-      // $(document.body).css('background-color', 'blue');
-      $(window).scrollLeft(abc);
-      $(window).scrollTop(dfg);
-    } else if (eq2 && eq4) {
-      // $(document.body).css('background-color', 'red');
-      $(window).scrollTop(dfg);
-      // $(window).scrollLeft(xup);
-    } else if (eq3 && eq4) {
-      // $(document.body).css('background-color', 'black');
-      $(window).scrollLeft(hij);
-      $(window).scrollTop(dfg);
-    } else if (eq1 && eq5) {
-      // $(document.body).css('background-color', 'white');
-      $(window).scrollLeft(abc);
-      // $(window).scrollTop(yup);
-    } else if (eq2 && eq5) {
-      // $(document.body).css('background-color', 'red');
-      $(window).scrollLeft();
-      $(window).scrollTop();
-    } else if (eq3 && eq5) {
-      // $(document.body).css('background-color', 'blue');
-      $(window).scrollLeft(hij);
-      // $(window).scrollTop(yup);
-    } else if (eq1 && eq6) {
-      $(document.body).css('background-color', 'white');
-      $(window).scrollLeft(abc);
-      $(window).scrollTop(klm);
-    } else if (eq2 && eq6) {
-      $(document.body).css('background-color', 'red');
-      $(window).scrollTop(klm);
-      // $(window).scrollLeft(xup);
-    } else if (eq3 && eq6) {
+
+    if (eq1 && eq3) {
       $(document.body).css('background-color', 'blue');
+      $(window).scrollLeft(abc);
+      $(window).scrollTop(dfg);
+      // abc = $(window).scrollLeft() - 50;
+      // dfg = $(window).scrollTop() - 50;
+    } else if (eq1 && eq4) {
+      $(document.body).css('background-color', 'red');
+      $(window).scrollLeft(abc);
       $(window).scrollTop(klm);
+      // abc = $(window).scrollLeft() - 50;
+      // dfg = $(window).scrollTop() + 50;
+    } else if (eq2 && eq3) {
+      $(document.body).css('background-color', 'black');
       $(window).scrollLeft(hij);
+      $(window).scrollTop(dfg);
+      // abc = $(window).scrollLeft() + 50;
+      // dfg = $(window).scrollTop() - 50;
+    } else if (eq2 && eq4) {
+      $(document.body).css('background-color', 'white');
+      $(window).scrollLeft(hij);
+      $(window).scrollTop(klm);
+      // abc = $(window).scrollLeft() + 50;
+      // dfg = $(window).scrollTop() + 50;
+
     }
   });
 
@@ -519,14 +504,17 @@ $(document).ready(function(){
 
 
 <div class="menu up">
-  <p><a href="about.html">о нас</a></p>
+  <div class="score">
+
+  </div>
+  <!-- <p>о нас</p> -->
   <p><a href="story.html">история</a></p>
   <p><a href="menu2.html">меню</a></p>
 </div>
 <div class="menu down">
   <p><a href="events.html">афиша</a></p>
-  <p><a href="book.html">бронь</a></p>
-  <p><a href="game.html"></a>секрет</p>
+  <p>бронь</p>
+  <p>секрет</p>
 </div>
 
 <div class="cursor">
