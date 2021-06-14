@@ -6,13 +6,47 @@
 
     <title></title>
     <script type="text/javascript">
+      // $(".select-button").click(function(){
+      //   $(".chevrons").addClass("closed")
+      // })
 
+      // if ($('#options-view-button').is(':checked')){
+	    //    $("#select-button").css('background-color', 'red');
+      //  }
+
+    //    $('#options-view-button').change(function(){
+    //     if( $('#options-view-button').is(':checked') ){
+    //         $("#select-button").css('background-color', 'red');
+    //     }
+    // });
+    </script>
+    <script type="text/javascript">
+    $(function() {
+  $('#options-view-button').click(function () {
+      if ($(this).is(':checked')) {
+          $("#chevrons").addClass("closed");
+          // $("#options").slideToggle();
+      } else {
+          $("#chevrons").removeClass("closed");
+      }
+  });
+});
+    </script>
+    <script type="text/javascript">
+    $(function() {
+  $('.option').click(function () {
+      if($('input:radio').is(':checked')) {
+         // $("#options").css('display', 'none');
+       }
+  });
+});
     </script>
     <style media="screen">
     *
 {
   user-select: none;
 }
+
 
 *:focus
 {
@@ -35,8 +69,7 @@ body
 
 .brd
 {
-  border: 1px solid #e2eded;
-  border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
+  border: 1px solid #8C56B6;
 }
 
 #app-cover
@@ -52,10 +85,13 @@ body
 
 #select-button
 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   height: 16px;
   padding: 12px 14px;
-  background-color: #fff;
+  background-color: black;
   cursor: pointer;
 }
 
@@ -79,43 +115,44 @@ body
   font-size: 16px;
   line-height: 1;
   margin-right: 26px;
+  color: #8C8C8C;
+
 }
 
-.option i
+/* .option i
 {
   width: 16px;
   height: 16px;
-}
+} */
 
 .option, .label
 {
-  color: #2d3667;
+  color: #8C8C8C;
   font-size: 16px;
 }
 
 #chevrons
 {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
   width: 12px;
-  padding: 9px 14px;
+  height: 12px;
+  background: url('images/open.svg');
+  background-size: contain;
+  transition: all 0.5s ease;
+}
+.closed {
+  transform: rotate(180deg);
+  transition: all 0.5s ease;
 }
 
-#chevrons i
+/* #chevrons i
 {
   display: block;
   height: 50%;
-  color: #d1dede;
+  color: #8C8C8C;
   font-size: 12px;
   text-align: right;
-}
+} */
 
-#options-view-button:checked + #select-button #chevrons i
-{
-  color: #2d3667;
-}
 
 .options
 {
@@ -132,13 +169,13 @@ body
   left: 0;
   width: 298px;
   margin: 0 auto;
-  background-color: #fff;
+  background-color: black;
 }
 
 #options-view-button:checked ~ #options
 {
-  border: 1px solid #e2eded;
-  border-color: #eaf1f1 #e4eded #dbe7e7 #e4eded;
+  border: 1px solid #8C56B6;
+  border-top: transparent;
 }
 
 .option
@@ -149,6 +186,7 @@ body
   z-index: 2;
 }
 
+
 .option i
 {
   position: absolute;
@@ -157,23 +195,33 @@ body
   display: none;
 }
 
-#options-view-button:checked ~ #options .option i
-{
-  display: block;
-  padding: 12px 0;
-}
+
 
 .label
 {
+  border-bottom: 1px solid #8C56B6;
   display: none;
   padding: 0;
-  margin-left: 27px;
+}
+#lastt {
+  border-bottom: transparent;
 }
 
 #options-view-button:checked ~ #options .label
 {
   display: block;
   padding: 12px 14px;
+}
+
+#options-view-button:checked ~ #options .option i
+{
+  display: block;
+  padding: 12px 0;
+}
+
+#options-view-button:checked ~ #options #option-bg
+{
+  display: block;
 }
 
 .s-c
@@ -206,13 +254,13 @@ input[type="radio"]
   cursor: pointer;
 }
 
-.s-c:hover ~ i
+/* .s-c:hover ~ i
 {
-  color: #fff;
+  color: red;
   opacity: 0;
-}
+} */
 
-.s-c:hover
+/* .s-c:hover
 {
   height: 100%;
   z-index: 1;
@@ -228,9 +276,9 @@ input[type="radio"]
 {
   top: -25px;
   animation: movedown 0.3s ease 0.1s forwards;
-}
+} */
 
-@keyframes moveup
+/* @keyframes moveup
 {
   0%{ bottom: -25px; opacity: 0;}
   100%{ bottom: 0; opacity: 1;}
@@ -240,7 +288,7 @@ input[type="radio"]
 {
   0%{ top: -25px; opacity: 0;}
   100%{ top: 0; opacity: 1;}
-}
+} */
 
 .label
 {
@@ -254,7 +302,7 @@ input[type="radio"]
   width: 217px;
   height: 21px;
   opacity: 0;
-  background-color: #fff;
+  background-color: black;
   transform: scale(0);
 }
 
@@ -274,7 +322,7 @@ input[type="radio"]
 
 .option input[type="radio"]:checked ~ i, .option input[type="radio"]:checked ~ .label
 {
-  color:#fff;
+  /* color: #8C8C8C; */
 }
 
 .option input[type="radio"]:checked ~ .label:before
@@ -295,7 +343,7 @@ input[type="radio"]
 
 .option:nth-child(1) input[type="radio"]:checked ~ .label:before
 {
-  background-color: #000;
+  /* background-color: #000; */
 }
 
 .option:nth-child(1) input[type="radio"]:checked ~ .opt-val
@@ -305,7 +353,7 @@ input[type="radio"]
 
 .option:nth-child(2) input[type="radio"]:checked ~ .label:before
 {
-  background-color: #ea4c89;
+  /* background-color: #ea4c89; */
 }
 
 .option:nth-child(2) input[type="radio"]:checked ~ .opt-val
@@ -315,7 +363,7 @@ input[type="radio"]
 
 .option:nth-child(3) input[type="radio"]:checked ~ .label:before
 {
-  background-color: #0057ff;
+  /* background-color: #0057ff; */
 }
 
 .option:nth-child(3) input[type="radio"]:checked ~ .opt-val
@@ -325,7 +373,7 @@ input[type="radio"]
 
 .option:nth-child(4) input[type="radio"]:checked ~ .label:before
 {
-  background-color: #32c766;
+  /* background-color: #32c766; */
 }
 
 .option:nth-child(4) input[type="radio"]:checked ~ .opt-val
@@ -335,7 +383,7 @@ input[type="radio"]
 
 .option:nth-child(5) input[type="radio"]:checked ~ .label:before
 {
-  background-color: #f48024;
+  /* background-color: #f48024; */
 }
 
 .option:nth-child(5) input[type="radio"]:checked ~ .opt-val
@@ -345,7 +393,7 @@ input[type="radio"]
 
 .option:nth-child(6) input[type="radio"]:checked ~ .label:before
 {
-  background-color: #006400;
+  /* background-color: #006400; */
 }
 
 .option:nth-child(6) input[type="radio"]:checked ~ .opt-val
@@ -355,35 +403,39 @@ input[type="radio"]
 
 .option .fa-codepen
 {
-  color: #000;
+  color: #8C8C8C;
 }
 
 .option .fa-dribbble
 {
-  color: #ea4c89;
+  color: #8C8C8C;
 }
 
 .option .fa-behance
 {
-  color: #0057ff;
+  color: #8C8C8C;
+
 }
 
 .option .fa-hackerrank
 {
-  color: #32c766;
+  color: #8C8C8C;
+
 }
 
 .option .fa-stack-overflow
 {
-  color: #f48024;
+  color: #8C8C8C;
+
 }
 
 .option .fa-free-code-camp
 {
-  color: #006400;
+  color: #8C8C8C;
+
 }
 
-#option-bg
+/* #option-bg
 {
   position: absolute;
   top: 0;
@@ -393,52 +445,11 @@ input[type="radio"]
   transition: 0.3s ease all;
   z-index: 1;
   display: none;
-}
-
-#options-view-button:checked ~ #options #option-bg
+  background-color: #8C56B6;
+} */
+.option:hover
 {
-  display: block;
-}
-
-.option:hover .label
-{
-  color: #fff;
-}
-
-.option:nth-child(1):hover ~ #option-bg
-{
-  top: 0;
-  background-color: #000;
-}
-
-.option:nth-child(2):hover ~ #option-bg
-{
-  top: 40px;
-  background-color: #ea4c89;
-}
-
-.option:nth-child(3):hover ~ #option-bg
-{
-  top: 80px;
-  background-color: #0057ff;
-}
-
-.option:nth-child(4):hover ~ #option-bg
-{
-  top: 120px;
-  background-color: #32c766;
-}
-
-.option:nth-child(5):hover ~ #option-bg
-{
-  top: 160px;
-  background-color: #f48024;
-}
-
-.option:nth-child(6):hover ~ #option-bg
-{
-  top: 200px;
-  background-color: #006400;
+  background-color: #8C56B6;
 }
 
 #ytd-url {
@@ -448,7 +459,7 @@ right: 0;
 bottom: 0;
 padding: 10px 14px;
 margin: 20px;
-color: #fff;
+color: #8C8C8C;
 font-size: 14px;
 text-decoration: none;
 background-color: #143240;
@@ -465,55 +476,45 @@ box-shadow: 0 10px 20px -5px rgba(20, 50, 64, 0.76);
                             <div id="selected-value">
                                 <span>Выберите зону</span>
                             </div>
-                            <div id="chevrons">
-                                    <i class="fas fa-chevron-up"></i>
-                                    <i class="fas fa-chevron-down"></i>
-                            </div>
+                            <div id="chevrons"></div>
                     </div>
                     <div id="options">
                             <div class="option">
                                     <input class="s-c top" type="radio" name="platform" value="codepen">
                                     <input class="s-c bottom" type="radio" name="platform" value="codepen">
                                     <i class="fab fa-codepen"></i>
-                                    <span class="label">CodePen</span>
-                                    <span class="opt-val">CodePen</span>
+                                    <span class="label">Основной зал</span>
+                                    <span class="opt-val">Основной зал</span>
                             </div>
                             <div class="option">
                                     <input class="s-c top" type="radio" name="platform" value="dribbble">
                                     <input class="s-c bottom" type="radio" name="platform" value="dribbble">
                                     <i class="fab fa-dribbble"></i>
-                                    <span class="label">Dribbble</span>
-                                    <span class="opt-val">Dribbble</span>
+                                    <span class="label">Барная зона</span>
+                                    <span class="opt-val">Барная зона</span>
                             </div>
                             <div class="option">
                                     <input class="s-c top" type="radio" name="platform" value="behance">
                                     <input class="s-c bottom" type="radio" name="platform" value="behance">
                                     <i class="fab fa-behance"></i>
-                                    <span class="label">Behance</span>
-                                    <span class="opt-val">Behance</span>
+                                    <span class="label">Десертная</span>
+                                    <span class="opt-val">Десертная</span>
                             </div>
                             <div class="option">
                                     <input class="s-c top" type="radio" name="platform" value="hackerrank">
                                     <input class="s-c bottom" type="radio" name="platform" value="hackerrank">
                                     <i class="fab fa-hackerrank"></i>
-                                    <span class="label">HackerRank</span>
-                                    <span class="opt-val">HackerRank</span>
+                                    <span class="label">Детская</span>
+                                    <span class="opt-val">Детская</span>
                             </div>
                             <div class="option">
                                     <input class="s-c top" type="radio" name="platform" value="stackoverflow">
                                     <input class="s-c bottom" type="radio" name="platform" value="stackoverflow">
                                     <i class="fab fa-stack-overflow"></i>
-                                    <span class="label">StackOverflow</span>
-                                    <span class="opt-val">StackOverflow</span>
+                                    <span class="label" id="lastt">Терасса</span>
+                                    <span class="opt-val">Терасса</span>
                             </div>
-                            <div class="option">
-                                    <input class="s-c top" type="radio" name="platform" value="freecodecamp">
-                                    <input class="s-c bottom" type="radio" name="platform" value="freecodecamp">
-                                    <i class="fab fa-free-code-camp"></i>
-                                    <span class="label">FreeCodeCamp</span>
-                                    <span class="opt-val">FreeCodeCamp</span>
-                            </div>
-                            <div id="option-bg"></div>
+                            <!-- <div id="option-bg"></div> -->
                     </div>
             </div>
     </form>

@@ -75,6 +75,12 @@ padding-right: 43px;
     .left {
       transform: rotate(90deg);
     }
+    .up {
+      transform: rotate(180deg);
+    }
+    .right {
+      transform: rotate(-90deg);
+    }
     .three {
       position: absolute;
       width: 248px;
@@ -102,7 +108,7 @@ top: 504px;
 background-size: contain;
 background-image: url("images/5.png");
     }
-    .up {
+    .upp {
       top: 0;
     }
     .down {
@@ -304,7 +310,6 @@ background-image: url("images/5.png");
 
   <script type="text/javascript">
   $(document).mousemove(function(e) {
-    setInterval(function() {
     let body_size_x = $( window ).width();
     let x_third = parseInt(body_size_x / 3);
     let x_third_move = x_third + $(window).scrollLeft();
@@ -336,108 +341,98 @@ background-image: url("images/5.png");
 
 
     if (eq1 && eq4) {
+
+
+      setInterval(function() {
         $(window).scrollLeft(value - 10);
         $(window).scrollTop(valuee - 10);
+      }, 1000);
+
     } else if (eq2 && eq4) {
       $(".cursor").addClass("up");
       $(".cursor").removeClass("left");
       $(".cursor").removeClass("right");
+
+
+
+      setInterval(function() {
         $(window).scrollTop(valuee - 10);
+      }, 1000);
+
     } else if (eq3 && eq4) {
+
+
+      setInterval(function() {
         $(window).scrollTop(valuee - 10);
         $(window).scrollLeft(value + 10);
+      }, 1000);
+
     } else if (eq1 && eq5) {
       $(".cursor").removeClass("right");
       $(".cursor").removeClass("up");
+
       $(".cursor").addClass("left");
+
+      setInterval(function() {
         $(window).scrollLeft(value - 10);
+
+      }, 1000);
+
+
     } else if (eq2 && eq5) {
+
+      // $("body").css('background-color', 'white');
+
+
         $(window).scrollLeft();
         $(window).scrollTop();
+
     } else if (eq3 && eq5) {
       $(".cursor").removeClass("left");
       $(".cursor").removeClass("up");
+
       $(".cursor").addClass("right");
+
+      setInterval(function() {
         $(window).scrollLeft(value + 10);
+      }, 1000);
+
     } else if (eq1 && eq6) {
+      // $("body").css('background-color', 'white');
+
+      setInterval(function() {
         $(window).scrollLeft(value + 10);
         $(window).scrollTop(valuee + 10);
+      }, 1000);
+
     } else if (eq2 && eq6) {
+      // $("body").css('background-color', 'red');
       $(".cursor").removeClass("left");
       $(".cursor").removeClass("right");
       $(".cursor").removeClass("up");
-      $(window).scrollTop(valuee + 10);
+
+
+      setInterval(function() {
+        $(window).scrollTop(valuee + 10);
+      }, 1000);
+
+
     } else if (eq3 && eq6) {
+      // $(document.body).css('background-color', 'blue');
+
+      setInterval(function() {
         $(window).scrollTop(valuee + 10);
         $(window).scrollLeft(value + 10);
+      }, 1000);
+
     }
     value = $(window).scrollLeft();
     valuee = $(window).scrollTop();
-    }, 1000);
   });
+
   </script>
 
-<!-- <script type="text/javascript">
-$(document).ready(function(){
-      jQuery(document).ready(function(){
 
-         $(document).mousemove(function(e){
-
-           let value = $(window).scrollLeft() + 5;
-           let valuee = $(window).scrollLeft() - 7;
-           let xPrev= 0;
-
-           let valueee = $(window).scrollTop() + 5;
-           let valueeee = $(window).scrollTop() - 7;
-           let yPrev= 0;
-
-           if (xPrev<e.pageX){
-             $(window).scrollLeft(value);
-             xPrev= e.pageX;
-           } else {
-             $(window).scrollLeft(valuee);
-             xPrev= e.pageX;
-           }
-
-
-           if (yPrev<e.pageY){
-             $(window).scrollTop(valueee);
-             yPrev= e.pageY;
-           } else {
-             $(window).scrollTop(valueeee);
-             yPrev= e.pageY;
-           }
-         });
-      })
-});
-</script> -->
-
-  <script type="text/javascript">
-  // $(document).ready(function(){
-  //   let xPrev = 0;
-  //   let yPrev = 0;
-  //
-  //   let value;
-  //   let valuee;
-  //   let valueee;
-  //   let valueeee;
-  //
-  //       jQuery(document).ready(function(){
-  //
-  //          $(document).mousemove(function(e){
-  //            xPrev<e.pageX ? $(window).scrollLeft(value) && $(".cursor")addClass("left") : $(window).scrollLeft(valuee);
-  //             value = $(window).scrollLeft() + 5;
-  //             valuee = $(window).scrollLeft() - 7;
-  //           xPrev=e.pageX;
-  //
-  //           yPrev<e.pageY ? $(window).scrollTop(valueee) : $(window).scrollTop(valueeee)
-  //             valueee = $(window).scrollTop() + 5;
-  //             valueeee = $(window).scrollTop() - 7;
-  //           yPrev=e.pageY;
-  //          });
-  //       })
-  // });
-  </script>
 
   <script type="text/javascript">
 
@@ -502,7 +497,7 @@ $(document).ready(function(){
 </div>
 
 
-<div class="menu up">
+<div class="menu upp">
   <p><a href="404.html">о нас</a></p>
   <p><a href="story.html">история</a></p>
   <p><a href="menu2.html">меню</a></p>

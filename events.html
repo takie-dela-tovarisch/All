@@ -6,8 +6,211 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
     <title>Афиша</title>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+        var counter = 0;
+var image = document.getElementById("a");
+
+var requestAnimationFrame = window.requestAnimationFrame ||
+                            window.mozRequestAnimationFrame ||
+                            window.webkitRequestAnimationFrame ||
+                            window.msRequestAnimationFrame;
+
+requestAnimationFrame(updateValue);
+
+
+function updateValue() {
+	var textField = document.getElementById("results");
+	var imageTopPosition = getComputedStyle(image).top;
+
+	textField.textContent = imageTopPosition;
+
+	requestAnimationFrame(updateValue);
+
+  $( ".four, .five, .six" ).click(function() {
+    $("#a").css({'top' : imageTopPosition});
+    $("#c").css({'top' : imageTopPosition});
+    $("#b").css({'top' : imageTopPosition});
+    $("#a").removeClass("animate");
+    $("#c").removeClass("animate");
+    $("#b").removeClass("animate");
+    $(".moving").fadeOut();
+    $(".po").removeClass("addhover");
+    document.getElementById('ress').innerHTML = "горячие научные лекции в boomshh!!";
+
+    $( "#never" ).mouseover(function() {
+      $(this).css('background', '#8C56B6');
+    });
+    $( "#never" ).mouseout(function() {
+      $(this).css('background', 'transparent');
+    });
+
+    $('#never').click(function(){
+      $("#a").addClass("animate");
+      $("#b").addClass("animate");
+      $("#c").addClass("animate");
+      $(".moving").fadeIn();
+      $(".res2").hide();
+      $(".res2 h1").hide();
+
+      $( "#never" ).mouseover(function() {
+        $(this).css('background', 'transparent');
+      });
+    })
+
+    setTimeout(function(){
+      $("#a").css('top', '-100%');
+      $("#b").css('top', '-100%');
+      $("#c").css('top', '-100%');
+		}, 800);
+    setTimeout(function(){
+      $(".res2").show();
+      $(".res2 h1").show();
+		}, 1200);
+  });
+
+  $( ".one, .two, .three" ).click(function() {
+    $("#a").css({'top' : imageTopPosition});
+    $("#c").css({'top' : imageTopPosition});
+    $("#b").css({'top' : imageTopPosition});
+    $("#a").removeClass("animate");
+    $("#c").removeClass("animate");
+    $("#b").removeClass("animate");
+    $(".moving").fadeOut();
+    $(".po").removeClass("addhover");
+    document.getElementById('ress').innerHTML = "новые блюда и напитки в ресторане";
+
+
+    $( "#never" ).mouseover(function() {
+      $(this).css('background', '#8C56B6');
+    });
+    $( "#never" ).mouseout(function() {
+      $(this).css('background', 'transparent');
+    });
+
+    $('#never').click(function(){
+      $("#a").addClass("animate");
+      $("#b").addClass("animate");
+      $("#c").addClass("animate");
+      $(".moving").fadeIn();
+      $(".res2").hide();
+      $(".res2 h1").hide();
+
+      $( "#never" ).mouseover(function() {
+        $(this).css('background', 'transparent');
+      });
+    })
+
+    setTimeout(function(){
+      $("#a").css('top', '0%');
+      $("#b").css('top', '0%');
+      $("#c").css('top', '0%');
+		}, 800);
+    setTimeout(function(){
+      $(".res2").show();
+      $(".res2 h1").show();
+		}, 1200);
+  });
+
+  $( ".seven, .eight, .nine" ).click(function() {
+    $("#a").css({'top' : imageTopPosition});
+    $("#c").css({'top' : imageTopPosition});
+    $("#b").css({'top' : imageTopPosition});
+    $("#a").removeClass("animate");
+    $("#c").removeClass("animate");
+    $("#b").removeClass("animate");
+    $(".moving").fadeOut();
+    $(".po").removeClass("addhover");
+    document.getElementById('ress').innerHTML = "жаркая (ага!) киноночь в ресторане";
+
+
+    $( "#never" ).mouseover(function() {
+      $(this).css('background', '#8C56B6');
+    });
+    $( "#never" ).mouseout(function() {
+      $(this).css('background', 'transparent');
+    });
+
+    $('#never').click(function(){
+      $("#a").addClass("animate");
+      $("#b").addClass("animate");
+      $("#c").addClass("animate");
+      $(".moving").fadeIn();
+      $(".res2").hide();
+      $(".res2 h1").hide();
+
+      $( "#never" ).mouseover(function() {
+        $(this).css('background', 'transparent');
+      });
+    })
+
+    setTimeout(function(){
+      $("#a").css('top', '-201%');
+      $("#b").css('top', '-201%');
+      $("#c").css('top', '-201%');
+		}, 800);
+    setTimeout(function(){
+      $(".res2").show();
+      $(".res2 h1").show();
+		}, 1200);
+  });
+
+  $( ".ten, .eleven, .twelve" ).click(function() {
+    $("#a").css({'top' : imageTopPosition});
+    $("#c").css({'top' : imageTopPosition});
+    $("#b").css({'top' : imageTopPosition});
+    $("#a").removeClass("animate");
+    $("#c").removeClass("animate");
+    $("#b").removeClass("animate");
+    $(".moving").fadeOut();
+    $(".po").removeClass("addhover");
+    document.getElementById('ress').innerHTML = "горячие акции и скидки в boomshh!!";
+
+
+    $( "#never" ).mouseover(function() {
+      $(this).css('background', '#8C56B6');
+    });
+    $( "#never" ).mouseout(function() {
+      $(this).css('background', 'transparent');
+    });
+
+    $('#never').click(function(){
+      $("#a").addClass("animate");
+      $("#b").addClass("animate");
+      $("#c").addClass("animate");
+      $(".moving").fadeIn();
+      $(".res2").hide();
+      $(".res2 h1").hide();
+
+      $( "#never" ).mouseover(function() {
+        $(this).css('background', 'transparent');
+      });
+    })
+
+    setTimeout(function(){
+      $("#a").css('top', '-301.5%');
+      $("#b").css('top', '-301.5%');
+      $("#c").css('top', '-301.5%');
+		}, 800);
+    setTimeout(function(){
+      $(".res2").show();
+      $(".res2 h1").show();
+		}, 1200);
+  });
+
+}
+
+
+
+      });
+    </script>
 
     <style media="screen">
+    #results {
+      color: white;
+      position: absolute;
+      opacity: 0;
+    }
     body {
       width: 100vw;
       margin: 0 auto;
@@ -23,6 +226,9 @@
     }
     a {
       color: #8C56B6;
+    }
+    #a, #c, #b {
+      transition: top 0.5s ease;
     }
     .m {
       width: 100%;
@@ -102,18 +308,85 @@
       padding-left: 1.74vw;
       padding-right: 1.74vw;
     }
+    #never {
+      transition: all 0.5s ease;
+    }
     .header:last-of-type {
       border-bottom: 0;
       border-top: 1px solid #8C56B6;
     }
-    .moving h1 {
+    .moving {
+      display: flex;
+    }
+    .m_1, .m_2, .m_3, .m_4 {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      width: 13vw;
+      margin-top: -3.1%;
+
+    }
+    .m_1, .m_2, .m_3 {
+      margin-right: 37px;
+    }
+    .m_1 {
+      width: 13vw;
+      /* animation: m_1 1s linear infinite; */
+    }
+    @keyframes m_1 {
+      0% {
+        margin-top: 23%;
+      }
+      100% {
+        margin-top: -4%;
+      }
+    }
+    .w_4 {
+      width: 29vh;
+    }
+    .w_3 {
+      width: 15vw;
+    }
+    .w_1 {
+      width: 13vw;
+    }
+    .w_1, .w_2, .w_3, .w_4 {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .header h1 {
       position: relative;
       font-size: 2.5vw;
       font-family: PT Mono;
       font-weight: normal;
-      line-height: 2.5vw;
+      line-height: 9.96vh;
       color: #E0E0E0;
-      margin-top: calc(2.445vh - 1.25vw);
+      animation-delay: 1s;
+      animation: res 0.5s ease;
+      animation-fill-mode: forwards;
+      margin-top: 5%;
+      /* top: calc(50% - 1.25vw); */
+    }
+    @keyframes res {
+      0% {
+        margin-top: 5%;
+      }
+      100% {
+        margin-top: 0%;
+      }
+    }
+    .res2 {
+      position: relative;
+      /* background-color: blue; */
+      height: 9.96vh;
+      width: 100%;
+      text-align: center;
+      display: none;
+      overflow: hidden;
+    }
+    .res2 h1 {
+      display: none;
     }
     .star {
       background: url("images/star.svg");
@@ -127,33 +400,59 @@
       height: auto;
       width: calc(100%/3);
     }
+    .addhover:hover {
+      transform: scale(1.1);
+    }
     .pmove {
       position: absolute;
       height: 100%;
       width: 100%;
-      animation: p 2s infinite linear;
-      top: 100%;
+      top: 0%;
+      /* transition: top 2s ease; */
     }
-    .pmovee {
+    .animate {
+      animation: p 9s infinite linear;
+    }
+    .onea {
+      animation: onea 2s ease;
+    }
+    @keyframes onea {
+      0% {
+
+      }
+      100% {
+        top: 0%;
+      }
+    }
+    .pmoverev {
       position: absolute;
       height: 100%;
       width: 100%;
-      animation: p 2s infinite linear;
-      animation-delay: 1s;
-      top: 100%;
+      /* animation: prev 4s infinite linear; */
+      top: -400%;
     }
     @keyframes p {
       0% {
-        top: 100%;
+        top: 0%;
       }
 
       100% {
         top: -400%;
       }
     }
+    @keyframes prev {
+      0% {
+        top: -400%;
+      }
+
+      100% {
+        top: 0%;
+      }
+    }
     .po {
       width: 100%;
       height: 64.37vh;
+      cursor: pointer
     }
     .posters {
       height: 64.37vh;
@@ -186,14 +485,50 @@
       background-repeat: no-repeat;
       background-position: center;
     }
+    .five {
+      background: url("images/p5.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .six {
+      background: url("images/p6.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
     .seven {
       background: url("images/p7.png");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
     }
+    .eight {
+      background: url("images/p8.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .nine {
+      background: url("images/p9.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
     .ten {
       background: url("images/p10.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .eleven {
+      background: url("images/p11.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .twelve {
+      background: url("images/p12.png");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -212,6 +547,47 @@
       position: absolute;
       right: 0;
       top: calc(2.22vh + 0.6vw)
+    }
+    .b_1, .b_2, .b_3, .b_4 {
+      position: relative;
+      width: 17vw;
+      /* background-color: blue; */
+      height: 100%;
+      margin-top: 2%;
+    }
+    .y_1, .y_2, .y_3, .y_4 {
+      position: absolute;
+      width: 100%;
+      /* background-color: white; */
+      height: 50%;
+      /* top: 21%; */
+    }
+    .y_1, .y_3 {
+      animation: y_1 1s infinite linear;
+    }
+    .y_2, .y_4 {
+      animation: y_1 1s infinite linear;
+      animation-direction: reverse;
+    }
+    @keyframes y_1 {
+      0% {
+        top: 0%;
+      }
+      100% {
+        top: -238%;
+      }
+    }
+    .y_1 p, .y_2 p, .y_3 p, .y_4 p {
+      font-size: 2.5vw;
+    font-family: PT Mono;
+    font-weight: normal;
+    line-height: 3.7vw;
+    color: #E0E0E0;
+    }
+    .moving {
+      /* background-color: red; */
+      height: 100%;
+      overflow: hidden;
     }
     </style>
   </head>
@@ -239,37 +615,129 @@
     <div class="events">
       <div class="header">
         <div class="star"></div>
+        <div class="res2">
+          <h1 id="ress"></h1>
+        </div>
         <div class="moving">
-          <h1>новые блюда и напитки в ресторане boomshh</h1>
+          <div class="b_1">
+            <div class="y_1">
+              <p>новые
+                <br>взрывные
+                <br>горячие
+                <br>жаркая
+                <br>новые
+              </p>
+            </div>
+          </div>
+          <div class="b_2">
+            <div class="y_2">
+              <p>блюда
+                <br>научные
+                <br>акции
+                <br>(ага!)
+                <br>блюда
+              </p>
+            </div>
+          </div>
+          <div class="b_3">
+            <div class="y_3">
+              <p>и напитки
+                <br>лекции
+                <br>и скидки
+                <br>киноночь
+                <br>и напитки
+              </p>
+            </div>
+          </div>
+          <div class="b_4">
+            <div class="y_4">
+              <p>в boomshh!!
+                <br>в ресторане
+                <br>в boomshh!!
+                <br>в ресторане
+                <br>в boomshh!!
+              </p>
+            </div>
+          </div>
         </div>
         <div class="star"></div>
       </div>
       <div class="posters">
         <div class="p">
-          <div class="pmove">
-            <div class="po one"></div>
-            <div class="po four"></div>
-            <div class="po seven"></div>
-            <div class="po ten"></div>
+          <div class="pmove animate" id="a">
+            <div class="po one addhover"></div>
+            <div class="po four addhover"></div>
+            <div class="po seven addhover"></div>
+            <div class="po ten addhover"></div>
+            <div class="po one addhover"></div>
           </div>
-          <!-- <div class="pmove">
-            <div class="po one"></div>
-            <div class="po four"></div>
-            <div class="po seven"></div>
-            <div class="po ten"></div>
-          </div> -->
         </div>
         <div class="p">
-          <div class="po two"></div>
+          <div class="pmoverev animate" id="b">
+            <div class="po two addhover"></div>
+            <div class="po five addhover"></div>
+            <div class="po eight addhover"></div>
+            <div class="po eleven addhover"></div>
+            <div class="po two addhover"></div>
+          </div>
         </div>
         <div class="p">
-          <div class="po three"></div>
+          <div class="pmove animate" id="c">
+            <div class="po three addhover"></div>
+            <div class="po six addhover"></div>
+            <div class="po nine addhover"></div>
+            <div class="po twelve addhover"></div>
+            <div class="po three addhover"></div>
+          </div>
         </div>
       </div>
-      <div class="header">
+      <div class="header" id="never">
+        <p id="results"></p>
         <div class="star"></div>
+        <div class="res2">
+          <h1 class="res2">смотреть другие события?</h1>
+        </div>
         <div class="moving">
-          <h1>новые блюда и напитки в ресторане boomshh</h1>
+          <div class="b_1">
+            <div class="y_1">
+              <p>новые
+                <br>взрывные
+                <br>горячие
+                <br>жаркая
+                <br>новые
+              </p>
+            </div>
+          </div>
+          <div class="b_2">
+            <div class="y_2">
+              <p>блюда
+                <br>научные
+                <br>акции
+                <br>(ага!)
+                <br>блюда
+              </p>
+            </div>
+          </div>
+          <div class="b_3">
+            <div class="y_3">
+              <p>и напитки
+                <br>лекции
+                <br>и скидки
+                <br>киноночь
+                <br>и напитки
+              </p>
+            </div>
+          </div>
+          <div class="b_4">
+            <div class="y_4">
+              <p>в boomshh!!
+                <br>в ресторане
+                <br>в boomshh!!
+                <br>в ресторане
+                <br>в boomshh!!
+              </p>
+            </div>
+          </div>
         </div>
         <div class="star"></div>
       </div>

@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
     <title>Страницы не существует</title>
     <style media="screen">
@@ -40,6 +41,10 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        transition: all 0.4s ease;
+      }
+      .img:hover {
+        transform: scale(0.4);
       }
       h1 {
         font-size: 5.11vh;
@@ -47,6 +52,13 @@
         color: black;
         font-family: PT Mono;
         line-height: 5.11vh;
+        text-decoration: underline #FFCD00;
+      }
+      h1:hover {
+        color: #FFCD00;
+      }
+      a {
+        text-decoration: none;
       }
     </style>
   </head>
@@ -89,7 +101,7 @@
         <div class="img"></div>
         <div class="img"></div>
         <div class="img"></div>
-        <h1>404</h1>
+        <a href="#" onclick="history.back();"><h1>404</h1></a>
         <div class="img"></div>
         <div class="img"></div>
         <div class="img"></div>

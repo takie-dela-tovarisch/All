@@ -6,51 +6,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
     <title>Игра</title>
-    <!-- <script type="text/javascript">
-      $( document ).ready(function() {
-        let deg_temp=0;
-          $(".square").click(function(){
-            deg_temp = deg_temp+30;
-            $(this).rotate(deg_temp);
-          })
-      });
-    </script> -->
     <script type="text/javascript">
     $( document ).ready(function() {
-
-      // let deg_temp =0;
-      // $(".square").click(function(){
-      // deg_temp = deg_temp-90;
-      // $(this).css({
-      //   'transform' : 'rotate('+deg_temp+'deg)'
-      // });
-      // })
-
-      // $(".square").click(function(){
-      //   $(this).addClass("s_1");
-      //
-      //   setTimeout(function(){
-      //     if ($(".square").hasClass("s_1")) {
-      //         $(this).removeClass("s_1");
-      //         $(this).addClass("s_2");
-      //       }
-      //   }, 100);
-      //
-      //   setTimeout(function(){
-      //     if ($(".square").hasClass("s_2")) {
-      //           $(this).removeClass("s_2");
-      //           $(this).addClass("s_3");
-      //     }
-      //   }, 200);
-      //
-      //   setTimeout(function(){
-      //     if ($(".square").hasClass("s_3")) {
-      //           $(this).removeClass("s_3");
-      //           $(this).addClass("s_4");
-      //     }
-      //   }, 300);
-      //
-      // })
 
       var timesClicked = 0;
 
@@ -152,12 +109,18 @@
                   }, 1900);
 
                   setTimeout(function(){
-                    $(".fail").css('opacity','0');
-                  }, 2900);
 
-                  setTimeout(function(){
-                    $(".fail").css('display','none');
-                  }, 3000);
+                    $( ".ups" ).each(function(index) {
+                      $(this).hover(function() {
+                        $( this ).addClass("none");
+                        if(document.getElementsByClassName("none").length == 15) {
+                          $(".fail").css('display','none');
+                        }
+                      });
+                    });
+
+                  }, 2000);
+
                 }
 
         setTimeout(function(){
@@ -169,7 +132,6 @@
       $(".redo").click(function(){
         window.location.reload();
       })
-
     });
     </script>
     <style media="screen">
@@ -188,6 +150,9 @@
     }
     a {
       color: #8C56B6;
+    }
+    .none {
+      display: none;
     }
     .m {
       width: 100%;
@@ -262,7 +227,6 @@
       border-bottom: 1px solid #8C56B6;
       display: flex;
       flex-direction: row;
-      /* justify-content: space-between; */
       align-items: baseline;
       padding-left: 1.74vw;
     }
@@ -323,7 +287,6 @@
       margin-right: auto;
       border-left: 1px solid #8C56B6;
       border-right: 1px solid #8C56B6;
-      /* display: none; */
     }
     .redo {
       display: none;
@@ -361,12 +324,6 @@
       height: 22.22vh;
       width: 22.22vh;
       background-color: white;
-    }
-    .square:nth-of-type(2) {
-      /* background-color: blue; */
-    }
-    .square:nth-of-type(4) {
-      /* background-color: blue; */
     }
     .a {
       background: url("images/1s.png");
