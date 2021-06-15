@@ -304,7 +304,6 @@ background-image: url("images/5.png");
 
   <script type="text/javascript">
   $(document).mousemove(function(e) {
-    setInterval(function() {
     let body_size_x = $( window ).width();
     let x_third = parseInt(body_size_x / 3);
     let x_third_move = x_third + $(window).scrollLeft();
@@ -336,45 +335,95 @@ background-image: url("images/5.png");
 
 
     if (eq1 && eq4) {
+
+
+      setInterval(function() {
         $(window).scrollLeft(value - 10);
         $(window).scrollTop(valuee - 10);
+      }, 1000);
+
     } else if (eq2 && eq4) {
       $(".cursor").addClass("up");
       $(".cursor").removeClass("left");
       $(".cursor").removeClass("right");
+
+
+
+      setInterval(function() {
         $(window).scrollTop(valuee - 10);
+      }, 1000);
+
     } else if (eq3 && eq4) {
+
+
+      setInterval(function() {
         $(window).scrollTop(valuee - 10);
         $(window).scrollLeft(value + 10);
+      }, 1000);
+
     } else if (eq1 && eq5) {
       $(".cursor").removeClass("right");
       $(".cursor").removeClass("up");
+
       $(".cursor").addClass("left");
+
+      setInterval(function() {
         $(window).scrollLeft(value - 10);
+
+      }, 1000);
+
+
     } else if (eq2 && eq5) {
+
+      // $("body").css('background-color', 'white');
+
+
         $(window).scrollLeft();
         $(window).scrollTop();
+
     } else if (eq3 && eq5) {
       $(".cursor").removeClass("left");
       $(".cursor").removeClass("up");
+
       $(".cursor").addClass("right");
+
+      setInterval(function() {
         $(window).scrollLeft(value + 10);
+      }, 1000);
+
     } else if (eq1 && eq6) {
+      // $("body").css('background-color', 'white');
+
+      setInterval(function() {
         $(window).scrollLeft(value + 10);
         $(window).scrollTop(valuee + 10);
+      }, 1000);
+
     } else if (eq2 && eq6) {
+      // $("body").css('background-color', 'red');
       $(".cursor").removeClass("left");
       $(".cursor").removeClass("right");
       $(".cursor").removeClass("up");
-      $(window).scrollTop(valuee + 10);
+
+
+      setInterval(function() {
+        $(window).scrollTop(valuee + 10);
+      }, 1000);
+
+
     } else if (eq3 && eq6) {
+      // $(document.body).css('background-color', 'blue');
+
+      setInterval(function() {
         $(window).scrollTop(valuee + 10);
         $(window).scrollLeft(value + 10);
+      }, 1000);
+
     }
     value = $(window).scrollLeft();
     valuee = $(window).scrollTop();
-    }, 1000);
   });
+
   </script>
 
 <!-- <script type="text/javascript">
