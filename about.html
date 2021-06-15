@@ -2,7 +2,138 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Игра</title>
+    <script type="text/javascript">
+    $( document ).ready(function() {
+
+      var timesClicked = 0;
+
+      $(".square").click(function() {
+        timesClicked++;
+
+        if (timesClicked==2) {
+          $(this).removeClass("s_1");
+          $(this).addClass("s_2");
+        } if (timesClicked==3) {
+          $(this).removeClass("s_2");
+          $(this).addClass("s_3");
+        } if (timesClicked==4) {
+          $(this).removeClass("s_3");
+          $(this).addClass("s_4");
+            setTimeout(function(){
+              timesClicked = 0;
+              }, 100);
+        } if (timesClicked==1) {
+          $(this).addClass("s_1");
+          $(this).removeClass("s_4");
+        }
+      })
+
+
+
+      $(".score").click(function(){
+
+                if ($(".e").hasClass("s_4") && $(".g").hasClass("s_4") && $(".h").hasClass("s_4") && $(".k").hasClass("s_4")) {
+                  $(".yeah").css('display','block');
+
+                  setTimeout(function(){
+                    $(".ah").css('opacity','1');
+                    $(".hh").css('opacity','1');
+                  }, 500);
+
+                  setTimeout(function(){
+                    $(".bh").css('opacity','1');
+                    $(".gh").css('opacity','1');
+                  }, 900);
+
+                  setTimeout(function(){
+                    $(".ch").css('opacity','1');
+                    $(".fh").css('opacity','1');
+                  }, 1300);
+
+                  setTimeout(function(){
+                    $(".dh").css('opacity','1');
+                    $(".eh").css('opacity','1');
+                  }, 1700);
+
+                  setTimeout(function(){
+                    $(".yeah").css('opacity','0');
+                  }, 11900);
+
+                  setTimeout(function(){
+                    $(".yeah").css('display','none');
+                  }, 12000);
+                } else {
+                  $(".fail").css('display','block');
+
+                  setTimeout(function(){
+                    $(".one").css('opacity','1');
+                    $(".fifteen").css('opacity','1');
+                  }, 500);
+
+                  setTimeout(function(){
+                    $(".two").css('opacity','1');
+                    $(".fourteen").css('opacity','1');
+                  }, 700);
+
+                  setTimeout(function(){
+                    $(".three").css('opacity','1');
+                    $(".thirteen").css('opacity','1');
+                  }, 900);
+
+                  setTimeout(function(){
+                    $(".four").css('opacity','1');
+                    $(".twelve").css('opacity','1');
+                  }, 1100);
+
+                  setTimeout(function(){
+                    $(".five").css('opacity','1');
+                    $(".eleven").css('opacity','1');
+                  }, 1300);
+
+                  setTimeout(function(){
+                    $(".six").css('opacity','1');
+                    $(".ten").css('opacity','1');
+                  }, 1500);
+
+                  setTimeout(function(){
+                    $(".seven").css('opacity','1');
+                    $(".nine").css('opacity','1');
+                  }, 1700);
+
+                  setTimeout(function(){
+                    $(".eight").css('opacity','1');
+                  }, 1900);
+
+                  setTimeout(function(){
+
+                    $( ".ups" ).each(function(index) {
+                      $(this).hover(function() {
+                        $( this ).addClass("none");
+                        if(document.getElementsByClassName("none").length == 15) {
+                          $(".fail").css('display','none');
+                        }
+                      });
+                    });
+
+                  }, 2000);
+
+                }
+
+        setTimeout(function(){
+          $(".game").css('display','none');
+          $(".redo").css('display','block');
+        }, 2000);
+      })
+
+      $(".redo").click(function(){
+        window.location.reload();
+      })
+    });
+    </script>
     <style media="screen">
     body {
       width: 100vw;
@@ -14,127 +145,244 @@
       padding-top: 8.89vh;
       padding-bottom: 0;
     }
-
     * {
       text-decoration: none;
     }
     a {
       color: #8C56B6;
     }
-      .m {
-        width: 100%;
-        height: 7.44vh;
-        margin-top: 0 auto;
-        display: inline-block;
-        position: fixed;
-        background-color: black;
-        top: 0;
-        z-index: 1;
-      }
-      .pages {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0;
-      }
-      .s {
-        height: 7.44vh;
-        margin-left: 2.78vw;
-        margin-right: 2.78vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: baseline;
-        font-family: 'PT Mono', monospace;
-        color: #8C56B6;
-      }
-      .black:hover a {
-        color: #FFCD00;
-      }
-      .s p:hover {
-        color: #FFCD00;
-      }
-      .other {
-        margin: 0 auto;
-      }
-      .pages p {
-        font-size: 1.46vw;
-        text-transform: uppercase;
-        letter-spacing: 0.07em;
-        margin-top: 2.22vh;
-      }
-      .black {
-        height: 7.44vh;
-        width: 8.747em;
-        text-transform: uppercase;
-        font-size: 2.08vw;
-        letter-spacing: 0.07em;
-      }
-      .white {
-        height: 7.44vh;
-        width: 59.51vw;
-      }
-      .face {
-        font-size: 10px;
-        width: 643px;
-        color: white;
-      }
-      .sorry {
-        color: white;
-      }
-
-      .strike {
-        position: relative;
-        display: inline-block;
-      }
-      .strike p:hover {
-        color: #8C56B6;
-      }
-      .strike::before {
-          content: '';
-          border-bottom: 0.3vw solid #FFCD00;
-          width: 100%;
-          position: absolute;
-          right: 0;
-          top: calc(2.22vh + 0.6vw)
-      }
-      a:hover {
-        color: #FFCD00;
-      }
-
-      .cross {
-        position: absolute;
-        width: 4vw;
-        height: 4vw;
-        right: 4.81vw;
-        top: 16.2vh;
-      }
-      .cross:hover .crosspic {
-        background-size: cover;
-        background: url("images/crossyellow.svg");
-        background-repeat: no-repeat;
-      }
-      .crosspic {
-        position: absolute;
-        right: 0;
-        top: 200px;
-        background-size: cover;
-        background: url("images/cross.svg");
-        width: 2.2vw;
-        height: 2.2vw;
-        background-repeat: no-repeat;
-      }
-
-      .open {
-        position: relative;
-        width: 1.7vw;
-        height: 1.94vw;
-        background: url("images/cross.svg");
-        background-size: contain;
-        transform: rotate(-90deg);
-        margin-right: 3.1vw;
-        background-repeat: no-repeat;
-      }
+    .none {
+      display: none;
+    }
+    .m {
+      width: 100%;
+      height: 7.44vh;
+      margin-top: 0 auto;
+      display: inline-block;
+      position: fixed;
+      background-color: black;
+      top: 0;
+      z-index: 1;
+    }
+    .pages {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0;
+    }
+    .s {
+      height: 7.44vh;
+      margin-left: 2.78vw;
+      margin-right: 2.78vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: 'PT Mono', monospace;
+      color: #8C56B6;
+    }
+    .black:hover a {
+      color: #FFCD00;
+    }
+    a:hover {
+      color: #FFCD00;
+    }
+    .s p:hover {
+      color: #FFCD00;
+    }
+    .other {
+      margin: 0 auto;
+    }
+    .pages p {
+      font-size: 1.46vw;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 2.22vh;
+    }
+    .black {
+      height: 7.44vh;
+      width: 8.747em;
+      text-transform: uppercase;
+      font-size: 2.08vw;
+      letter-spacing: 0.07em;
+    }
+    .white {
+      height: 7.44vh;
+      width: 59.51vw;
+    }
+    .strike {
+  position: relative;
+  display: inline-block;
+}
+    .strike p:hover {
+      color: #8C56B6
+    }
+.strike::before {
+  content: '';
+  border-bottom: 0.3vw solid #FFCD00;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: calc(2.22vh + 0.6vw)
+}
+/* menu */
+    .events {
+      position: relative;
+      margin-left: 2.78vw;
+      margin-right: 2.78vw;
+      border: 1px solid #8C56B6;
+    }
+    .header {
+      width: inherit;
+      height: 9.96vh;
+      border-bottom: 1px solid #8C56B6;
+      display: flex;
+      justify-content: center;
+    }
+    .header h1 {
+      position: relative;
+      font-size: 2.5vw;
+      font-family: PT Mono;
+      font-weight: normal;
+      line-height: 9.96vh;
+      color: #E0E0E0;
+    }
+    #middle {
+      border-top: 1px solid #8C56B6;
+    }
+    .note {
+      position: relative;
+      color: #8C8C8C;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1.18vw;
+      font-family: Open Sans;
+      width: 44.31vw;
+    }
+    #a {
+      margin-top: 8.89vh;
+      margin-left: 2.92vw;
+    }
+    .content {
+      position: relative;
+      height: 10000px;
+      width: inherit;
+    }
+    .a_1 {
+      position: absolute;
+      background: url("images/a_1.png");
+      width: 27.22vw;
+      height: 45.44vh;
+      background-size: contain;
+      background-position: center;
+      top: 0;
+      right: 0;
+    }
+    .a_2 {
+      position: relative;
+      background: url("images/a_2.png");
+      width: 100%;
+      height: 40vw;
+      background-size: contain;
+      background-position: center;
+      margin-top: 14vh;
+      margin-left: 0;
+    }
+    .eh {
+      height: 65vh;
+      width: auto;
+      border-left: 1px solid #8C56B6;
+    }
+    .gif {
+      display: flex;
+      margin-left: 0;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .notel {
+      width: 44.31vw;
+      position: relative;
+      color: #8C8C8C;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1.18vw;
+      font-family: Open Sans;
+    }
+    .noteb {
+      width: 69.24vw;
+      position: relative;
+      color: #8C8C8C;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 1.18vw;
+      font-family: Open Sans;
+    }
+    #aa {
+      margin-left: 2.92vw;
+    }
+    .ornament {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100;
+      height: 10vw;
+      border-top: 1px solid #8C56B6;
+      border-bottom: 1px solid #8C56B6;
+      padding-left: 2.92vw;
+      padding-right: 2.92vw;
+    }
+    .question {
+      background: url("images/question.svg");
+      height: 80%;
+      width: 4vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all 0.4s ease;
+    }
+    .vulcan {
+      background: url("images/vulcan.svg");
+      height: 80%;
+      width: 5.1vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all 0.4s ease;
+    }
+    .dessert {
+      background: url("images/dessert.svg");
+      height: 80%;
+      width: 6.8vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all 0.4s ease;
+    }
+    .kids {
+      background: url("images/kid.svg");
+      height: 80%;
+      width: 7.9vw;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition: all 0.4s ease;
+    }
+    .ornament div:hover {
+      transform: scale(0.4);
+    }
+    .kitchen {
+      position: relative;
+      background: url("images/a_3.png");
+      width: 100%;
+      height: 40vw;
+      background-size: cover;
+      background-position: center;
+    }
+    .promo {
+      margin-top: 8.89vh;
+      /* margin-bottom: 8.89vh; */
+      height: 40vw
+    }
     </style>
   </head>
   <body>
@@ -149,7 +397,7 @@
               <p><a href="about.html">о нас</a></p>
             </div>
             <p><a href="story.html">история</a></p>
-              <p><a href="menu2.html">меню</a></p>
+            <p><a href="menu2.html">меню</a></p>
             <p><a href="events.html">афиша</a></p>
             <p><a href="book.html">бронь</a></p>
             <p><a href="game.html">секрет</a></p>
@@ -158,53 +406,73 @@
       </div>
     </div>
 
-<h1 class="sorry">Сайт в разработке, чуваки!</h1>
-<p class="face">░░░░░░░░░░░░░░░░░░░██████████████
-░░░░░░░░░░░░░░░░████════════════████
-░░░░░░░░░░░░░████══════════════════███
-░░░░░░░░░░░███════════════════════════██
-░░░░░░░░░███════════════════════════════██
-░░░░░░░░██═══════════════════════════════██
-░░░░░░░██══════════════════════════════════█
-░░░░░░█══════════════════════████████═══════█
-░░░░░█══════════════════════██═══════════════█
-░░░░█════════════════════════════════███══════█
-░░░██══════════════███════════██████══════════██
-░░██═══════════████═════════██████████═════════██
-░░█════════════════████════████══════███════════█
-░██═══════════██████═══════██═══████══███═══════█
-░█══════════════════════█════████══███══════════██
-██════════════════███████═══██════════█══════════█
-█══════════█████████████═══█═══════════█═════════█
-█═════════███████═══════█═█═══██═══════█═════════█
-█═════════██══════███══██═█═══██═══════█═════════█
-█══════════██══════█══██══██══════════█══════════█
-█═══════════███══════██════██═══════██═══════════█
-█═════════════███████════════███████═════════════█
-█══════════════════════█═════════════════════════█
-█══════════════════════███═══════════════════════█
-█══════════════════█████═██═══███════════════════█
-█════════════════██═██══════════██═══════════════█
-██═══════════════██═█════════════██═════════════██
-░██═════════════█══██════════████═█═════════════█
-░░█════════════█════██══════██═════█═══════════██
-░░██═════════════════████████══════════════════█
-░░░█═════════════════════█████═══█════════════██
-░░░░█═══════════█═════████════██══█══════════██
-░░░░██═════════█═█████═════█═══█══█═════════██
-░░░░░██════════█═════════███════█═█════════██
-░░░░░░██═══════█════█████═════════════════██
-░░░░░░░░██═══════════════════════════════██
-░░░░░░░░░██════════════════════════════██
-░░░░░░░░░░░██════════════════════════██
-░░░░░░░░░░░░░███══════════════════███
-░░░░░░░░░░░░░░░████████████████████</p>
+    <div class="events">
+      <div class="header">
+          <h1>собери вулканчик boomshh</h1>
+      </div>
+      <div class="content">
+        <div class="rel">
 
-  <div class="crosspic">
+          <div class="note" id="a">
+            <p>&laquo;Boomshh&raquo;&nbsp;&mdash; первый и&nbsp;единственный ресторан вулканов.
+    Это место, в&nbsp;котором каждое блюдо с&nbsp;любовью готовится на&nbsp;магме опытными лавовыми поварами.</p>
+          </div>
+          <div class="a_2"></div>
+          <div class="a_1"></div>
+      </div>
+      <div class="header" id="middle">
+          <h1>вчера и завтра</h1>
+      </div>
 
-  </div>
-<div class="open">
+      <div class="rel">
+        <div class="gif">
+          <div class="notel" id="aa">
+            <p>Обладая богатой историей, уходящей в&nbsp;древность, &laquo;Boomshh&raquo;, тем не&nbsp;менее идёт в&nbsp;ногу со&nbsp;временем: мы&nbsp;используем новейшие технологии, чтобы обеспечить наших посетителей вкуснейшей едой как можно быстрее</p>
+          </div>
+          <img class="eh" src="https://media.giphy.com/media/wguuFitPeB84vUCB5Z/giphy.gif" alt="я джифка">
+        </div>
+      </div>
+      <div class="ornament">
+        <div class="question"></div>
+        <div class="vulcan"></div>
+        <div class="question"></div>
+        <div class="vulcan"></div>
+        <div class="question"></div>
+        <div class="vulcan"></div>
+        <div class="question"></div>
+        <div class="vulcan"></div>
+        <div class="question"></div>
+        <div class="vulcan"></div>
+        <div class="question"></div>
+      </div>
+      <div class="kitchen"></div>
+      <div class="header" id="middle">
+          <h1>этажи этажи этажи</h1>
+      </div>
+      <div class="rel">
+        <div class="noteb" id="a">
+          <p>В&nbsp;ресторане найдётся место для каждого! Посетители могут выбрать любой из&nbsp;6&nbsp;этажей здания. Отдельные залы есть и&nbsp;для любителей сладкого и&nbsp;для самых юных наших гостей.</p>
+        </div>
+        <div class="promo">
+          <iframe src="https://player.vimeo.com/video/529754132?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="ornament">
+        <div class="kids"></div>
+        <div class="dessert"></div>
+        <div class="kids"></div>
+        <div class="dessert"></div>
+        <div class="kids"></div>
+        <div class="dessert"></div>
+        <div class="kids"></div>
+        <div class="dessert"></div>
+      </div>
+      <div class="noteb" id="a">
+        <p>Обладая богатой историей, уходящей в&nbsp;древность, &laquo;Boomshh&raquo;, тем не&nbsp;менее идёт в&nbsp;ногу со&nbsp;временем: мы&nbsp;используем новейшие технологии, чтобы обеспечить наших посетителей вкуснейшей едой как можно быстрее</p>
+      </div>
 
-</div>
+
+    </div>
+    </div>
   </body>
 </html>

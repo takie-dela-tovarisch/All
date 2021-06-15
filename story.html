@@ -23,48 +23,61 @@
 
     $(".a").click(function(){
       $('.b').animate({
-        width:'0'
-      });
-      $(".a").removeClass("hov")
-      setTimeout(function(){
-        $( ".b" ).addClass("none");
-      }, 100);
-      $( ".bog" ).addClass("clicked");
-      $( ".cross" ).removeClass("none");
-      $( ".info" ).removeClass("none");
+        width:'0'},1000, "linear", function() {});
+
+      $(".bog").css('margin-right','12vw');
+
+    $(".a").css('margin-right', '0');
+    $(".b").fadeOut();
+    $( ".a" ).removeClass("hov");
+    $( "#hehe" ).fadeIn();
+
+    setTimeout(function(){
+      $( ".cross" ).fadeIn();
+    }, 1000);
     });
+
+// sddsd
 
     $(".b").click(function(){
       $('.a').animate({
-        width:'0'
-      });
-      $( ".b" ).removeClass("hov");
-      setTimeout(function(){
-        $( ".a" ).addClass("none");
-      }, 100);
-      $(".b").css('margin-left', '2.78vw');
-      $( ".pant" ).removeClass("notclicked");
-      $( ".pant" ).addClass("clickedd");
-      $( ".cross" ).removeClass("none");
-      $( ".info" ).removeClass("none");
+        width:'0'},1000, "linear", function() {});
+
+      $(".pant").css('margin-right','8vw');
+
+    $(".a").css('margin-right', '0');
+    $(".a").fadeOut();
+    $( ".b" ).removeClass("hov");
+    $( ".cross" ).fadeIn();
+    $( "#haha" ).fadeIn();
     });
 
     $(".cross").click(function(){
-      $( ".b" ).removeClass("none");
-      $( ".a" ).removeClass("none");
-      $( ".a" ).addClass("hov");
-      $( ".b" ).addClass("hov");
-      $('.b').animate({
-        width:'100%'
-      });
+      $( ".a" ).fadeIn();
+      $( ".b" ).fadeIn();
+      $(".a").css('margin-right', '2.78vw');
+      $( ".cross" ).fadeOut();
+      $( "#haha" ).fadeOut();
+      $( "#hehe" ).fadeOut();
+
       $('.a').animate({
-        width:'100%'
-      });
-      $( ".cross" ).addClass("none");
-      $( ".info" ).addClass("none");
+        width:'100%'},1000, "linear", function() {});
+      $('.b').animate({
+        width:'100%'},1000, "linear", function() {});
+
       $( ".bog" ).removeClass("clicked");
-      $( ".pant" ).addClass("notclicked");
-      $( ".pant" ).removeClass("clickedd");
+      setTimeout(function(){
+                $( ".a" ).addClass("hov");
+                $( ".b" ).addClass("hov");
+      }, 500);
+
+      setTimeout(function(){
+          $(".pant").css('margin-right','calc(50% - 12.2vw)');
+          $(".bog").css({
+            'margin-right':'auto',
+            'margin-left':'auto'
+          });
+      }, 1000);
     });
 
 });
@@ -167,31 +180,35 @@
           margin-left: 2.78vw;
         }
         .steps {
-          width: 100%;
+          width: inherit;
           height: 100%;
           align-self: stretch;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
+          margin-right: 2.78vw;
+          margin-left: 2.78vw;
         }
-        .step {
+        .wrapper {
           position: relative;
           height: 67vh;
           width: 100%;
           background-color: black;
           margin-top: 1vh;
           border: 1px solid #8C56B6;
+          overflow: hidden;
+          transition : border 2s ease-out;
         }
         .hov:hover {
           background-color: #8C56B6;
         }
         .a {
-          margin-left: 2.78vw;
           margin-right: 2.78vw;
+          transition: margin-right 2s;
         }
         .b {
-          margin-right: 2.78vw;
           margin-left: 0;
+          transition: margin-left 2s;
         }
         .none {
           display: none;
@@ -207,20 +224,27 @@
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center bottom;
-          transition: margin-right 2s ease-in-out;
+          transition: margin 5s ease;
         }
         .clicked {
           margin-right: 12vw;
+          transition: margin 5s ease;
+
         }
         .clickedd {
           margin-right: 8vw;
+          transition: margin 5s ease;
+
         }
-        .notclicked {
+        /* .notclicked {
           margin-right: auto;
-        }
+          transition: margin 5s ease;
+
+        } */
         .pant {
           position: relative;
           margin-top: calc(33.5vh - 29.5vh);
+          margin-right: calc(50% - 12.2vw);
           margin-left: auto;
           background: url("images/pant.svg");
           width: 24.4vw;
@@ -228,6 +252,7 @@
           background-size: contain;
           background-repeat: no-repeat;
           background-position: center bottom;
+          transition: margin 2s ease;
         }
         .apple {
           position: absolute;
@@ -331,16 +356,15 @@
           top: 16.2vh;
         }
         .cross:hover .crosspic {
-          background-size: cover;
           background: url("images/crossyellow.svg");
           background-repeat: no-repeat;
           position: absolute;
           width: 1.7vw;
           height: 1.7vw;
+          background-size: cover;
         }
         .crosspic {
           position: absolute;
-          right: 0;
           width: 1.7vw;
           height: 1.7vw;
           background: url("images/cross.svg");
@@ -398,24 +422,27 @@
         <h1>концепция нашего ресторана</h1>
       </div>
       <div class="steps">
-        <div class="step a hov">
-          <h2 class="s1">1.</h2>
-          <div class="info none">
-            <h3>История Бога Вулкана</h3>
-            <p>Вулкан&nbsp;&mdash; античный бог разрушительного и&nbsp;очистительного огня. Не&nbsp;являясь одним из&nbsp;12&nbsp;главных богов Пантеона, обладает тем не&nbsp;менее богатой историей. Он&nbsp;&mdash; покровитель этого ресторана и&nbsp;наше вдохновение.
-            <br> Каждое лето ресторан Boomshh проводит фестиваль &laquo;Vulcanalia&raquo; в&nbsp;честь бога Вулкана.
-           </p>
-           <div class="more">
-             <div class="open"></div>
-             <h4><a href="https://takie-dela-tovarisch.github.io/MAP/">Узнать больше</a></h4>
-           </div>
+        <div class="wrapper a">
+          <div class="step a hov">
+            <h2 class="s1">1.</h2>
+            <div class="info none" id="hehe">
+              <h3>История Бога Вулкана</h3>
+              <p>Вулкан&nbsp;&mdash; античный бог разрушительного и&nbsp;очистительного огня. Не&nbsp;являясь одним из&nbsp;12&nbsp;главных богов Пантеона, обладает тем не&nbsp;менее богатой историей. Он&nbsp;&mdash; покровитель этого ресторана и&nbsp;наше вдохновение.
+              <br> Каждое лето ресторан Boomshh проводит фестиваль &laquo;Vulcanalia&raquo; в&nbsp;честь бога Вулкана.
+             </p>
+             <div class="more">
+               <div class="open" id="right"></div>
+               <h4><a href="https://takie-dela-tovarisch.github.io/MAP/">Узнать больше</a></h4>
+             </div>
+            </div>
+            <div class="bog"></div>
           </div>
-          <div class="bog"></div>
         </div>
 
+        <div class="wrapper b">
         <div class="step b hov">
           <h2>2.</h2>
-          <div class="info none">
+          <div class="info none" id="haha">
             <h3>История кузниц Вулкана</h3>
             <p>С&nbsp;приходом римской культуры роль бога Вулкана сильно изменилась. Многие его функции перешли к&nbsp;Гефесту. Сам Вулкан стал покровителем кузнецов. Наша подземная кухня с&nbsp;магматическим шаром вдохновленна историей о&nbsp;кузницах Бога, находящихся под каждой горой. Римляне верили, что вулкан извергается, когда работа кипит.</p>
            <div class="more">
@@ -430,6 +457,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
         <div class="cross none">
           <div class="crosspic">
