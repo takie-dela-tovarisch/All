@@ -7,132 +7,44 @@
     <link rel="stylesheet" href="stylesheets/style.css">
     <title>О нас</title>
     <script type="text/javascript">
-    $( document ).ready(function() {
+var slideIndex = 1;
+showSlides(slideIndex);
 
-      var timesClicked = 0;
+/* Функция увеличивает индекс на 1, показывает следующй слайд*/
+function plusSlide() {
+    showSlides(slideIndex += 1);
+}
 
-      $(".square").click(function() {
-        timesClicked++;
+/* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
+function minusSlide() {
+    showSlides(slideIndex -= 1);
+}
 
-        if (timesClicked==2) {
-          $(this).removeClass("s_1");
-          $(this).addClass("s_2");
-        } if (timesClicked==3) {
-          $(this).removeClass("s_2");
-          $(this).addClass("s_3");
-        } if (timesClicked==4) {
-          $(this).removeClass("s_3");
-          $(this).addClass("s_4");
-            setTimeout(function(){
-              timesClicked = 0;
-              }, 100);
-        } if (timesClicked==1) {
-          $(this).addClass("s_1");
-          $(this).removeClass("s_4");
-        }
-      })
+/* Устанавливает текущий слайд */
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
 
-
-
-      $(".score").click(function(){
-
-                if ($(".e").hasClass("s_4") && $(".g").hasClass("s_4") && $(".h").hasClass("s_4") && $(".k").hasClass("s_4")) {
-                  $(".yeah").css('display','block');
-
-                  setTimeout(function(){
-                    $(".ah").css('opacity','1');
-                    $(".hh").css('opacity','1');
-                  }, 500);
-
-                  setTimeout(function(){
-                    $(".bh").css('opacity','1');
-                    $(".gh").css('opacity','1');
-                  }, 900);
-
-                  setTimeout(function(){
-                    $(".ch").css('opacity','1');
-                    $(".fh").css('opacity','1');
-                  }, 1300);
-
-                  setTimeout(function(){
-                    $(".dh").css('opacity','1');
-                    $(".eh").css('opacity','1');
-                  }, 1700);
-
-                  setTimeout(function(){
-                    $(".yeah").css('opacity','0');
-                  }, 11900);
-
-                  setTimeout(function(){
-                    $(".yeah").css('display','none');
-                  }, 12000);
-                } else {
-                  $(".fail").css('display','block');
-
-                  setTimeout(function(){
-                    $(".one").css('opacity','1');
-                    $(".fifteen").css('opacity','1');
-                  }, 500);
-
-                  setTimeout(function(){
-                    $(".two").css('opacity','1');
-                    $(".fourteen").css('opacity','1');
-                  }, 700);
-
-                  setTimeout(function(){
-                    $(".three").css('opacity','1');
-                    $(".thirteen").css('opacity','1');
-                  }, 900);
-
-                  setTimeout(function(){
-                    $(".four").css('opacity','1');
-                    $(".twelve").css('opacity','1');
-                  }, 1100);
-
-                  setTimeout(function(){
-                    $(".five").css('opacity','1');
-                    $(".eleven").css('opacity','1');
-                  }, 1300);
-
-                  setTimeout(function(){
-                    $(".six").css('opacity','1');
-                    $(".ten").css('opacity','1');
-                  }, 1500);
-
-                  setTimeout(function(){
-                    $(".seven").css('opacity','1');
-                    $(".nine").css('opacity','1');
-                  }, 1700);
-
-                  setTimeout(function(){
-                    $(".eight").css('opacity','1');
-                  }, 1900);
-
-                  setTimeout(function(){
-
-                    $( ".ups" ).each(function(index) {
-                      $(this).hover(function() {
-                        $( this ).addClass("none");
-                        if(document.getElementsByClassName("none").length == 15) {
-                          $(".fail").css('display','none');
-                        }
-                      });
-                    });
-
-                  }, 2000);
-
-                }
-
-        setTimeout(function(){
-          $(".game").css('display','none');
-          $(".redo").css('display','block');
-        }, 2000);
-      })
-
-      $(".redo").click(function(){
-        window.location.reload();
-      })
-    });
+/* Основная функция слайдера */
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("page");
+    var dots = document.getElementsByClassName("slider-dots_item");
+    if (n > slides.length) {
+      slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
     </script>
     <style media="screen">
     body {
@@ -231,6 +143,8 @@
       margin-left: 2.78vw;
       margin-right: 2.78vw;
       border: 1px solid #8C56B6;
+      border-bottom: none;
+      margin-bottom: 7vh;
     }
     .header {
       width: inherit;
@@ -239,7 +153,7 @@
       display: flex;
       justify-content: center;
     }
-    .header h1 {
+    .header h1, .calameo {
       position: relative;
       font-size: 2.5vw;
       font-family: PT Mono;
@@ -247,6 +161,7 @@
       line-height: 9.96vh;
       color: #E0E0E0;
     }
+
     #middle {
       border-top: 1px solid #8C56B6;
     }
@@ -266,7 +181,7 @@
     }
     .content {
       position: relative;
-      height: 10000px;
+      height: 100%;
       width: inherit;
     }
     .a_1 {
@@ -294,6 +209,7 @@
       width: auto;
       border-left: 1px solid #8C56B6;
     }
+
     .gif {
       display: flex;
       margin-left: 0;
@@ -397,8 +313,236 @@
     .promo {
       /* margin-top: 8.89vh; */
       /* margin-bottom: 8.89vh; */
-      height: 40vw
+      height: 37vw;
     }
+    .book {
+      height: 42.1vw;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .test {
+      height: 42.1vw;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      /* border-bottom: 1px solid #8C56B6; */
+      border-top: 1px solid #8C56B6;
+      position: relative;
+    }
+    .left, .right {
+      width: 14.2vw;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s ease;
+    }
+    .left:hover, .right:hover {
+      background-color: #8C56B6;
+    }
+    .window {
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      flex: 1;
+      border-left: 1px solid #8C56B6;
+      border-right: 1px solid #8C56B6;
+      position: relative;
+    }
+    .calameo {
+      position: absolute;
+      top: 42%;
+      left: calc(50% - 18vw);
+      width: 36vw;
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+    .window:hover .page {
+      filter: blur(1px);
+      opacity: .2;
+    }
+    .window:hover .calameo {
+      opacity: 1;
+    }
+    .page {
+      position: relative;
+      display: none;
+      transition: all 0.5s ease;
+    }
+    .block {
+      display: block;
+    }
+    #one {
+      background: url("images/p1b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #two {
+      background: url("images/p2b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #three {
+      background: url("images/p3b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #four {
+      background: url("images/p4b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #five {
+      background: url("images/p5b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #six {
+      background: url("images/p6b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #seven {
+      background: url("images/p7b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #eight {
+      background: url("images/p8b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #nine {
+      background: url("images/p9b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #ten {
+      background: url("images/p10b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #eleven {
+      background: url("images/p11b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #twelve {
+      background: url("images/p12b.png");
+      width: 100%;
+      height: 100%;
+      background-size: contain;
+      background-position: center;
+    }
+    #back {
+      transform: rotate(90deg);
+    }
+    #forward {
+      transform: rotate(-90deg);
+    }
+    .arrow {
+      position: relative;
+      background-image: url("images/open.svg");
+      height: 2.5vw;
+      width: 4vh;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .window .page {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: .5s;
+    animation-name: fade;
+    animation-duration: .5s;
+}
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+.pers {
+  background: url("images/pers1.png");
+  height: 65vh;
+  width: 27.22vw;
+  background-size: cover;
+  background-position: center;
+  border-left: 1px solid #8C56B6;
+}
+.last {
+  position: relative;
+  width: 100%;
+  height: 50vw;
+  display: flex;
+  justify-content: space-between;
+}
+.a_4 {
+    position: relative;
+    background: url(images/a_4.png);
+    width: 27.22vw;
+    height: 15vw;
+    background-size: cover;
+    background-position: center;
+}
+.a_5 {
+    position: relative;
+    background: url(images/a_5.png);
+    width: 27.22vw;
+    height: 15vw;
+    background-size: cover;
+    background-position: center;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+.parallax {
+  top: calc(50% - 20vw);
+  position: absolute;
+  width: 100%;
+  height: 40vw;
+  transform: translateZ(0);
+}
+.a_6 {
+  height: 100%;
+  width: 100%;
+  background: url(images/a_6.png);
+  background-size: cover;
+  background-position: center;
+  transform: translateZ(-1px);
+  background-attachment: fixed;
+}
     </style>
   </head>
   <body>
@@ -463,7 +607,7 @@
       </div>
       <!-- <div class="kitchen"></div> -->
       <div class="promo">
-        <iframe src="https://player.vimeo.com/video/529754132?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/529754132?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="header" id="middle">
           <h1>этажи этажи этажи</h1>
@@ -485,11 +629,72 @@
         <div class="dessert"></div>
       </div>
       <div class="noteс" id="a">
-        <p>Всю информацию о&nbsp;здании Boomshh, процессе приготовления блюд, внутреннем устройстве кухни можно прочитать в&nbsp;нашем бумажном&nbsp;гиде. Его&nbsp;всегда можно найти на&nbsp;ресепшене ресторана или по&nbsp;ссылке на&nbsp;сайте issuu.</p>
+        <p>Всю информацию о&nbsp;здании Boomshh, процессе приготовления блюд, внутреннем устройстве кухни можно прочитать в&nbsp;нашем бумажном&nbsp;гиде. Его&nbsp;всегда можно найти на&nbsp;ресепшене ресторана или по&nbsp;ссылке на&nbsp;сайте Calameo.</p>
       </div>
-      <div class="book">
+      <div class="test">
+        <div class="left" onclick="minusSlide()">
+          <div class="arrow" id="back">
 
+          </div>
+        </div>
+        <div class="window">
+          <a href="https://www.calameo.com/read/006492065d868dc88b8e4">
+          <div class="page block" id="one"></div>
+          <div class="page" id="two"></div>
+          <div class="page" id="three"></div>
+          <div class="page" id="four"></div>
+          <div class="page" id="five"></div>
+          <div class="page" id="six"></div>
+          <div class="page" id="seven"></div>
+          <div class="page" id="eight"></div>
+          <div class="page" id="nine"></div>
+          <div class="page" id="ten"></div>
+          <div class="page" id="eleven"></div>
+          <div class="page" id="twelve"></div>
+          <h1 class="calameo">полная версия на calameo</h1>
+          </a>
+        </div>
+        <div class="right" onclick="plusSlide()">
+          <div class="arrow" id="forward">
+          </div>
+        </div>
       </div>
+      <div class="header" id="middle">
+          <h1>работают для вас</h1>
+      </div>
+      <div class="rel">
+        <div class="gif">
+          <div class="notel" id="aa">
+            <p>Наши вулканические повара абсолютно жаропрочны. Каждые полгода они проходят тестирование. Лишь они могут работать на&nbsp;подземной кухне ресторана: не&nbsp;каждый выдержит температуру магматического шара.</p>
+          </div>
+          <div class="pers">
+          </div>
+        </div>
+      </div>
+      <div class="ornament">
+        <div class="kids"></div>
+        <div class="dessert"></div>
+        <div class="kids"></div>
+        <div class="dessert"></div>
+        <div class="kids"></div>
+        <div class="dessert"></div>
+        <div class="kids"></div>
+        <div class="dessert"></div>
+      </div>
+      <div class="last">
+        <div class="parallax">
+          <div class="a_6">
+          </div>
+        </div>
+        <div class="a_4">
+        </div>
+        <div class="a_5">
+        </div>
+      </div>
+      <div class="header" id="middle">
+          <h1>bon appetit!</h1>
+      </div>
+
 
 
     </div>
