@@ -8,6 +8,26 @@
     <title>Меню</title>
     <script type="text/javascript">
       $( document ).ready(function() {
+
+//         function repeat()
+// {
+//
+// }
+
+setTimeout(function(){
+  $( ".first" ).clone().appendTo( ".verx" );
+}, 5000);
+
+setTimeout(function(){
+  $( ".second" ).clone().appendTo( ".niz" );
+}, 5000);
+
+// $(function () {
+//
+//     setInterval(repeat, 4000);
+// });
+
+
         $(".header").click(function(){
           $(this).siblings(".content").slideToggle();
           $(this).children(".open").toggleClass("close");
@@ -290,41 +310,46 @@
         position: relative;
         height: 13.92vh;
         width: 100%;
-        /* overflow: hidden; */
+        overflow: hidden;
       }
       .wider h1 {
         position: absolute;
-        font-size: 1.9rem;
-        font-family: PT Mono;
-        font-weight: normal;
-        line-height: 2.5vw;
-        color: #E0E0E0;
-        top: calc(6.96vh - 1.25vw);
-        margin: 0 auto;
-        width: 100vw;
-        white-space: nowrap;
+    font-size: 1.9rem;
+    font-family: PT Mono;
+    font-weight: normal;
+    line-height: 13.92vh;
+    color: #E0E0E0;
+    top: 0;
+    margin: 0 auto;
+    width: 100vw;
+    /* white-space: nowrap; */
+    /* background-color: blue; */
       }
       .moving {
         position: absolute;
-        width: auto;
-        height: 13.92vh;
+    width: 100vw;
+    height: 13.92vh;
+    /* background-color: red; */
+    overflow: hidden;
       }
       .first {
         animation: moving 10s infinite linear;
         left: -118%;
       }
       .second {
+        animation: moving 10s infinite linear reverse;
         left: -118%;
-        animation: moving 10s infinite linear;
-        animation-delay: 4.4s;
+      }
+      .second h1 {
+        text-align: right;
       }
       .third {
-        animation: movingtwo 10s infinite linear;
+        /* animation: movingtwo 10s infinite linear; */
         left: 121%;
       }
       .fourth {
         left: 121%;
-        animation: movingtwo 10s infinite linear;
+        /* animation: movingtwo 10s infinite linear; */
         animation-delay: 5s;
       }
       @keyframes moving {
@@ -513,12 +538,9 @@
         </div>
       </div>
       <div class="part anchor">
-        <a href="https://takie-dela-tovarisch.github.io/Boomshh/" target="_blank"> <div class="wider">
+        <a href="https://takie-dela-tovarisch.github.io/Boomshh/" target="_blank"> <div class="wider verx">
           <div class="moving first">
-            <h1>что? каким образом? лавовый гриль? что? каким образом? лавовый гриль?</h1>
-          </div>
-          <div class="moving second">
-            <h1>что? каким образом? лавовый гриль? что? каким образом?</h1>
+            <h1>что? каким образом? лавовый гриль? что? каким образом? лавовый гриль? как-как?</h1>
           </div>
         </div>
         </a>
@@ -596,12 +618,9 @@
         </div>
       </div>
       <div class="part anchor">
-        <a href="https://takie-dela-tovarisch.github.io/Boomshh/" target="_blank"> <div class="wider">
-          <div class="moving third">
-            <h1>что? каким образом? лавовый гриль? что? каким образом? лавовый гриль?</h1>
-          </div>
-          <div class="moving fourth">
-            <h1>что? каким образом? лавовый гриль? что? каким образом? лавовый гриль?</h1>
+        <a href="https://takie-dela-tovarisch.github.io/Boomshh/" target="_blank"> <div class="wider niz">
+          <div class="moving second">
+            <h1>что? каким образом? лавовый гриль? что? каким образом? лавовый гриль? как-как?</h1>
           </div>
         </div>
         </a>
