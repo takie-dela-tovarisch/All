@@ -194,7 +194,7 @@
       margin: 0 auto;
     }
     .pages p {
-      font-size: 1.46vw;
+      font-size: 1.2rem;
       text-transform: uppercase;
       letter-spacing: 0.07em;
       margin-top: 2.22vh;
@@ -203,7 +203,7 @@
       height: 7.44vh;
       width: 8.747em;
       text-transform: uppercase;
-      font-size: 2.08vw;
+      font-size: 1.3rem;
       letter-spacing: 0.07em;
     }
     .white {
@@ -241,7 +241,7 @@
     }
     .moving h1, .score h1 {
       position: relative;
-      font-size: 2.5vw;
+      font-size: 1.9rem;
       font-family: PT Mono;
       font-weight: normal;
       line-height: 2.5vw;
@@ -268,7 +268,7 @@
       position: absolute;
       font-family: Open Sans;
       font-weight: 300;
-      font-size: 1.46vw;
+      font-size: 1.1rem;
       line-height: 2vw;
       color: #E0E0E0;
       margin-top: calc(3.835vh - 1vw);
@@ -421,6 +421,7 @@
     background: white;
     opacity: 0;
     transition: opacity 0.2s ease;
+    cursor: pointer;
   }
   .ups:hover {
     background: #FFCD00;
@@ -428,7 +429,7 @@
   h3 {
     font-family: PT Mono;
     font-weight: bold;
-    font-size: 2.36vw;
+    font-size: 1.9rem;
     line-height: 40px;
     margin-left: 2.08vw;
     margin-top: 2.67vh;
@@ -437,10 +438,11 @@
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 1.25vw;
+    font-size: 1.1rem;
     line-height: 2.78vh;
     margin-left: 2.08vw;
     margin-top: 1.2vh;
+    margin-right: 2vw;
   }
     .yeah {
       position: fixed;
@@ -473,16 +475,19 @@
   display: inline-block;
 }
     .strike p:hover {
-      color: #8C56B6
+      color: #8C56B6;
     }
-.strike::before {
-  content: '';
-  border-bottom: 0.3vw solid #FFCD00;
-  width: 100%;
-  position: absolute;
-  right: 0;
-  top: calc(2.22vh + 0.6vw)
-}
+    .strike::before {
+      content: '';
+      border-bottom: 0.3vw solid #FFCD00;
+      width: 100%;
+      position: absolute;
+      right: 0;
+      top: calc(2.22vh + 0.4rem);
+    }
+    .strike a:hover {
+      color: #8C56B6;
+    }
     </style>
   </head>
   <body>

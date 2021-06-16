@@ -62,7 +62,7 @@
         margin: 0 auto;
       }
       .pages p {
-        font-size: 1.46vw;
+        font-size: 1.2rem;
         text-transform: uppercase;
         letter-spacing: 0.07em;
         margin-top: 2.22vh;
@@ -71,7 +71,7 @@
         height: 7.44vh;
         width: 8.747em;
         text-transform: uppercase;
-        font-size: 2.08vw;
+        font-size: 1.3rem;
         letter-spacing: 0.07em;
       }
       .white {
@@ -89,12 +89,13 @@
         flex-direction: column;
       }
       .header {
+        display: block;
         height: 13.92vh;
         width: 100%;
       }
       .header h1 {
         position: relative;
-        font-size: 2.5vw;
+        font-size: 1.9rem;
         font-family: PT Mono;
         font-weight: normal;
         line-height: 2.5vw;
@@ -112,7 +113,7 @@
       color: #E0E0E0;
       font-style: normal;
       font-weight: 300;
-      font-size: 1.18vw;
+      font-size: 1em;
       font-family: Open Sans;
       width: 100%;
       box-sizing: border-box;
@@ -186,15 +187,15 @@ color: #dfbe65;
 .select_text, .select_text_2 {
 font-style: normal;
 font-weight: 300;
-font-size: 1.18vw;
+font-size: 1em;
 font-family: Open Sans;
       color: #8C8C8C;
 padding-left: 18px;
 }
 .open {
   position: relative;
-  width: 0.9vw;
-  height: 0.9vw;
+  width: 0.6rem;
+  height: 0.6rem;
   padding-right: 18px;
 }
 .up {
@@ -206,6 +207,8 @@ padding-left: 18px;
   width: inherit;
   height: inherit;
 }
+
+/* WARNING:  */
 .mur {
   position: absolute;
   background: url(images/open.svg);
@@ -215,8 +218,13 @@ padding-left: 18px;
   width: inherit;
   height: inherit;
 }
+/* WARNING:  */
+
 .closed {
   transform: rotate(180deg);
+}
+.mew {
+  transform: rotate(0deg);
 }
 ul#night_option {
 width: 100%;
@@ -251,7 +259,7 @@ ul#night_option li, ul.wow li {
 font-family: Open Sans;
 font-style: normal;
 font-weight: 300;
-font-size: 1.18vw;
+font-size: 1em;
 color: #E0E0E0;
 padding-left: 18px;
 text-decoration: none;
@@ -269,12 +277,14 @@ cursor: pointer;
 #nights:hover .up {
   background: url("images/openactive.svg");
   background-size: contain;
-  width: 0.9vw;
-  height: 0.9vw;
+  width: 0.6rem;
+  height: 0.6rem;
   background-size: contain;
   background-repeat: no-repeat;
   transition: transform 0.5s ease;
 }
+
+/* WARNING:  */
 #sudba:hover .mur {
   background: url("images/openactive.svg");
   background-size: contain;
@@ -284,6 +294,10 @@ cursor: pointer;
   background-repeat: no-repeat;
   transition: transform 0.5s ease;
 }
+/* WARNING:  */
+
+
+
 #nights:hover .select_text {
   color: #8C56B6;
 }
@@ -319,7 +333,7 @@ background-color: #8C56B6;
   cursor: text;
   font-style: normal;
   font-weight: 300;
-  font-size: 1.18vw;
+  font-size: 1em;
   font-family: Open Sans;
 }
 #ph {
@@ -360,7 +374,7 @@ background-color: #8C56B6;
   transition: all 0.8s ease;
   left: auto;
   right: 5%;
-  font-size: 11px;
+  font-size: 0.7em;
   opacity: 1;
   color: #8C8C8C;
   font-weight: 300;
@@ -375,7 +389,7 @@ input:not(:focus):valid ~ .floating-label{
   /* bottom: 10px; */
   left: auto;
   right: 5%;
-  font-size: 11px;
+  font-size: 0.7em;
   opacity: 1;
 }
 
@@ -383,7 +397,7 @@ label {
   color: #8C8C8C;
   font-style: normal;
   font-weight: 300;
-  font-size: 1.18vw;
+  font-size: 1em;
   font-family: Open Sans;
   position: absolute;
   /* top: calc(50% - 6px); */
@@ -397,7 +411,7 @@ label {
 font-style: normal;
 font-weight: normal;
 color: #E0E0E0;
-font-size: 1.18vw;
+font-size: 1em;
 }
 .send {
   display: flex;
@@ -415,14 +429,14 @@ margin-bottom: 6.5vh;
 font-style: normal;
 font-weight: normal;
 color: #E0E0E0;
-font-size: 1.18vw;
+font-size: 1em;
 cursor: pointer;
 }
 .kids p {
   color: #757575;
     font-style: normal;
     font-weight: 300;
-    font-size: 1.18vw;
+    font-size: 1em;
     font-family: Open Sans;
     position: relative;
     left: 0;
@@ -446,7 +460,7 @@ position: absolute;
   color: #8C8C8C;
     font-style: normal;
     font-weight: 300;
-    font-size: 1.18vw;
+    font-size: 1em;
     font-family: Open Sans;
     position: relative;
     left: 0;
@@ -680,7 +694,7 @@ input {
   cursor: text;
   font-style: normal;
   font-weight: 300;
-  font-size: 1.18vw;
+  font-size: 1em;
   font-family: Open Sans;
 }
 .time {
@@ -695,12 +709,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   color: #8C8C8C;
     font-style: normal;
     font-weight: 300;
-    font-size: 1.18vw;
+    font-size: 1em;
     font-family: Open Sans;
     left: 0px;
     top: 1px;
     left: 18px;
-    line-height: 5.5vh;
+    line-height: 5vh;
     transition: all 0.8s ease;
     background-color: black;
     width: 5vw;
@@ -709,8 +723,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 input:focus ~ .timing,
 input:not(:focus):valid ~ .floating-label{
   left: auto;
-  right: 5%;
-  font-size: 11px;
+  right: 3%;
+  font-size: 0.7em;
   opacity: 1;
 }
 #appt:focus {
@@ -813,7 +827,7 @@ input:not(:focus):valid ~ .floating-label{
   color: #8C8C8C;
     font-style: normal;
     font-weight: 300;
-    font-size: 1.18vw;
+    font-size: 1em;
     font-family: Open Sans;
     position: relative;
     /* top: calc(50% - 6px); */
@@ -823,7 +837,7 @@ input:not(:focus):valid ~ .floating-label{
   color: #8C8C8C;
     font-style: normal;
     font-weight: 300;
-    font-size: 1.18vw;
+    font-size: 1em;
     font-family: Open Sans;
     position: relative;
   margin-left: auto;
@@ -839,7 +853,7 @@ input:not(:focus):valid ~ .floating-label{
     color: #757575;
     font-style: normal;
     font-weight: 300;
-    font-size: 1.18vw;
+    font-size: 0.8em;
     font-family: Open Sans;
     position: relative;
     margin-bottom: 6.5vh;
@@ -870,7 +884,7 @@ display: inline-block;
   width: 100%;
   position: absolute;
   right: 0;
-  top: calc(2.22vh + 0.6vw)
+  top: calc(2.22vh + 0.4rem);
 }
 .popup {
   width: 50vw;
@@ -883,7 +897,7 @@ display: inline-block;
 }
 .popup h1 {
   position: relative;
-    font-size: 2.5vw;
+    font-size: 1.9rem;
     font-family: PT Mono;
     font-weight: normal;
     line-height: 2.5vw;
@@ -916,7 +930,7 @@ display: inline-block;
   color: #E0E0E0;
     font-style: normal;
     font-weight: 300;
-    font-size: 1.18vw;
+    font-size: 1rem;
     font-family: Open Sans;
     position: relative;
     line-height: 2vw;
@@ -941,6 +955,9 @@ a:hover {
 }
 .strike a:hover {
   color: #8C56B6;
+}
+.suchara {
+  transform: scale(2);
 }
     </style>
   </head>
@@ -1055,7 +1072,7 @@ a:hover {
           </select>
             <div id="sudba" class="skoka">
               <div class="select_text_2">Кол-во гостей</div>
-              <div class="open"> <div class="mur">
+              <div class="open"> <div class="mur mew">
               </div>
             </div>
           </div>

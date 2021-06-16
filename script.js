@@ -1,11 +1,21 @@
-// $('#wow').css('display', 'none');
 
+$('.option_2').click(function(){
+	$('.select_text_2').html($(this).attr('id'));
+	$('#svolo option[value='+$(this).attr('id')+']').prop('selected', true);
+	$('.wow').addClass("none");
+	$('.wow').removeClass("block");
 
+	if ($('.wow').hasClass("block")) {
+		$(".mur").removeClass("mew");
+		$(".mur").addClass("closed");
+	} else {
+		$(".mur").removeClass("closed");
+	}
+})
 
 
 $('#nights').click(function(){
 	$('#night_option').toggle();
-	$(".upper").toggleClass("closed");
 })
 
 $('.crosspic').click(function(){
@@ -38,15 +48,19 @@ $('.option').click(function(){
 	$('.select_text').html($(this).attr('id'));
 	$('#nightselect option[value='+$(this).attr('id')+']').prop('selected', true);
 	$('#night_option').toggle();
-	$(".upper").toggleClass("closed");
 })
 
-if($('.wow').css('display') == 'block')
-{
-	$("body").css("background-color", "yellow");
-}
-
 $('body').click(function(e) {
+
+	if ($('#night_option').is(':visible')) {
+		$(".upper").addClass("closed");
+	} else {
+		$(".upper").removeClass("closed");
+	}
+
+
+
+
         var target = $(e.target);
 
 				if($('.popup').css('display') == 'block')
@@ -74,8 +88,6 @@ $('body').click(function(e) {
 	var rufen = document.getElementById('phone-input').value;
 			document.getElementById('rufen').innerHTML=rufen;
 
-	// var which = document.getElementById('nightselect').value;
-	// 		document.getElementById('which').innerHTML=which;
 
 			var howmany = document.getElementById('svolo').value;
 					document.getElementById('howmany').innerHTML=howmany;
@@ -84,13 +96,21 @@ $('body').click(function(e) {
 							document.getElementById('when').innerHTML=when;
         var target = $(e.target);
 
-        // If there are child elements under #overlay or #btn, use
-        // !target.is('#btn *')
         if(target.is('#nights, #sudba')){
         }else{
             $('#night_option').hide();
-						$(".upper").toggleClass("closed");
         }
+
+				if($(".header").css("display") == "block"){
+					$(document).css("background-color", "gray");
+				}else{
+					$(document).css("background-color", "green");
+				}
+
+
+
+
+
 
 				if(document.getElementById("name").value.length == 0)
 		{
@@ -116,12 +136,6 @@ $('body').click(function(e) {
 	} else {
 			$('.timing').hide();
 	}
-
-// 	if ($('.wow').is(':visible')) {
-// 		$("body").css("background-color", "yellow");
-// } else {
-// 	$("body").css("background-color", "black");
-// }
     });
 
 		function phoneMask() {
@@ -132,46 +146,24 @@ $('body').click(function(e) {
 
 
 		$('#sudba').click(function(){
-
-			// $(".mur").addClass("closed");
-
-			if ($(".mur").hasClass("closed")) {
-				setTimeout(function(){
-					$('.mur').removeClass("closed");
-				}, 100);
-
+			if ($('.wow').hasClass("block")) {
+				$(".mur").removeClass("mew");
+				$(".mur").addClass("closed");
 			} else {
-				setTimeout(function(){
-					$('.mur').addClass("closed");
-				}, 100);
+				$(".mur").removeClass("closed");
 			}
-
 
 			if ($(".wow").hasClass("none")) {
 				setTimeout(function(){
 					$('.wow').removeClass("none");
+					$('.wow').addClass("block");
 				}, 100);
 
 			} else {
 				setTimeout(function(){
 					$('.wow').addClass("none");
+					$('.wow').removeClass("block");
 				}, 100);
 			}
-						e.stopPropagation();
-		})
-
-		$('.option_2').click(function(){
-			$('.select_text_2').html($(this).attr('id'));
-			$('#svolo option[value='+$(this).attr('id')+']').prop('selected', true);
-			$('.wow').addClass("none");
-
-			if ($(".mur").hasClass("closed")) {
-				setTimeout(function(){
-					$('.mur').removeClass("closed");
-				}, 100);
-			} else {
-				setTimeout(function(){
-					$('.mur').addClass("closed");
-				}, 100);
-			}
+						// e.stopPropagation();
 		})
