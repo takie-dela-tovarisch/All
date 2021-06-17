@@ -4,9 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="stylesheets/jquery-ui.js"></script>
+    <script src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
     <title>Главная</title>
   </head>
+  <script type="text/javascript">
+  $(function() {
+
+  	$('.ops').draggable();
+
+  });
+      </script>
   <style media="screen">
   html {
     /* overflow:  hidden; */
@@ -170,9 +179,14 @@ background-image: url("images/5.png");
       background-size: cover;
       animation-play-state: paused;
     }
-    .ops * div:hover {
+    /* .ops * div:hover {
       transform: scale(1.2);
       transition: all 0.5s ease;
+    } */
+    .ops {
+      position: absolute;
+      height: 1000px;
+      width: 1000px;
     }
     .one:hover {
       transform: scale(1.1);
@@ -308,7 +322,7 @@ background-image: url("images/5.png");
 
   </style>
 
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
   $(document).mousemove(function(e) {
     let body_size_x = $( window ).width();
     let x_third = parseInt(body_size_x / 3);
@@ -341,100 +355,108 @@ background-image: url("images/5.png");
 
 
     if (eq1 && eq4) {
+      clearInterval(refreshIntervalId);
 
 
-      setInterval(function() {
+
+      setInterval(function(refreshIntervalId) {
         $(window).scrollLeft(value - 10);
         $(window).scrollTop(valuee - 10);
       }, 1000);
 
     } else if (eq2 && eq4) {
+      clearInterval(refreshIntervalId);
+
       $(".cursor").addClass("up");
       $(".cursor").removeClass("left");
       $(".cursor").removeClass("right");
 
 
 
-      setInterval(function() {
+      setInterval(function(refreshIntervalId) {
         $(window).scrollTop(valuee - 10);
       }, 1000);
 
     } else if (eq3 && eq4) {
+      clearInterval(refreshIntervalId);
 
 
-      setInterval(function() {
+      setInterval(function(refreshIntervalId) {
         $(window).scrollTop(valuee - 10);
         $(window).scrollLeft(value + 10);
       }, 1000);
 
     } else if (eq1 && eq5) {
+      clearInterval(refreshIntervalId);
+
       $(".cursor").removeClass("right");
       $(".cursor").removeClass("up");
 
       $(".cursor").addClass("left");
 
-      setInterval(function() {
+      setInterval(function(refreshIntervalId) {
         $(window).scrollLeft(value - 10);
 
       }, 1000);
 
 
     } else if (eq2 && eq5) {
-
-      // $("body").css('background-color', 'white');
-
+      clearInterval(refreshIntervalId);
 
         $(window).scrollLeft();
         $(window).scrollTop();
 
     } else if (eq3 && eq5) {
+      clearInterval(refreshIntervalId);
+
       $(".cursor").removeClass("left");
       $(".cursor").removeClass("up");
 
       $(".cursor").addClass("right");
 
-      setInterval(function() {
+      setInterval(function(refreshIntervalId) {
         $(window).scrollLeft(value + 10);
       }, 1000);
 
     } else if (eq1 && eq6) {
-      // $("body").css('background-color', 'white');
+      clearInterval(refreshIntervalId);
 
-      setInterval(function() {
+      setInterval(function(refreshIntervalId) {
         $(window).scrollLeft(value + 10);
         $(window).scrollTop(valuee + 10);
       }, 1000);
 
     } else if (eq2 && eq6) {
-      // $("body").css('background-color', 'red');
       $(".cursor").removeClass("left");
       $(".cursor").removeClass("right");
       $(".cursor").removeClass("up");
 
+      clearInterval(refreshIntervalId);
 
-      setInterval(function() {
+      setInterval(function(refreshIntervalId) {
         $(window).scrollTop(valuee + 10);
       }, 1000);
 
 
     } else if (eq3 && eq6) {
-      // $(document.body).css('background-color', 'blue');
+      clearInterval(refreshIntervalId);
 
-      setInterval(function() {
+      setInterval(function(refreshIntervalId) {
         $(window).scrollTop(valuee + 10);
         $(window).scrollLeft(value + 10);
       }, 1000);
+
 
     }
     value = $(window).scrollLeft();
     valuee = $(window).scrollTop();
   });
 
-  </script>
+  </script> -->
 
 
 
-  <script type="text/javascript">
+  <!-- <script type="text/javascript">
 
   $(document).ready(function(){
   $(".one").mouseover(function(){
@@ -452,12 +474,9 @@ background-image: url("images/5.png");
   top:e.pageY - 0
   });
   });
-  </script>
+  </script> -->
 
   <body>
-    <div class="eq1">
-
-    </div>
     <div class="back">
 
         <div class="t a"></div>
@@ -481,10 +500,9 @@ background-image: url("images/5.png");
         <div class="s a"></div>
         <div class="s b"></div>
     </div>
-
+<div class="one"></div>
 <div class="ops">
   <div id="backgroun">
-    <div class="one"></div>
     <div class="two"></div>
     <p>О нас</p>
     <div class="three"></div>
@@ -493,8 +511,9 @@ background-image: url("images/5.png");
   <div class="four"></div>
   <div class="five"></div>
 </div>
-
 </div>
+
+
 
 
 <div class="menu upp">

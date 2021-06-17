@@ -102,6 +102,25 @@ top: 504px;
 background-size: contain;
 background-image: url("images/5.png");
     }
+    .six {
+      position: absolute;
+width: 143px;
+height: 213px;
+left: 1075px;
+top: -89px;
+background-size: contain;
+background-image: url("images/p3.png");
+    }
+    .seven {
+      position: absolute;
+width: 102px;
+height: 148px;
+left: 1295px;
+top: 399px;
+background-size: contain;
+background-image: url("images/p6.png");
+opacity: 0.5;
+    }
     .up {
       top: 0;
     }
@@ -278,225 +297,74 @@ background-image: url("images/5.png");
     .score {
       color: white;
     }
-    /* .two:hover {
-      transform: scale(1.2);
-    }
-    .three:hover {
-      transform: scale(1.2);
-    }
-    .four:hover {
-      transform: scale(1.2);
-    }
-    .five:hover {
-      transform: scale(1.2);
-    } */
-    /* .now {
-      position: absolute;
-    }
-    .l {
-      top: 100px;
-    }
-    .n {
-      top: 0;
-    } */
 
+    body,html {
+      margin: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+    .ops {
+      position: absolute;
+      top: 0; left: 0;
+      width: 200%; height: 200%;
+    }
+    .backgroun {
+      /* transform: translateZ(-10px) scale(2); */
+    }
+    .upper {
+      /* transform: translateZ(0px) scale(3); */
+
+    }
   </style>
 
   <script type="text/javascript">
-  $(document).mousemove(function(e) {
-    let body_size_x = $( window ).width();
-    let x_third = parseInt(body_size_x / 3);
-    let x_third_move = x_third + $(window).scrollLeft();
+    $(document).mousemove(function(e) {
 
-    let body_size_y = $( window ).height();
-    let y_third = parseInt(body_size_y / 3);
-    let y_third_move = y_third + $(window).scrollTop();
+      let docWidth = $('body').width(),
+      docHeight = $('body').height(),
+      slidesWidth = $('.ops').width(),
+      slidesHeight = $('.ops').height(),
+      rangeX = slidesWidth - docWidth,
+      rangeY = slidesHeight - docHeight,
+      $block = $('.ops');
 
-
-    let left_dir = e.pageX;
-    let top_dir = e.pageY;
-
-    let abc = $(window).scrollLeft() - 10;
-    let dfg = $(window).scrollTop() - 10;
-    let hij = $(window).scrollLeft() + 10;
-    let klm = $(window).scrollTop() + 10;
-
-    let xup = $(window).scrollLeft() + 1;
-    let yup = $(window).scrollTop() + 1;
-
-
-
-    let eq1 = left_dir < x_third_move;
-    let eq2 = left_dir < parseInt (x_third_move * 2);
-    let eq3 = left_dir < parseInt (x_third_move * 3);
-    let eq4 = top_dir < y_third_move;
-    let eq5 = top_dir < parseInt (y_third_move * 2);
-    let eq6 = top_dir < parseInt (y_third_move * 3);
-
-
-    if (eq1 && eq4) {
-
-
-      setInterval(function() {
-        $(window).scrollLeft(value - 10);
-        $(window).scrollTop(valuee - 10);
-      }, 1000);
-
-    } else if (eq2 && eq4) {
-      $(".cursor").addClass("up");
-      $(".cursor").removeClass("left");
-      $(".cursor").removeClass("right");
-
-
-
-      setInterval(function() {
-        $(window).scrollTop(valuee - 10);
-      }, 1000);
-
-    } else if (eq3 && eq4) {
-
-
-      setInterval(function() {
-        $(window).scrollTop(valuee - 10);
-        $(window).scrollLeft(value + 10);
-      }, 1000);
-
-    } else if (eq1 && eq5) {
-      $(".cursor").removeClass("right");
-      $(".cursor").removeClass("up");
-
-      $(".cursor").addClass("left");
-
-      setInterval(function() {
-        $(window).scrollLeft(value - 10);
-
-      }, 1000);
-
-
-    } else if (eq2 && eq5) {
-
-      // $("body").css('background-color', 'white');
-
-
-        $(window).scrollLeft();
-        $(window).scrollTop();
-
-    } else if (eq3 && eq5) {
-      $(".cursor").removeClass("left");
-      $(".cursor").removeClass("up");
-
-      $(".cursor").addClass("right");
-
-      setInterval(function() {
-        $(window).scrollLeft(value + 10);
-      }, 1000);
-
-    } else if (eq1 && eq6) {
-      // $("body").css('background-color', 'white');
-
-      setInterval(function() {
-        $(window).scrollLeft(value + 10);
-        $(window).scrollTop(valuee + 10);
-      }, 1000);
-
-    } else if (eq2 && eq6) {
-      // $("body").css('background-color', 'red');
-      $(".cursor").removeClass("left");
-      $(".cursor").removeClass("right");
-      $(".cursor").removeClass("up");
-
-
-      setInterval(function() {
-        $(window).scrollTop(valuee + 10);
-      }, 1000);
-
-
-    } else if (eq3 && eq6) {
-      // $(document.body).css('background-color', 'blue');
-
-      setInterval(function() {
-        $(window).scrollTop(valuee + 10);
-        $(window).scrollLeft(value + 10);
-      }, 1000);
-
-    }
-    value = $(window).scrollLeft();
-    valuee = $(window).scrollTop();
-  });
-
-  </script>
-
-<!-- <script type="text/javascript">
-$(document).ready(function(){
-      jQuery(document).ready(function(){
-
-         $(document).mousemove(function(e){
-
-           let value = $(window).scrollLeft() + 5;
-           let valuee = $(window).scrollLeft() - 7;
-           let xPrev= 0;
-
-           let valueee = $(window).scrollTop() + 5;
-           let valueeee = $(window).scrollTop() - 7;
-           let yPrev= 0;
-
-           if (xPrev<e.pageX){
-             $(window).scrollLeft(value);
-             xPrev= e.pageX;
-           } else {
-             $(window).scrollLeft(valuee);
-             xPrev= e.pageX;
-           }
-
-
-           if (yPrev<e.pageY){
-             $(window).scrollTop(valueee);
-             yPrev= e.pageY;
-           } else {
-             $(window).scrollTop(valueeee);
-             yPrev= e.pageY;
-           }
-         });
+      $(window).on('resize', function() {
+        let docWidth = $('body').width(),
+        docHeight = $('body').height(),
+        slidesWidth = $('.ops').width(),
+        slidesHeight = $('.ops').height(),
+        rangeX = slidesWidth - docWidth,
+        rangeY = slidesHeight - docHeight;
       })
-});
-</script> -->
 
-  <script type="text/javascript">
-  // $(document).ready(function(){
-  //   let xPrev = 0;
-  //   let yPrev = 0;
-  //
-  //   let value;
-  //   let valuee;
-  //   let valueee;
-  //   let valueeee;
-  //
-  //       jQuery(document).ready(function(){
-  //
-  //          $(document).mousemove(function(e){
-  //            xPrev<e.pageX ? $(window).scrollLeft(value) && $(".cursor")addClass("left") : $(window).scrollLeft(valuee);
-  //             value = $(window).scrollLeft() + 5;
-  //             valuee = $(window).scrollLeft() - 7;
-  //           xPrev=e.pageX;
-  //
-  //           yPrev<e.pageY ? $(window).scrollTop(valueee) : $(window).scrollTop(valueeee)
-  //             valueee = $(window).scrollTop() + 5;
-  //             valueeee = $(window).scrollTop() - 7;
-  //           yPrev=e.pageY;
-  //          });
-  //       })
-  // });
-  </script>
+      $(document).on('mousemove', function(e) {
+        let mouseX = e.pageX,
+          percentMouse = mouseX * 100 / docWidth,
+          offset = percentMouse / 100 * slidesWidth - percentMouse / 200 * docWidth,
+          mouseY = e.pageY,
+            percentMouseY = mouseY * 100 / docHeight,
+            offsetY = percentMouseY / 100 * slidesHeight - percentMouseY / 200 * docHeight;
 
-  <script type="text/javascript">
+        $block.css({
+          '-webkit-transform': 'translate3d(' + -offset + 'px,' + -offsetY + 'px,0)',
+          'transform': 'translate3d(' + -offset + 'px,' + -offsetY + 'px,0)'
+        });
+      });
+    });
+
+    </script>
+
+
+  <!-- <script type="text/javascript">
 
   $(document).ready(function(){
-  $(".one").mouseover(function(){
+  $(".two").mouseover(function(){
     $(".back").css("display", "block");
     $(".back.div").css("animation-playstate", "running");
   })
   $(".one").mouseout(function(){
     $(".back").css("display", "none");
+    $(".back.div").css("animation-playstate", "paused");
   })
   });
 
@@ -506,7 +374,7 @@ $(document).ready(function(){
   top:e.pageY - 0
   });
   });
-  </script>
+  </script> -->
 
   <body>
     <div class="eq1">
@@ -542,10 +410,12 @@ $(document).ready(function(){
     <div class="two"></div>
     <p>О нас</p>
     <div class="three"></div>
+    <div class="seven"></div>
   </div>
 <div id="upper">
   <div class="four"></div>
   <div class="five"></div>
+  <div class="six"></div>
 </div>
 
 </div>
