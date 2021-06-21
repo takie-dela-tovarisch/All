@@ -637,11 +637,14 @@ background-attachment: fixed;
 /* responsive */
 
 @media only screen and (max-width: 768px) {
+  .razdel {
+    right: -11vw;
+  }
    .m {
      display: none;
    }
    html {
-     font-size: 14px;
+     font-size: 15px;
    }
    .events {
      margin-left: 4vw;
@@ -701,4 +704,81 @@ background-attachment: fixed;
   .h {
     line-height: 20.96vh !important;
   }
+  .black2, .appear, .razdel {
+   font-size: 2rem;
+}
+.black2 {
+  line-height: 8vh;
+}
  }
+
+ @media only screen and (max-width: 375px) {
+   body {
+     background: red;
+   }
+    .m {
+      display: none;
+    }
+    html {
+      font-size: 14px;
+    }
+    .events {
+      margin-left: 4vw;
+      margin-right: 4vw;
+    }
+    .eh {
+     height: 47vh;
+     width: auto;
+     border-left: 1px solid #8C56B6;
+ }
+ .a_1 {
+   width: 26.22vw;
+     height: 43.44vh;
+ }
+ #desk {
+   display: none;
+ }
+ #mobik {
+   display: block;
+ }
+ .gif {
+   flex-direction: column;
+ }
+ .notel {
+     width: 100%;
+     margin-top: 8vh;
+     border-bottom: 1px solid #8C56B6;
+
+   }
+   .eh {
+     border-right: 1px solid #8C56B6;
+ }
+ #aa {
+     margin-left: 0;
+ }
+ .notel p {
+   margin-left: 2.92vw;
+   margin-right: 2.92vw;
+   margin-bottom: 8vh;
+ }
+ .noteс {
+     width: 80.24vw;
+   }
+   .pers {
+     width: 68.22vw;
+     border-right: 1px solid #8C56B6;
+   }
+ .noteb {
+     width: 84.24vw;
+   }
+   .rel, #a, .promo{
+     display: none;
+   }
+   .inthe {
+     height: 20.96vh;
+   }
+   .h {
+     line-height: 20.96vh !important;
+   }
+
+  }
