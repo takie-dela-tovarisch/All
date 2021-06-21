@@ -1,0 +1,391 @@
+  body {
+    width: 100vw;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    overflow: auto;
+    background-color: black;
+    padding-top: 8.89vh;
+    padding-bottom: 0;
+  }
+  * {
+    text-decoration: none;
+  }
+  a {
+    color: #8C56B6;
+  }
+  .m {
+    width: 100%;
+    height: 7.44vh;
+    margin-top: 0 auto;
+    display: inline-block;
+    position: fixed;
+    background-color: black;
+    top: 0;
+    z-index: 1;
+  }
+  .pages {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+  }
+  .s {
+    height: 7.44vh;
+    margin-left: 2.78vw;
+    margin-right: 2.78vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'PT Mono', monospace;
+    color: #8C56B6;
+  }
+  .black:hover a {
+    color: #FFCD00;
+  }
+  .s p:hover {
+    color: #FFCD00;
+  }
+  .other {
+    margin: 0 auto;
+  }
+  .pages p {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-top: 2.22vh;
+  }
+  .black {
+    height: 7.44vh;
+    width: 8.747em;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 0.07em;
+  }
+  .white {
+    height: 7.44vh;
+    width: 59.51vw;
+  }
+  .menu {
+    position: relative;
+    margin-left: 2.78vw;
+    margin-right: 2.78vw;
+    border: 1px solid #8C56B6;
+  }
+  .part {
+    position: relative;
+    border-bottom: 1px solid #8C56B6;
+    width: 100%;
+  }
+
+  .part:last-of-type {
+    border: 0;
+  }
+  .anchor {
+    background-color: #8C56B6;
+  }
+  .header {
+    height: 13.92vh;
+    width: 100%;
+  }
+  .header:hover h1 {
+    color: #8C56B6;
+  }
+  .anchor:hover h1 {
+    color: black;
+  }
+  .header h1 {
+    position: absolute;
+    font-size: 1.9rem;
+    font-family: PT Mono;
+    font-weight: normal;
+    line-height: 2.5vw;
+    color: #E0E0E0;
+    top: calc(6.96vh - 1.25vw);
+    margin: 0 auto;
+    left: 2.78vw;
+  }
+  .wider {
+    position: relative;
+    height: 13.92vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  .wider h1 {
+    position: absolute;
+    font-size: 1.9rem;
+    font-family: PT Mono;
+    font-weight: normal;
+    line-height: 13.92vh;
+    color: #E0E0E0;
+    top: 0;
+    margin: 0 auto;
+    width: 100vw;
+  }
+  .moving {
+    position: absolute;
+    width: 100vw;
+    height: 13.92vh;
+    overflow: hidden;
+  }
+  .first {
+    animation: moving 10s infinite linear;
+    left: -118%;
+  }
+  .second {
+    animation: moving 10s infinite linear reverse;
+    left: -118%;
+  }
+  .second h1 {
+    text-align: right;
+  }
+  .third {
+    left: 121%;
+  }
+  .fourth {
+    left: 121%;
+    animation-delay: 5s;
+  }
+  @keyframes moving {
+    0% {
+      left: -118%;
+    }
+    100% {
+      left: 101%;
+    }
+  }
+  @keyframes movingtwo {
+    0% {
+      left: -119%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+  .open {
+    position: absolute;
+    width: 1rem;
+    height: 1.1rem;
+    top: calc(6.96vh - 0.8vw);
+    background: url("../images/open.svg");
+    right: 2.78vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease;
+  }
+  .header:hover .open {
+    background: url("../images/openactive.svg");
+    background-size: contain;
+    width: 1rem;
+    height: 1.1rem;
+    background-repeat: no-repeat;
+  }
+  .close {
+    transform: rotate(180deg);
+  }
+  .content {
+    position: relative;
+    margin-left: 2.78vw;
+    margin-right: 2.78vw;
+    display: none;
+    transition: max-height 1.5s;
+    padding-bottom: 2.78vh;
+  }
+  .content h3 {
+    font-family: Open Sans;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.4em;
+    color: #8C8C8C;
+    margin-bottom: 5.78vh;
+    margin-left: 0;
+    margin-right: 0;
+    width: 43.82vw;
+  }
+  .food h2 {
+    font-family: PT Mono;
+    font-weight: normal;
+    font-size: 1.1rem;
+    line-height: 1.67vw;
+    color: #E0E0E0;
+    margin-top: 0.3vw;
+    width: 28.13vw;
+  }
+  .food {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .name p, .price p {
+    font-family: Open Sans;
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.46vw;
+    color: #E0E0E0;
+    margin-top: 0;
+    margin-bottom: 4.22vh;
+  }
+  .name {
+    width: 48.82vw;
+  }
+  #note {
+    font-family: Open Sans;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.4em;
+    color: #8C8C8C;
+    width: 90%;
+  }
+  .tab {
+    height: 4.1vw;
+  }
+  .tabs {
+    height: 2.4vw;
+  }
+  #with {
+    margin-bottom: 1.33vh;
+  }
+  .strike {
+    position: relative;
+    display: inline-block;
+  }
+  .strike p:hover {
+    color: #8C56B6;
+  }
+  .strike::before {
+    content: '';
+    border-bottom: 0.3vw solid #FFCD00;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: calc(2.22vh + 0.4rem);
+  }
+  a:hover {
+    color: #FFCD00;
+  }
+  .strike a:hover {
+    color: #8C56B6;
+  }
+
+  /* mobile */
+
+  .mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    height: 7vh;
+    width: 100%;
+  }
+  .mobcont {
+    height: 100%;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'PT Mono', monospace;
+  }
+  .lines {
+    height: 50%;
+    width: 8vw;
+    position: relative;
+  }
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: #8C56B6;
+    position: absolute;
+  }
+  .lina, .linb {
+    top: 0%;
+    transition: all 1s ease;
+  }
+  .linan {
+    top: 490%;
+  }
+  .linbn {
+    top: 860%;
+  }
+  .linc, .lind {
+    top: calc(50% - 1px);
+    transition: all 1s ease;
+  }
+  .lincn {
+    top: 1240%;
+  }
+  .lindn {
+    top: 1602%;
+  }
+  .linee, .linf {
+    bottom: 0%;
+    transition: all 1s ease;
+  }
+  .lineen {
+    bottom: -1890%;
+  }
+  .linfn {
+    bottom: -2260%;
+  }
+  .black2, .appear, .razdel {
+    height: 7.44vh;
+    width: 8.747em;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.07em;
+    line-height: 7vh;
+    color: #8C56B6;
+    font-family: 'PT Mono', monospace;
+  }
+  .appear a:active {
+    color: #FFCD00;
+  }
+  .razdel {
+    position: absolute;
+    right: -19%;
+    display: none;
+    transition: 1s all ease;
+  }
+  .rooms {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: none;
+  }
+  .appear {
+    position: absolute;
+    width: 100%;
+    height: 79.23vh;
+    top: calc(52% - 39vh);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .appear p {
+    line-height: 4.45em;
+    text-align: center;
+  }
+
+  /* responsive */
+
+  @media only screen and (max-width: 768px) {
+   .m {
+     display: none;
+   }
+   html {
+     font-size: 14px;
+   }
+   .menu {
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+  .content h3 {
+    width: 86.82vw;
+  }
+  }
