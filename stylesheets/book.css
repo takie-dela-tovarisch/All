@@ -1175,4 +1175,13 @@ transform: scale(2);
   .crosspic {
     display: none;
   }
+  .popup {
+    width: 90vw;
+    height: 48vh;
+    left: calc(50% - 45vw);
+    top: calc(52% - 24vh);
+}
+.popup p {
+  line-height: 6vw;
+}
 }
