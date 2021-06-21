@@ -19,8 +19,24 @@
           $(".linf").toggleClass("linfn");
           setTimeout(function(){
             $(".razdel").fadeToggle(1000);
+
+            $('body').click(function(e) {
+                    var target = $(e.target);
+                      if(target.is(".appear a")){
+                      }else{
+                          $('.rooms').slideToggle();
+                          $(".razdel").fadeToggle(1000);
+                          $(".lina").toggleClass("linan");
+                          $(".linb").toggleClass("linbn");
+                          $(".linc").toggleClass("lincn");
+                          $(".lind").toggleClass("lindn");
+                          $(".linee").toggleClass("lineen");
+                          $(".linf").toggleClass("linfn");
+                      }
+                });
           }, 300);
         });
+
 
 
         setTimeout(function(){
