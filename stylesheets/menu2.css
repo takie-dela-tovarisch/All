@@ -364,7 +364,7 @@
     height: 100%;
     width: 100%;
     background-color: black;
-    /* display: none; */
+    display: none;
   }
   .appear {
     position: absolute;
@@ -389,8 +389,15 @@
   .zero {
     width: 0px;
   }
+
   .trick {
     margin-right: 10vw;
+    width: 0%;
+    overflow: hidden;
+    transition: 1.5s all ease;
+  }
+  .ten {
+    width: 10%;
   }
 
   /* responsive */
