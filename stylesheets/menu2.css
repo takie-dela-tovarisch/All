@@ -368,24 +368,30 @@
     align-items: center;
   }
   .appear p {
-    line-height: 4.45em;
+    line-height: 446%;
     text-align: center;
   }
 
   /* responsive */
 
   @media only screen and (max-width: 768px) {
-   .m {
-     display: none;
-   }
-   html {
-     font-size: 14px;
-   }
-   .menu {
-    margin-left: 4vw;
-    margin-right: 4vw;
-  }
-  .content h3 {
-    width: 86.82vw;
-  }
+     .m {
+       display: none;
+     }
+     html {
+       font-size: 14px;
+     }
+     .menu {
+      margin-left: 4vw;
+      margin-right: 4vw;
+    }
+    .content h3 {
+      width: 86.82vw;
+    }
+    .header h1 {
+      left: 4vw;
+    }
+    .open {
+      right: 4vw;
+    }
   }
