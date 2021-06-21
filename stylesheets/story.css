@@ -394,8 +394,11 @@ line-height: 1.5em;
       font-size: 1.2rem;
       letter-spacing: 0.07em;
       line-height: 7vh;
-      color: #8C56B6;
+      color: #8C56B6 !important;
       font-family: 'PT Mono', monospace;
+    }
+    .black2 a, .appear a {
+      color: #8C56B6;
     }
     .appear a:active {
       color: #FFCD00;

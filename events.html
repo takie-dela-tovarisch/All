@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/events.css">
     <title>Афиша</title>
     <script type="text/javascript">
       $( document ).ready(function() {
@@ -201,343 +202,8 @@ function updateValue() {
 
 }
 
-
-
       });
     </script>
-
-    <style media="screen">
-    #results {
-      color: white;
-      position: absolute;
-      opacity: 0;
-    }
-    body {
-      width: 100vw;
-      margin: 0 auto;
-      display: block;
-      position: relative;
-      overflow: auto;
-      background-color: black;
-      padding-top: 8.89vh;
-      padding-bottom: 0;
-    }
-    * {
-      text-decoration: none;
-    }
-    a {
-      color: #8C56B6;
-    }
-    #a, #c, #b {
-      transition: top 0.5s ease;
-    }
-    .m {
-      width: 100%;
-      height: 7.44vh;
-      margin-top: 0 auto;
-      display: inline-block;
-      position: fixed;
-      background-color: black;
-      top: 0;
-      z-index: 1;
-    }
-    .pages {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin: 0;
-    }
-    .s {
-      height: 7.44vh;
-      margin-left: 2.78vw;
-      margin-right: 2.78vw;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: baseline;
-      font-family: 'PT Mono', monospace;
-      color: #8C56B6;
-    }
-    .black:hover a {
-      color: #FFCD00;
-    }
-    a:hover {
-      color: #FFCD00;
-    }
-    .strike a:hover {
-      color: #8C56B6;
-    }
-    .s p:hover {
-      color: #FFCD00;
-    }
-    .other {
-      margin: 0 auto;
-    }
-    .pages p {
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      margin-top: 2.22vh;
-    }
-    .black {
-      height: 7.44vh;
-      width: 8.747em;
-      text-transform: uppercase;
-      font-size: 1.3rem;
-      letter-spacing: 0.07em;
-    }
-    .white {
-      height: 7.44vh;
-      width: 59.51vw;
-    }
-    .events {
-      position: relative;
-      margin-left: 2.78vw;
-      margin-right: 2.78vw;
-      border: 1px solid #8C56B6;
-      height: 84.29vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: stretch;
-    }
-    .header {
-      width: inherit;
-      height: 9.96vh;
-      border-bottom: 1px solid #8C56B6;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding-left: 1.74vw;
-      padding-right: 1.74vw;
-    }
-    #never {
-      transition: all 0.5s ease;
-    }
-    .header:last-of-type {
-      border-bottom: 0;
-      border-top: 1px solid #8C56B6;
-    }
-    .moving {
-      display: flex;
-    }
-    .header h1 {
-      position: relative;
-      font-size: 1.9rem;
-      font-family: PT Mono;
-      font-weight: normal;
-      line-height: 9.96vh;
-      color: #E0E0E0;
-      animation-delay: 1s;
-      animation: res 0.5s ease;
-      animation-fill-mode: forwards;
-      margin-top: 5%;
-    }
-    @keyframes res {
-      0% {
-        margin-top: 5%;
-      }
-      100% {
-        margin-top: 0%;
-      }
-    }
-    .res2 {
-      position: relative;
-      height: 9.96vh;
-      width: 100%;
-      text-align: center;
-      display: none;
-      overflow: hidden;
-    }
-    .res2 h1 {
-      display: none;
-    }
-    .star {
-      background: url("images/star.svg");
-      width: 2.19vw;
-      height: 2.19vw;
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
-    .p {
-      position: relative;
-      height: auto;
-      width: calc(100%/3);
-    }
-    .addhover:hover {
-      transform: scale(1.1);
-    }
-    .pmove {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0%;
-    }
-    .animate {
-      animation: p 9s infinite linear;
-    }
-    .pmoverev {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: -400%;
-    }
-    @keyframes p {
-      0% {
-        top: 0%;
-      }
-
-      100% {
-        top: -400%;
-      }
-    }
-    @keyframes prev {
-      0% {
-        top: -400%;
-      }
-
-      100% {
-        top: 0%;
-      }
-    }
-    .po {
-      width: 100%;
-      height: 64.37vh;
-      cursor: pointer
-    }
-    .posters {
-      height: 64.37vh;
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      overflow: hidden;
-    }
-    .one {
-      background: url("images/p1.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .two {
-      background: url("images/p2.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .three {
-      background: url("images/p3.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .four {
-      background: url("images/p4.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .five {
-      background: url("images/p5.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .six {
-      background: url("images/p6.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .seven {
-      background: url("images/p7.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .eight {
-      background: url("images/p8.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .nine {
-      background: url("images/p9.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .ten {
-      background: url("images/p10.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .eleven {
-      background: url("images/p11.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .twelve {
-      background: url("images/p12.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .strike {
-      position: relative;
-      display: inline-block;
-    }
-    .strike p:hover {
-      color: #8C56B6
-    }
-    .strike::before {
-      content: '';
-      border-bottom: 0.3vw solid #FFCD00;
-      width: 100%;
-      position: absolute;
-      right: 0;
-      top: calc(2.22vh + 0.4rem);
-    }
-    .b_1, .b_2, .b_3, .b_4 {
-      position: relative;
-      width: 17vw;
-      height: 100%;
-      margin-top: 0%;
-    }
-    .y_1, .y_2, .y_3, .y_4 {
-      position: absolute;
-      width: 100%;
-      height: 50%;
-    }
-    .y_1, .y_3 {
-      animation: y_1 2s infinite linear;
-    }
-    .y_2, .y_4 {
-      animation: y_1 2s infinite linear;
-      animation-direction: reverse;
-    }
-    @keyframes y_1 {
-      0% {
-        top: 0%;
-      }
-      100% {
-        top: -400%;
-      }
-    }
-    .y_1 p, .y_2 p, .y_3 p, .y_4 p {
-    font-size: 1.9rem;
-    font-family: PT Mono;
-    font-weight: normal;
-    line-height: 9.96vh;
-    color: #E0E0E0;
-    }
-    .moving {
-      height: 100%;
-      overflow: hidden;
-    }
-    </style>
   </head>
   <body>
     <div class="m">
@@ -611,16 +277,16 @@ function updateValue() {
         <div class="star"></div>
       </div>
       <div class="posters">
-        <div class="p">
+        <div class="p" id="left">
           <div class="pmove animate" id="a">
             <div class="po one addhover"></div>
             <div class="po four addhover"></div>
             <div class="po seven addhover"></div>
-            <div class="po ten addhover"></div>
+            <div class="po tenn addhover"></div>
             <div class="po one addhover"></div>
           </div>
         </div>
-        <div class="p">
+        <div class="p" id="center">
           <div class="pmoverev animate" id="b">
             <div class="po two addhover"></div>
             <div class="po five addhover"></div>
@@ -629,7 +295,7 @@ function updateValue() {
             <div class="po two addhover"></div>
           </div>
         </div>
-        <div class="p">
+        <div class="p" id="right">
           <div class="pmove animate" id="c">
             <div class="po three addhover"></div>
             <div class="po six addhover"></div>
@@ -688,6 +354,43 @@ function updateValue() {
           </div>
         </div>
         <div class="star"></div>
+      </div>
+    </div>
+
+    <div class="rooms">
+      <div class="appear">
+        <div class="trick">
+          <p>&mdash; </p>
+          <p>&mdash; </p>
+          <p>&mdash; </p>
+          <p>&mdash; </p>
+          <p>&mdash; </p>
+          <p>&mdash; </p>
+        </div>
+        <div class="text">
+          <a href="about.html"><p>о нас</p></a>
+          <a href="story.html"><p>история</p></a>
+          <a href="menu2.html"><p>меню</p></a>
+          <a href="events.html"><p>афиша</p></a>
+          <a href="book.html"><p>бронь</p></a>
+          <a href="game.html"><p>секрет</p></a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile">
+      <div class="mobcont">
+        <div class="black2">
+          <p><a href="index.html">boomshh</a></p>
+        </div>
+        <p class="razdel">разделы</p>
+        <div class="lines">
+          <div class="line lina"></div>
+          <div class="line linb"></div>
+          <div class="line linc"></div>
+          <div class="line lind"></div>
+          <div class="line linee"></div>
+          <div class="line linf"></div>
+        </div>
       </div>
     </div>
   </body>
