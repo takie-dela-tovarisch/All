@@ -389,6 +389,9 @@
   .zero {
     width: 0px;
   }
+  .trick {
+    margin-right: 10vw;
+  }
 
   /* responsive */
 
