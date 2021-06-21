@@ -5,9 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/story.css">
+
     <title></title>
   <script type="text/javascript">
   $( document ).ready(function() {
+
+    // mobile
+    $(".lines").click(function(){
+      $(".rooms").slideToggle();
+      $(".lina, .linb, .linc, .lind, .linee, .linf").toggleClass("zero");
+      setTimeout(function(){
+        $(".razdel").toggle();
+        $(".lina, .linb, .linc, .lind, .linee, .linf").toggle();
+        $(".trick").toggleClass("ten");
+      }, 300);
+    });
+
+
+    $('body').click(function(e) {
+            var target = $(e.target);
+            if ($('.razdel').is(':visible')) {
+              if(target.is(".appear a, .lines")){
+              }else{
+                  $('.rooms').slideUp();
+                  $(".lina, .linb, .linc, .lind, .linee, .linf").toggle();
+                  setTimeout(function(){
+                    $(".razdel").hide();
+                    $(".lina, .linb, .linc, .lind, .linee, .linf").toggleClass("zero");
+                    $(".trick").toggleClass("ten");
+                  }, 300);
+              }
+            }
+        });
+
+        // mobile
+
+
     $(document).mousemove(function(e) {
     let balls = document.getElementsByClassName("pupil");
     document.onmousemove = function(){
@@ -24,9 +58,7 @@
     $(".a").click(function(){
       $('.b').animate({
         width:'0'},1000, "linear", function() {});
-
       $(".bog").css('margin-right','12vw');
-
     $(".a").css('margin-right', '0');
     $(".b").fadeOut();
     $( ".a" ).removeClass("hov");
@@ -42,16 +74,13 @@
     $(".b").click(function(){
       $('.a').animate({
         width:'0'},1000, "linear", function() {});
-
       $(".pant").css('margin-right','8vw');
-
     $(".a").css('margin-right', '0');
     $(".a").fadeOut();
     $( ".b" ).removeClass("hov");
     $( ".cross" ).fadeIn();
     $( "#haha" ).fadeIn();
     });
-
     $(".cross").click(function(){
       $( ".a" ).fadeIn();
       $( ".b" ).fadeIn();
@@ -59,18 +88,15 @@
       $( ".cross" ).fadeOut();
       $( "#haha" ).fadeOut();
       $( "#hehe" ).fadeOut();
-
       $('.a').animate({
         width:'100%'},1000, "linear", function() {});
       $('.b').animate({
         width:'100%'},1000, "linear", function() {});
-
       $( ".bog" ).removeClass("clicked");
       setTimeout(function(){
                 $( ".a" ).addClass("hov");
                 $( ".b" ).addClass("hov");
       }, 500);
-
       setTimeout(function(){
           $(".pant").css('margin-right','calc(50% - 12.2vw)');
           $(".bog").css({
@@ -79,325 +105,9 @@
           });
       }, 1000);
     });
-
 });
   </script>
-    <style media="screen">
-      body {
-        width: 100vw;
-        margin: 0 auto;
-        display: block;
-        position: relative;
-        overflow: auto;
-        background-color: black;
-        padding-top: 8.89vh;
-        padding-bottom: 0;
-      }
-      * {
-        text-decoration: none;
-      }
-      .m a {
-        color: #8C56B6;
-      }
-      .newhov:hover {
-        background: black;
-      }
-        .m {
-          width: 100%;
-          height: 7.44vh;
-          margin-top: 0 auto;
-          display: inline-block;
-          position: fixed;
-          background-color: black;
-          top: 0;
-          z-index: 1;
-        }
-        .pages {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          margin: 0;
-        }
-        .s {
-          height: 7.44vh;
-          margin-left: 2.78vw;
-          margin-right: 2.78vw;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: baseline;
-          font-family: 'PT Mono', monospace;
-          color: #8C56B6;
-        }
-        .black:hover a {
-          color: #FFCD00;
-        }
-        .s p:hover {
-          color: #FFCD00;
-        }
-        .other {
-          margin: 0 auto;
-        }
-        .pages p {
-          font-size: 1.2rem;
-          text-transform: uppercase;
-          letter-spacing: 0.07em;
-          margin-top: 2.22vh;
-        }
-        .black {
-          height: 7.44vh;
-          width: 8.747em;
-          text-transform: uppercase;
-          font-size: 1.3rem;
-          letter-spacing: 0.07em;
-        }
-        .white {
-          height: 7.44vh;
-          width: 59.51vw;
-        }
-        .container {
-          position: relative;
-          margin-left: 2.78vw;
-          margin-right: 2.78vw;
-          border: 1px solid #8C56B6;
-          height: 84.29vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        }
-        .header {
-          height: 13.92vh;
-          width: 100%;
-        }
-        .header h1 {
-          position: relative;
-          font-size: 1.9rem;
-          font-family: PT Mono;
-          font-weight: normal;
-          line-height: 2.5vw;
-          color: #E0E0E0;
-          margin-top: calc(6.5vh - 1.25vw);
-          margin-left: 2.78vw;
-        }
-        .strike a:hover {
-          color: #8C56B6;
-        }
-        .steps {
-          width: inherit;
-          height: 100%;
-          align-self: stretch;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          margin-right: 2.78vw;
-          margin-left: 2.78vw;
-        }
-        .wrapper {
-          position: relative;
-          height: 67vh;
-          width: 100%;
-          background-color: black;
-          margin-top: 1vh;
-          border: 1px solid #8C56B6;
-          overflow: hidden;
-          transition : border 2s ease-out;
-        }
-        .hov:hover {
-          background-color: #8C56B6;
-        }
-        .a {
-          margin-right: 2.78vw;
-          transition: margin-right 2s;
-        }
-        .b {
-          margin-left: 0;
-          transition: margin-left 2s;
-        }
-        .none {
-          display: none;
-        }
-        .bog {
-          position: relative;
-          margin-top: calc(33.5vh - 29.5vh);
-          margin-left: auto;
-          margin-right: auto;
-          background: url("images/bog.svg");
-          width: 16.4vw;
-          height: 59vh;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center bottom;
-          transition: margin 5s ease;
-        }
-        .clicked {
-          margin-right: 12vw;
-          transition: margin 5s ease;
 
-        }
-        .clickedd {
-          margin-right: 8vw;
-          transition: margin 5s ease;
-
-        }
-        /* .notclicked {
-          margin-right: auto;
-          transition: margin 5s ease;
-
-        } */
-        .pant {
-          position: relative;
-          margin-top: calc(33.5vh - 29.5vh);
-          margin-right: calc(50% - 12.2vw);
-          margin-left: auto;
-          background: url("images/pant.svg");
-          width: 24.4vw;
-          height: 59vh;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center bottom;
-          transition: margin 2s ease;
-        }
-        .apple {
-          position: absolute;
-          background: url("images/eye.svg");
-          background-size: contain;
-          width: 9.5vw;
-          height: 9.44vh;
-          overflow: hidden;
-          background-repeat: no-repeat;
-          background-position: center;
-          left: calc(13.2vw - 4.75vw);
-          bottom: calc(16.5vh - 4.72vh);
-        }
-        .movement {
-          position: relative;
-          height: 8vh;
-          width: 8vh;
-          margin-top: 0.2vw;
-          margin-left: calc(4.75vw - 4vh);
-          border-radius: 50%;
-        }
-        .pupil {
-          position: absolute;
-          background-image: url("images/pupil.svg");
-          width: 2.61vw;
-          height: 2.61vw;
-          left: 28%;
-          top: 14%;
-          background-repeat: no-repeat;
-          background-size: contain;
-        }
-        .step h2 {
-          position: absolute;
-          font-size: 1.9rem;
-          font-family: PT Mono;
-          font-weight: bold;
-          color: #FFCD00;
-          left: 1.81vw;
-          top: 2.89vh;
-        }
-        .info h3 {
-          position: absolute;
-          font-size: 1.9rem;
-          font-family: PT Mono;
-          font-weight: normal;
-          color: #FFCD00;
-          left: 6.81vw;
-          top: 2.89vh;
-        }
-        .info p {
-          position: absolute;
-          font-family: Open Sans;
-          font-weight: 300;
-          color: #8C8C8C;
-          left: 6.81vw;
-          top: calc(12% + 2.89vh);
-          width: 38.67vw;
-          font-size: 1em;
-    line-height: 1.5em;
-        }
-        .more {
-          position: absolute;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          left: 2vw;
-          top: 61%;
-        }
-        .info h3 {
-          color: #E0E0E0;
-        }
-        .more h4 {
-          position: relative;
-          font-family: Open Sans;
-          font-weight: 300;
-          font-size: 1em;
-          line-height: 1.99vw;
-          color: #E0E0E0;
-        }
-        a {
-          color: #E0E0E0;
-        }
-        .more:hover a {
-          color: #FFCD00;
-        }
-        .open {
-          position: relative;
-          width: 1.2vw;
-          height: 1.94vw;
-          background: url("images/open.svg");
-          background-size: contain;
-          transform: rotate(-90deg);
-          margin-right: 3.1vw;
-          background-repeat: no-repeat;
-        }
-        .cross {
-          position: absolute;
-          width: 4vw;
-          height: 4vw;
-          right: 4.81vw;
-          top: 16.2vh;
-        }
-        .cross:hover .crosspic {
-          background: url("images/crossyellow.svg");
-          background-repeat: no-repeat;
-          position: absolute;
-          width: 1.7vw;
-          height: 1.7vw;
-          background-size: cover;
-        }
-        .crosspic {
-          position: absolute;
-          width: 1.7vw;
-          height: 1.7vw;
-          background: url("images/cross.svg");
-          background-size: cover;
-          background-repeat: no-repeat;
-        }
-        .more:hover .open {
-          background: url("images/openyellow.svg");
-          background-size: contain;
-          background-repeat: no-repeat;
-        }
-        .strike {
-      position: relative;
-      display: inline-block;
-        }
-        .strike p:hover {
-          color: #8C56B6
-        }
-        .strike::before {
-          content: '';
-          border-bottom: 0.3vw solid #FFCD00;
-          width: 100%;
-          position: absolute;
-          right: 0;
-          top: calc(2.22vh + 0.4rem);
-        }
-        a:hover {
-          color: #FFCD00;
-        }
-    </style>
   </head>
   <body>
     <div class="m">
@@ -422,7 +132,8 @@
 
     <div class="container">
       <div class="header">
-        <h1>концепция нашего ресторана</h1>
+        <h1 id="desk">концепция нашего ресторана</h1>
+        <h1 id="ph">наша концепция</h1>
       </div>
       <div class="steps">
         <div class="wrapper a hov">
@@ -464,10 +175,46 @@
         </div>
         <div class="cross none">
           <div class="crosspic">
-
           </div>
         </div>
       </div>
     </div>
   </body>
+
+  <div class="rooms">
+    <div class="appear">
+      <div class="trick">
+        <p>&mdash; </p>
+        <p>&mdash; </p>
+        <p>&mdash; </p>
+        <p>&mdash; </p>
+        <p>&mdash; </p>
+        <p>&mdash; </p>
+      </div>
+      <div class="text">
+        <a href="about.html"><p>о нас</p></a>
+        <a href="story.html"><p>история</p></a>
+        <a href="menu2.html"><p>меню</p></a>
+        <a href="events.html"><p>афиша</p></a>
+        <a href="book.html"><p>бронь</p></a>
+        <a href="game.html"><p>секрет</p></a>
+      </div>
+    </div>
+  </div>
+  <div class="mobile">
+    <div class="mobcont">
+      <div class="black2">
+        <p><a href="index.html">boomshh</a></p>
+      </div>
+      <p class="razdel">разделы</p>
+      <div class="lines">
+        <div class="line lina"></div>
+        <div class="line linb"></div>
+        <div class="line linc"></div>
+        <div class="line lind"></div>
+        <div class="line linee"></div>
+        <div class="line linf"></div>
+      </div>
+    </div>
+  </div>
 </html>
