@@ -364,7 +364,7 @@
     height: 100%;
     width: 100%;
     background-color: black;
-    display: none;
+    /* display: none; */
   }
   .appear {
     position: absolute;
@@ -373,18 +373,21 @@
     top: calc(52% - 39vh);
     background-color: black;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
   }
   .appear p {
     line-height: 446%;
-    text-align: center;
   }
   .mobfood {
     display: none;
   }
   #phones {
     display: none;
+  }
+  .zero {
+    width: 0px;
   }
 
   /* responsive */
@@ -452,5 +455,5 @@
     }
     .tabs {
     height: 10.9vw;
-}
+  }
   }

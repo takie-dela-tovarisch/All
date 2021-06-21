@@ -11,14 +11,17 @@
       $( document ).ready(function() {
         $(".lines").click(function(){
           $(".rooms").slideToggle();
-          $(".lina").toggleClass("linan");
-          $(".linb").toggleClass("linbn");
-          $(".linc").toggleClass("lincn");
-          $(".lind").toggleClass("lindn");
-          $(".linee").toggleClass("lineen");
-          $(".linf").toggleClass("linfn");
+          $(".lina, .linb, .linc, .lind, .linee, .linf").toggleClass("zero");
+
+          // $(".lina").toggleClass("linan");
+          // $(".linb").toggleClass("linbn");
+          // $(".linc").toggleClass("lincn");
+          // $(".lind").toggleClass("lindn");
+          // $(".linee").toggleClass("lineen");
+          // $(".linf").toggleClass("linfn");
           setTimeout(function(){
             $(".razdel").show();
+            $(".lina, .linb, .linc, .lind, .linee, .linf").toggle();
           }, 300);
         });
 
@@ -30,12 +33,12 @@
                   }else{
                       $('.rooms').slideUp();
                       // $(".razdel").toggle();
-                      $(".lina").removeClass("linan");
-                      $(".linb").removeClass("linbn");
-                      $(".linc").removeClass("lincn");
-                      $(".lind").removeClass("lindn");
-                      $(".linee").removeClass("lineen");
-                      $(".linf").removeClass("linfn");
+                      // $(".lina").removeClass("linan");
+                      // $(".linb").removeClass("linbn");
+                      // $(".linc").removeClass("lincn");
+                      // $(".lind").removeClass("lindn");
+                      // $(".linee").removeClass("lineen");
+                      // $(".linf").removeClass("linfn");
                       setTimeout(function(){
                         $(".razdel").hide();
                       }, 300);
@@ -430,12 +433,23 @@
 
   <div class="rooms">
     <div class="appear">
-      <a href="about.html"><p>о нас</p></a>
-      <a href="story.html"><p>история</p></a>
-      <a href="menu.html"><p>меню</p></a>
-      <a href="events.html"><p>афиша</p></a>
-      <a href="book.html"><p>бронь</p></a>
-      <a href="game.html"><p>секрет</p></a>
+      <div class="trick">
+        <p>&mdash; </p>
+        <p>&mdash; </p>
+        <p>&mdash; </p>
+        <p>&mdash; </p>
+        <p>&mdash; </p>
+        <p>&mdash; </p>
+      </div>
+      <div class="text">
+        <a href="about.html"><p>о нас</p></a>
+        <a href="story.html"><p>история</p></a>
+        <a href="menu.html"><p>меню</p></a>
+        <a href="events.html"><p>афиша</p></a>
+        <a href="book.html"><p>бронь</p></a>
+        <a href="game.html"><p>секрет</p></a>
+      </div>
+
     </div>
   </div>
   <div class="mobile">
