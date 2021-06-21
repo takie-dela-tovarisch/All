@@ -18,24 +18,30 @@
           $(".linee").toggleClass("lineen");
           $(".linf").toggleClass("linfn");
           setTimeout(function(){
-            $(".razdel").fadeToggle(1000);
-
-            $('body').click(function(e) {
-                    var target = $(e.target);
-                      if(target.is(".appear a")){
-                      }else{
-                          $('.rooms').slideToggle();
-                          $(".razdel").fadeToggle(1000);
-                          $(".lina").toggleClass("linan");
-                          $(".linb").toggleClass("linbn");
-                          $(".linc").toggleClass("lincn");
-                          $(".lind").toggleClass("lindn");
-                          $(".linee").toggleClass("lineen");
-                          $(".linf").toggleClass("linfn");
-                      }
-                });
+            $(".razdel").show();
           }, 300);
         });
+
+
+        $('body').click(function(e) {
+                var target = $(e.target);
+                if ($('.razdel').is(':visible')) {
+                  if(target.is(".appear a")){
+                  }else{
+                      $('.rooms').slideUp();
+                      // $(".razdel").toggle();
+                      $(".lina").removeClass("linan");
+                      $(".linb").removeClass("linbn");
+                      $(".linc").removeClass("lincn");
+                      $(".lind").removeClass("lindn");
+                      $(".linee").removeClass("lineen");
+                      $(".linf").removeClass("linfn");
+                      setTimeout(function(){
+                        $(".razdel").hide();
+                      }, 300);
+                  }
+                }
+            });
 
 
 
@@ -236,6 +242,9 @@
         </div>
         <div class="content closed one">
           <h3>Все блюда нашего ресторана приготовлены опытными вулканическими поварами на&nbsp;магме, привезённой с&nbsp;Везувия.</h3>
+          <div class="mobfood">
+            <h2>Главные блюда</h2>
+          </div>
           <div class="food">
             <h2>Главные блюда</h2>
             <div class="name">

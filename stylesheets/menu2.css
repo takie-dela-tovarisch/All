@@ -371,6 +371,9 @@
     line-height: 446%;
     text-align: center;
   }
+  .mobfood {
+    display: none;
+  }
 
   /* responsive */
 
@@ -394,4 +397,36 @@
     .open {
       right: 4vw;
     }
+    .food h2 {
+    line-height: 5.67vw;
+    }
+    .name p, .price p {
+    line-height: 6.2vw;
+    }
+    .content {
+    position: relative;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    }
+    .mobfood {
+    display: block;
+    font-family: PT Mono;
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #E0E0E0;
+    margin-bottom: 8.3vw;
+    width: 100%;
+}
+    .food h2 {
+      display: none;
+    }
+    .food {
+      justify-content: space-between;
+    }
+    .name {
+    width: 68.82vw;
+    }
+    .tab {
+    height: 26.1vw;
+}
   }
