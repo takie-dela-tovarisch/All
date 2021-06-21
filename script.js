@@ -1,4 +1,19 @@
 
+if (screen.width < 768) {
+	$('.svede').click(function(){
+			$('#ustal').slideDown();
+			$(this).css('height', '13.92vh');
+			$(".svede h1").addClass("communism");
+	})
+	$('.svoda').click(function(){
+			$('#ustala').slideDown();
+			$(this).css('height', '13.92vh');
+			$(".svoda h1").addClass("communism");
+	})
+	}
+
+
+
 $('.option_2').click(function(){
 	$('.select_text_2').html($(this).attr('id'));
 	$('#svolo option[value='+$(this).attr('id')+']').prop('selected', true);

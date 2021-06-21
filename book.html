@@ -4,962 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/book.css">
     <title>Бронь</title>
-<script type="text/javascript">
-
-</script>
-    <style media="screen">
-    body {
-      width: 100vw;
-      margin: 0 auto;
-      display: block;
-      position: relative;
-      overflow: auto;
-      background-color: black;
-      padding-top: 8.89vh;
-      padding-bottom: 0;
-    }
-    * {
-      text-decoration: none;
-    }
-    a {
-      color: #8C56B6;
-    }
-      .m {
-        width: 100%;
-        height: 7.44vh;
-        margin-top: 0 auto;
-        display: inline-block;
-        position: fixed;
-        background-color: black;
-        top: 0;
-        z-index: 1;
-      }
-      .pages {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0;
-      }
-      .s {
-        height: 7.44vh;
-        margin-left: 2.78vw;
-        margin-right: 2.78vw;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: baseline;
-        font-family: 'PT Mono', monospace;
-        color: #8C56B6;
-      }
-      .black:hover a {
-        color: #FFCD00;
-      }
-      .s p:hover {
-        color: #FFCD00;
-      }
-      .other {
-        margin: 0 auto;
-      }
-      .pages p {
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        letter-spacing: 0.07em;
-        margin-top: 2.22vh;
-      }
-      .black {
-        height: 7.44vh;
-        width: 8.747em;
-        text-transform: uppercase;
-        font-size: 1.3rem;
-        letter-spacing: 0.07em;
-      }
-      .white {
-        height: 7.44vh;
-        width: 59.51vw;
-      }
-
-      .container {
-        position: relative;
-        margin-left: 2.78vw;
-        margin-right: 2.78vw;
-        border: 1px solid #8C56B6;
-        /* height: 84.29vh; */
-        display: flex;
-        flex-direction: column;
-      }
-      .header {
-        display: block;
-        height: 13.92vh;
-        width: 100%;
-      }
-      .header h1 {
-        position: relative;
-        font-size: 1.9rem;
-        font-family: PT Mono;
-        font-weight: normal;
-        line-height: 2.5vw;
-        color: #E0E0E0;
-        margin-top: calc(6.5vh - 1.25vw);
-        margin-left: 2.78vw;
-      }
-
-      input[type="text"] {
-      display: block;
-      position: relative;
-      padding: 0 18px;
-      border: 1px solid #8C56B6;
-      background: black;
-      color: #E0E0E0;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 1em;
-      font-family: Open Sans;
-      width: 100%;
-      box-sizing: border-box;
-      height: 100%;
-      transition: border 0.5s ease;
-      }
-      input[type="text"]:focus {
-        border: 1px solid #FFCD00;
-      }
-      ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: #8C8C8C;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 1.18vw;
-        font-family: Open Sans;
-      }
-      select {
-        display: block;
-        width: 45%;
-        position: relative;
-        height: 46px;
-        padding: 0 18px;
-        font-size: 17px;
-        border: 1px solid #8C56B6;
-        background: black;
-        color: #E0E0E0;
-        font-family: Open Sans;
-      }
-      .marginal {
-        margin-left: 2.78vw;
-        margin-right: 2.78vw;
-      }
-      .row {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 2.22vw;
-      }
-
-/* new one */
-
-form {
-  /* width: 31.26%; */
-  color: #E0E0E0;
-  font-family: Open Sans;
-}
-
-#nights, #sudba {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  height: 5.3vh;
-  background-color: black;
-  border: 1px solid #8C56B6;
-  color: #8d90a2;
-}
-
-.select {
-/* font-size: 20px !important; */
-/* color: #071933; */
-transition: color .2s ease-in-out;
--webkit-transition: color .2s ease-in-out;
-}
-
-#nights:hover > .select {
-color: #dfbe65;
-}
-
-.select_text, .select_text_2 {
-font-style: normal;
-font-weight: 300;
-font-size: 1em;
-font-family: Open Sans;
-      color: #8C8C8C;
-padding-left: 18px;
-}
-.open {
-  position: relative;
-  width: 0.6rem;
-  height: 0.6rem;
-  padding-right: 18px;
-}
-.up {
-  position: absolute;
-  background: url(images/open.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: transform 0.5s ease;
-  width: inherit;
-  height: inherit;
-}
-
-/* WARNING:  */
-.mur {
-  position: absolute;
-  background: url(images/open.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: transform 0.5s ease;
-  width: inherit;
-  height: inherit;
-}
-/* WARNING:  */
-
-.closed {
-  transform: rotate(180deg);
-}
-.mew {
-  transform: rotate(0deg);
-}
-ul#night_option {
-width: 100%;
-background-color: black;
-border-left: 1px solid #8C56B6;
-border-right: 1px solid #8C56B6;
-position: absolute;
-z-index: 10;
-display: none;
-box-sizing: border-box;
-}
-
-ul.wow {
-width: 18.7vw;
-background-color: black;
-border-left: 1px solid #8C56B6;
-border-right: 1px solid #8C56B6;
-/* position: absolute; */
-z-index: 10;
-width: 100%;
-position: absolute;
-box-sizing: border-box;
-
-}
-.none {
-  display: none;
-}
-.block {
-  display: block;
-}
-ul#night_option li, ul.wow li {
-font-family: Open Sans;
-font-style: normal;
-font-weight: 300;
-font-size: 1em;
-color: #E0E0E0;
-padding-left: 18px;
-text-decoration: none;
-list-style: none;
-border-bottom: 1px solid #8C56B6;
-height: 5.11vh;
-display: flex;
-align-items: center;
-text-align: right;
-transition: background-color .2s ease-in-out;
--webkit-transition: background-color .2s ease-in-out;
-cursor: pointer;
-}
-
-#nights:hover .up {
-  background: url("images/openactive.svg");
-  background-size: contain;
-  width: 0.6rem;
-  height: 0.6rem;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: transform 0.5s ease;
-}
-
-/* WARNING:  */
-#sudba:hover .mur {
-  background: url("images/openactive.svg");
-  background-size: contain;
-  width: 0.9vw;
-  height: 0.9vw;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: transform 0.5s ease;
-}
-/* WARNING:  */
-
-
-
-#nights:hover .select_text {
-  color: #8C56B6;
-}
-#sudba:hover .select_text_2 {
-  color: #8C56B6;
-}
-ul#night_option li:hover {
-background-color: #8C56B6;
-}
-#nightselect, #svolo {
-display: none;
-}
-ul.wow li:hover {
-background-color: #8C56B6;
-}
-
-
-/* new new */
-#phone-input {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  height: 5.67vh;
-  background-color: black;
-  border: 1px solid #8C56B6;
-  color: #8d90a2;
-  /* color: #E0E0E0; */
-  font-family: Open Sans;
-  width: 100%;
-  padding-left: 18px;
-  box-sizing: border-box;
-  cursor: text;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1em;
-  font-family: Open Sans;
-}
-#ph {
-  position: relative;
-    width: 100%;
-}
-
-.nana {
-  position: relative;
-          margin-right: 2.22vw;
-          width: 100%;
-          height: 5.67vh;
-          display: flex;
-              align-items: center;
-}
-.sur {
-  position: relative;
-          width: 100%;
-          height: 5.67vh;
-          display: flex;
-              align-items: center;
-}
-.zozo {
-  position: relative;
-}
-.zozoo {
-  width: 27.5%;
-}
-.tele {
-  width: 70%;
-    margin-right: 2.22vw;
-}
-
-.float {
-  transition: all 0.8s ease;
-}
-.done {
-  transition: all 0.8s ease;
-  left: auto;
-  right: 5%;
-  font-size: 0.7em;
-  opacity: 1;
-  color: #8C8C8C;
-  font-weight: 300;
-  font-family: Open Sans;
-  position: absolute;
-  display: none;
-}
-
-input:focus ~ .float,
-input:not(:focus):valid ~ .floating-label{
-  /* top: 8px; */
-  /* bottom: 10px; */
-  left: auto;
-  right: 5%;
-  font-size: 0.7em;
-  opacity: 1;
-}
-
-label {
-  color: #8C8C8C;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1em;
-  font-family: Open Sans;
-  position: absolute;
-  /* top: calc(50% - 6px); */
-  left: 18px;
-}
-#secondone {
-  margin-bottom: 3.89vw;
-}
-.have, .pred {
-  font-family: PT Mono;
-font-style: normal;
-font-weight: normal;
-color: #E0E0E0;
-font-size: 1em;
-}
-.send {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#thelast {
-margin-bottom: 6.5vh;
-}
-.send:hover {
-  background-color: #8C56B6;
-}
-.button {
-  font-family: PT Mono;
-font-style: normal;
-font-weight: normal;
-color: #E0E0E0;
-font-size: 1em;
-cursor: pointer;
-}
-.kids p {
-  color: #757575;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1em;
-    font-family: Open Sans;
-    position: relative;
-    left: 0;
-    margin-right: 2vw;
-}
-.maybe {
-  position: absolute;
-    width: 25.9%;
-    box-sizing: border-box;
-    /* width: 100%; */
-position: absolute;
-
-}
-.wow {
-  position: absolute;
-  width: 18.5vw;
-  box-sizing: border-box;
-
-}
-#stable {
-  color: #8C8C8C;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1em;
-    font-family: Open Sans;
-    position: relative;
-    left: 0;
-}
-.kids {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.kid {
-  background: url("images/kids.svg");
-  height: 7vh;
-  width: 4.69vw;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-right: 0.8vw;
-}
-.pets {
-  background: url("images/pets.svg");
-  height: 7vh;
-  width: 4.3vw;
-  background-size: contain;
-  background-repeat: no-repeat;
-
-}
-#many {
-  align-items: center;
-  margin-bottom: 6.67vh;
-}
-
-/* new */
-
-
-
-
-.custom_radio{
-display: flex;
-flex-direction: row;
-margin-left: -36px;
-}
-.custom_radio_2 {
-  display: flex;
-  flex-direction: row;
-  margin-left: 0px;
-  cursor: pointer;
-}
-.custom_radio input[type="radio"]{
-  display: none;
-}
-.custom_radio_2 input[type="checkbox"]{
-  display: none;
-}
-.yes {
-  height: 7vh;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.no {
-  height: 7vh;
-  display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-.custom_radio input[type="radio"] + label{
-  position: relative;
-  display: inline-block;
-  padding-left: 10vh;
-  margin-right: 5.1vw;
-  /* cursor: pointer; */
-  /* line-height: 1em; */
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.custom_radio_2 input[type="checkbox"] + label{
-  position: relative;
-  display: inline-block;
-  padding-left: 4vh;
-  margin-right: 5.1vw;
-  line-height: 3.67vh;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-}
-.custom_radio input[type="radio"] + label:before,
-.custom_radio input[type="radio"] + label:after{
-  content: '';
-  position: absolute;
-  top: -3vh;
-  left: 0;
-  width: 7vh;
-  height: 7vh;
-  text-align: center;
-  border-radius: 50%;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  cursor: pointer;
-}
-.custom_radio_2 input[type="checkbox"] + label:before,
-.custom_radio_2 input[type="checkbox"] + label:after{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -1.6vw;
-  width: 3.67vh;
-  height: 3.67vh;
-  text-align: center;
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-    cursor: pointer;
-}
-
-.custom_radio input[type="radio"] + label:before {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  box-shadow: inset 0 0 0 1px #8C56B6, inset 0 0 0 1em black;
-}
-.custom_radio_2 input[type="checkbox"] + label:before {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  box-shadow: inset 0 0 0 1px #8C56B6, inset 0 0 0 1em black;
-}
-
-.custom_radio input[type="radio"] + label:hover:before {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  box-shadow: inset 0 0 0 15px black;
-  background-color: #8C56B6;
-}
-.custom_radio_2 input[type="checkbox"] + label:hover:before {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  box-shadow: inset 0 0 0 10px black;
-  background-color: #8C56B6;
-}
-
-.custom_radio input[type="radio"]:checked + label:before {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  box-shadow: inset 0 0 0 1px #8C56B6, inset 0 0 0 10px black;
-  background-color: #FFCD00;
-}
-.custom_radio_2 input[type="checkbox"]:checked + label:before {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  box-shadow: inset 0 0 0 1px #8C56B6, inset 0 0 0 6px black;
-  background-color: #FFCD00;
-}
-.rule {
-  width: 100%;
-}
-#mmmm {
-  margin-right: 2.22vw;
-  position: relative;
-}
-.checkbox-button {
-  cursor: pointer;
-}
-
-input[type=checkbox] {
-    box-sizing: border-box;
-    padding: 0;
-}
-
-input {
-    font-size: 1rem;
-    line-height: 1.5;
-    padding: 11px 23px;
-    border: 1px solid rgba(0,0,0,.15);
-    border-radius: 0;
-    outline: 0;
-    background-color: transparent;
-}
-
-.checkbox-button__input {
-    opacity: 0;
-    position: absolute;
-    left: 0;
-}
-
-.checkbox-button__control {
-    position: relative;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-    vertical-align: middle;
-    background-color: inherit;
-    color: #017b5f;
-    border: 2px solid #8C56B6;
-    margin-left: 10px;
-}
-
-.checkbox-button__input:checked+.checkbox-button__control:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 10px;
-    height: 10px;
-    background-color: #FFCD00;
-}
-
-.checkbox-button__input:checked+.checkbox-button__control {
-    border-color: #8C56B6;
-}
-
-.checkbox-button__control {
-  transform: scale(0.75);
-}
-.send {
-  height: 5.67vh;
-  width: 100%;
-  border: 1px solid #8C56B6;
-}
-#ah {
-  margin-top: 20px;
-}
-#appt {
-  display: block;
-  position: relative;
-  width: 100%;
-  padding: 0;
-  padding-left: 18px;
-  height: 5.5vh;
-  background-color: black;
-  border: 1px solid #8C56B6;
-  color: #E0E0E0;
-  box-sizing: border-box;
-  cursor: text;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 1em;
-  font-family: Open Sans;
-}
-.time {
-  width: 100%;
-  position: relative;
-}
-input[type="time"]::-webkit-calendar-picker-indicator {
-    background: none;
-}
-.timing {
-  position: absolute;
-  color: #8C8C8C;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1em;
-    font-family: Open Sans;
-    left: 0px;
-    top: 1px;
-    left: 18px;
-    line-height: 5vh;
-    transition: all 0.8s ease;
-    background-color: black;
-    width: 5vw;
-    height: 90%;
-}
-input:focus ~ .timing,
-input:not(:focus):valid ~ .floating-label{
-  left: auto;
-  right: 3%;
-  font-size: 0.7em;
-  opacity: 1;
-}
-#appt:focus {
-    color: #E0E0E0;
-}
-#meh {
-  margin-bottom: 6.22vh;
-}
-
-#hehe {
-  margin-bottom: 3vh;
-}
-.adress, .facebook, .tripadvisor {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 5.5vh;
-  width: 100%;
-  transition: all 0.5s ease;
-  border: 1px solid #8C56B6;
-  cursor: pointer;
-}
-.crosspic {
-  margin-right: 18px;
-  position: relative;
-  width: 1vw;
-  height: 1vw;
-  background: url("images/cross.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  cursor: pointer
-}
-.adress:hover .crosspic {
-  margin-right: 18px;
-  position: relative;
-  width: 1vw;
-  height: 1vw;
-  background: url("images/crossyellow.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.telephone, .afisharu {
-  display: flex;
-  align-items: center;
-  height: 5.5vh;
-  width: 100%;
-  border: 1px solid #8C56B6;
-  transition: all 0.5s ease;
-  cursor: pointer;
-  margin-right: 2.22vw;
-}
-#haha a {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.gmail {
-  display: flex;
-  align-items: center;
-  height: 5.5vh;
-  width: 70%;
-  border: 1px solid #8C56B6;
-  transition: all 0.5s ease;
-  cursor: pointer;
-  margin-right: 2.22vw;
-}
-.telegram {
-  width: 27.5%;
-  display: flex;
-  align-items: center;
-  height: 5.5vh;
-  border: 1px solid #8C56B6;
-  cursor: pointer;
-  transition: all 0.5s ease;
-
-}
-.instagram {
-  width: 27.5%;
-  display: flex;
-  align-items: center;
-  height: 5.5vh;
-  border: 1px solid #8C56B6;
-  margin-right: 2.22vw;
-  cursor: pointer;
-  transition: all 0.5s ease;
-
-}
-.messanger {
-  display: flex;
-  align-items: center;
-  height: 5.5vh;
-  width: 70%;
-  border: 1px solid #8C56B6;
-  cursor: pointer;
-  transition: all 0.5s ease;
-}
-.adress p, .telephone p, .gmail p, .instagram p, .afisharu p {
-  color: #8C8C8C;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1em;
-    font-family: Open Sans;
-    position: relative;
-    /* top: calc(50% - 6px); */
-    margin-left: 18px;
-}
-.facebook p, .telegram p, .messanger p, .tripadvisor p {
-  color: #8C8C8C;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1em;
-    font-family: Open Sans;
-    position: relative;
-  margin-left: auto;
-  margin-right: 18px;
-}
-.adress:hover, .telephone:hover, .facebook:hover, .gmail:hover, .telegram:hover, .instagram:hover, .messanger:hover, .afisharu:hover, .tripadvisor:hover {
-  background-color: #8C56B6;
-}
-.adress:hover p, .telephone:hover p, .facebook:hover p, .gmail:hover p, .telegram:hover p, .instagram:hover p, .messanger:hover p, .afisharu:hover p, .tripadvisor:hover p {
-  color: #E0E0E0;
-}
-.copyright {
-    color: #757575;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 0.8em;
-    font-family: Open Sans;
-    position: relative;
-    margin-bottom: 6.5vh;
-}
-#haha {
-  margin-bottom: 7vh;
-}
-.map {
-  top: 19.74vh;
-  width: 94.1%;;
-  position: absolute;
-  height: 54%;
-}
-.yandex {
-  width: 100%;
-  height: 100%;
-}
-.strike {
-position: relative;
-display: inline-block;
-}
-.strike p:hover {
-  color: #8C56B6
-}
-.strike::before {
-  content: '';
-  border-bottom: 0.3vw solid #FFCD00;
-  width: 100%;
-  position: absolute;
-  right: 0;
-  top: calc(2.22vh + 0.4rem);
-}
-.popup {
-  width: 50vw;
-  height: 44vh;
-  background-color: #8C56B6;
-  position: fixed;
-  top: calc(52% - 22vh);
-  left: calc(50% - 25vw);
-  display: none;
-}
-.popup h1 {
-  position: relative;
-    font-size: 1.9rem;
-    font-family: PT Mono;
-    font-weight: normal;
-    line-height: 2.5vw;
-    color: #E0E0E0;
-    margin-top: calc(6.5vh - 1.25vw);
-    margin-left: 2.78vw;
-    margin-bottom: calc(6.5vh - 1.25vw);
-}
-.h_c {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-#pop {
-  margin-right: 2.78vw;
-  width: 1.5vw;
-  height: 1.5vw;
-}
-#pop:hover {
-  margin-right: 2.78vw;
-  position: relative;
-  width: 1.5vw;
-  height: 1.5vw;
-  background: url("images/crossyellow.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.popup p {
-  color: #E0E0E0;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 1rem;
-    font-family: Open Sans;
-    position: relative;
-    line-height: 2vw;
-    margin-left: 2.78vw;
-}
-.popbg {
-  background-color: black;
-  opacity: 0.5;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  backdrop-filter: blur(8px);
-  display: none;
-}
-.popup span {
-  text-decoration: underline #FFCD00;
-}
-a:hover {
-  color: #FFCD00;
-}
-.strike a:hover {
-  color: #8C56B6;
-}
-.suchara {
-  transform: scale(2);
-}
-    </style>
   </head>
   <body>
     <div class="m">
@@ -983,10 +29,11 @@ a:hover {
     </div>
 
     <div class="container" id="hehe">
-      <div class="header">
-        <h1>забронируйте столик</h1>
+      <div class="header svede">
+        <h1 id="desk">забронируйте столик</h1>
+        <h1 class="aaaaa">бронь столика</h1>
       </div>
-      <div class="marginal">
+      <div class="marginal" id="ustal">
         <div class="row">
           <div class="nana">
             <input type="text" name="" value="" id="name" required>
@@ -1000,7 +47,7 @@ a:hover {
           </div>
         </div>
 
-        <div class="row" id="secondone">
+        <div class="row desk" id="secondone">
           <div class="tele">
             <form id="ph">
             <input id="phone-input" type="tel" value="" name="PhoneIn" aria-label="Please enter your phone number" placeholder="8 (  )">
@@ -1041,6 +88,53 @@ a:hover {
       <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
         </div>
 
+        <div class="row mobik">
+          <div class="tele">
+            <form id="ph">
+            <input id="phone-input" type="tel" value="" name="PhoneIn" aria-label="Please enter your phone number" placeholder="8 (  )">
+            </form>
+          </div>
+
+
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script><script  src="./script.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+        </div>
+
+        <div class="row mobik" id="secondone">
+<div class="zozoo">
+  <form action="#" id="zozo">
+<select id="nightselect" name="nights">
+          <option value="Основной зал">Основной зал</option>
+          <option value="Барная зона">Барная зона</option>
+          <option value="Десертная зона">Десертная зона</option>
+          <option value="Детская">Детская</option>
+          <option value="Терасса">Терасса</option>
+        </select>
+          <div id="nights">
+            <div class="select_text">Выберите зону</div>
+            <div class="open"> <div class="up upper">
+
+            </div>
+          </div>
+        </div>
+        <div class="maybe">
+          <ul id="night_option">
+            <li class="option" id="Основной зал">Основной зал</li>
+            <li class="option" id="Барная зона">Барная зона</li>
+            <li class="option" id="Десертная зона">Десертная зона</li>
+            <li class="option" id="Детская">Детская</li>
+            <li class="option" id="Терасса">Терасса</li>
+          </ul>
+        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script><script  src="./script.js"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+</form>
+</div>
+
+
+
+        </div>
+
 <div class="row" id="many">
   <p class="have">Дети*</p>
   <div class="custom_radio">
@@ -1060,7 +154,7 @@ a:hover {
   </div>
 </div>
 
-<div class="row" id="meh">
+<div class="row desk" id="meh">
   <div class="zozoo" id="mmmm">
     <form action="#" id="zozo">
   <select id="svolo" name="oh">
@@ -1072,6 +166,43 @@ a:hover {
           </select>
             <div id="sudba" class="skoka">
               <div class="select_text_2">Кол-во гостей</div>
+              <div class="open"> <div class="mur mew">
+              </div>
+            </div>
+          </div>
+          <div class="maybe_2">
+            <ul class="wow none">
+              <li class="option_2" id="1-2">1-2</li>
+              <li class="option_2" id="3-4">3-4</li>
+              <li class="option_2" id="5-6">5-6</li>
+              <li class="option_2" id="7-8">7-8</li>
+              <li class="option_2" id="8+">8+</li>
+            </ul>
+          </div>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script><script  src="./script.js"></script>
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
+  </form>
+  </div>
+
+  <div class="time">
+    <input type="time" id="appt" name="appt"
+       min="08:00" max="23:00" required>
+    <label for="appt" class="timing">Время</label>
+  </div>
+</div>
+
+<div class="row mobik" id="meh">
+  <div class="zozoo" id="mmmm">
+    <form action="#" id="zozo">
+  <select id="svolo" name="oh">
+            <option value="1-2">1-2</option>
+            <option value="3-4">3-4</option>
+            <option value="5-6">5-6</option>
+            <option value="7-8">7-8</option>
+            <option value="8+">8+</option>
+          </select>
+            <div id="sudba" class="skoka">
+              <div class="select_text_2">Гости</div>
               <div class="open"> <div class="mur mew">
               </div>
             </div>
@@ -1116,10 +247,10 @@ a:hover {
     </div>
 
     <div class="container" id="haha">
-      <div class="header">
+      <div class="header svoda">
         <h1>как нас найти</h1>
       </div>
-      <div class="marginal">
+      <div class="marginal" id="ustala">
         <div class="row">
           <div class="adress">
             <p>г. Москва, Пятницкая улица, д.10, с.3</p>
@@ -1132,7 +263,7 @@ a:hover {
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script><script  src="./script.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
 
-        <div class="row">
+        <div class="row" id="desk">
           <div class="telephone">
             <a href="tel:+7800553535">
             <p>+7 (800) 555–35–35</p>
@@ -1145,7 +276,25 @@ a:hover {
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="mobik">
+          <!-- <div class="telephone">
+            <a href="tel:+7800553535">
+            <p>+7 (800) 555–35–35</p>
+          </a>
+          </div> -->
+          <div class="instagram">
+            <a href="404.html">
+            <p>instagram</p>
+            </a>
+          </div>
+          <div class="facebook">
+            <a href="404.html">
+            <p>facebook</p>
+          </a>
+          </div>
+        </div>
+
+        <div class="row" id="desk">
           <div class="gmail">
             <a href="mailto:boomshh_contact@gmail.com">
             <p>boomshh_contact@gmail.com</p>
@@ -1158,10 +307,31 @@ a:hover {
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="mobik">
+          <div class="gmail">
+            <a href="mailto:boomshh_contact@gmail.com">
+            <p>boomshh_contact@gmail.com</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="row" id="desk">
           <div class="instagram">
             <a href="404.html">
             <p>instagram</p>
+            </a>
+          </div>
+          <div class="messanger">
+            <a href="404.html">
+            <p>messanger</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="row" id="mobik">
+          <div class="telegram">
+            <a href="404.html">
+            <p>telegram</p>
             </a>
           </div>
           <div class="messanger">
@@ -1213,6 +383,45 @@ a:hover {
       <br>
       <p>Спасибо, что выбрали наш ресторан!<З</p>
       <div id="afterr"></div>
+    </div>
+
+    <div class="rooms">
+      <div class="appear">
+        <div class="trick">
+          <p>&mdash; </p>
+          <p>&mdash; </p>
+          <p>&mdash; </p>
+          <p>&mdash; </p>
+          <p>&mdash; </p>
+          <p>&mdash; </p>
+        </div>
+        <div class="text">
+          <a href="about.html"><p>о нас</p></a>
+          <a href="story.html"><p>история</p></a>
+          <a href="menu2.html"><p>меню</p></a>
+          <a href="events.html"><p>афиша</p></a>
+          <a href="book.html"><p>бронь</p></a>
+          <a href="game.html"><p>секрет</p></a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile">
+      <div class="mobcont">
+        <div class="black2">
+          <p><a href="index.html">boomshh</a></p>
+        </div>
+        <p class="razdel">разделы</p>
+        <div class="lines">
+          <div class="line lina"></div>
+          <div class="line linb"></div>
+          <div class="line linc"></div>
+          <div class="line lind"></div>
+          <div class="line linee"></div>
+          <div class="line linf"></div>
+        </div>
+      </div>
+      <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script><script  src="./script.js"></script> -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./mobile.js"></script>
     </div>
   </body>
 </html>
