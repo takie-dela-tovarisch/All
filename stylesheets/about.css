@@ -114,7 +114,7 @@ top: calc(2.22vh + 0.4rem);
   line-height: 9.96vh;
   color: #E0E0E0;
   transition: 0.5s ease all;
-  
+
 }
 
 #middle {
@@ -692,7 +692,7 @@ background-attachment: fixed;
 .noteb {
     width: 84.24vw;
   }
-  .rel, .last, #a, .promo{
+  .rel, #a, .promo{
     display: none;
   }
   .inthe {
