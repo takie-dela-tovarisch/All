@@ -695,7 +695,7 @@ background-attachment: fixed;
 .noteb {
     width: 84.24vw;
   }
-  .rel, #a, .promo{
+  .rel, #a, .promo, .last{
     display: none;
   }
   .inthe {
@@ -713,9 +713,6 @@ background-attachment: fixed;
  }
 
  @media only screen and (max-width: 375px) {
-   body {
-     background: red;
-   }
     .m {
       display: none;
     }
@@ -771,7 +768,7 @@ background-attachment: fixed;
  .noteb {
      width: 84.24vw;
    }
-   .rel, #a, .promo{
+   .rel, #a, .promo, .last{
      display: none;
    }
    .inthe {
