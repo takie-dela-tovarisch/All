@@ -12,16 +12,8 @@
         $(".lines").click(function(){
           $(".rooms").slideToggle();
           $(".lina, .linb, .linc, .lind, .linee, .linf").toggleClass("zero");
-
-
-          // $(".lina").toggleClass("linan");
-          // $(".linb").toggleClass("linbn");
-          // $(".linc").toggleClass("lincn");
-          // $(".lind").toggleClass("lindn");
-          // $(".linee").toggleClass("lineen");
-          // $(".linf").toggleClass("linfn");
           setTimeout(function(){
-            $(".razdel").show();
+            $(".razdel").toggle();
             $(".lina, .linb, .linc, .lind, .linee, .linf").toggle();
             $(".trick").toggleClass("ten");
           }, 300);
@@ -31,18 +23,14 @@
         $('body').click(function(e) {
                 var target = $(e.target);
                 if ($('.razdel').is(':visible')) {
-                  if(target.is(".appear a")){
+                  if(target.is(".appear a, .lines")){
                   }else{
                       $('.rooms').slideUp();
-                      // $(".razdel").toggle();
-                      // $(".lina").removeClass("linan");
-                      // $(".linb").removeClass("linbn");
-                      // $(".linc").removeClass("lincn");
-                      // $(".lind").removeClass("lindn");
-                      // $(".linee").removeClass("lineen");
-                      // $(".linf").removeClass("linfn");
+                      $(".lina, .linb, .linc, .lind, .linee, .linf").toggle();
                       setTimeout(function(){
                         $(".razdel").hide();
+                        $(".lina, .linb, .linc, .lind, .linee, .linf").toggleClass("zero");
+                        $(".trick").toggleClass("ten");
                       }, 300);
                   }
                 }
