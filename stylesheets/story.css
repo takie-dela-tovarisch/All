@@ -118,8 +118,14 @@
       overflow: hidden;
       transition : border 2s ease-out;
     }
+    .topic {
+      border-top: 1px solid #8C56B6 !important;
+    }
     .hov:hover {
       background-color: #8C56B6;
+    }
+    #mob {
+      display: none;
     }
     .a {
       margin-right: 2.78vw;
@@ -202,6 +208,9 @@
       top: 14%;
       background-repeat: no-repeat;
       background-size: contain;
+    }
+    #mobb {
+      display: none;
     }
     .step h2 {
       position: absolute;
@@ -500,6 +509,26 @@ line-height: 1.5em;
         margin-left: calc(10.75vw - 4vh);
         border-radius: 50%;
     }
+    .info h3, .info p {
+    left: 13.81vw;
+  }
+      #desk {
+        display: none;
+      }
+      #mob {
+        display: block;
+        width: 60.67vw;
+        top: calc(21% + 2.89vh);
+      }
+      #mobb {
+        display: block;
+        width: 60.67vw;
+        top: 3vh;
+      }
+      .more {
+        left: 8.81vw;
+        top: 72%;
+      }
 
 
      }

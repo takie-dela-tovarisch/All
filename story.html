@@ -11,36 +11,54 @@
   <script type="text/javascript">
   $( document ).ready(function() {
 
-    // mobile
-    $(".lines").click(function(){
-      $(".rooms").slideToggle();
-      $(".lina, .linb, .linc, .lind, .linee, .linf").toggleClass("zero");
-      setTimeout(function(){
-        $(".razdel").toggle();
-        $(".lina, .linb, .linc, .lind, .linee, .linf").toggle();
-        $(".trick").toggleClass("ten");
-      }, 300);
+    if (screen.width < 768) {
+      $( ".a, .b" ).removeClass("hov");
+    $(".a").click(function(){
+      if ($('#hehe').is(':visible')) {
+        $('.bog').css('margin-top', 'calc(33.5vh - 29.5vh)')
+        $('.bog').css('margin-right', 'auto')
+        $( ".b" ).fadeIn();
+        $( ".info" ).fadeOut();
+        $('.b').animate({
+          height:'67vh'},1000, "linear", function() {});
+      } else {
+        // alert('notvisibleeee');
+        $('.b').animate({
+          height:'0'},1000, "linear", function() {});
+        $('.bog').css('margin-top', 'calc(72.5vh - 29.5vh)')
+        $('.bog').css('margin-right', '10vw')
+          setTimeout(function(){
+            $( ".b" ).fadeOut();
+            $( ".info" ).fadeIn();
+          }, 800);
+      }
     });
 
+    $(".b").click(function(){
+      if ($('#haha').is(':visible')) {
+        $( ".b" ).removeClass("topic");
 
-    $('body').click(function(e) {
-            var target = $(e.target);
-            if ($('.razdel').is(':visible')) {
-              if(target.is(".appear a, .lines")){
-              }else{
-                  $('.rooms').slideUp();
-                  $(".lina, .linb, .linc, .lind, .linee, .linf").toggle();
-                  setTimeout(function(){
-                    $(".razdel").hide();
-                    $(".lina, .linb, .linc, .lind, .linee, .linf").toggleClass("zero");
-                    $(".trick").toggleClass("ten");
-                  }, 300);
-              }
-            }
-        });
-
-        // mobile
-
+        $('.pant').css('margin-top', 'calc(33.5vh - 29.5vh)');
+        $('.pant').css('margin-right', 'calc(50% - 23.2vw)');
+        $( ".a" ).fadeIn();
+        $( ".info" ).fadeOut();
+        $('.a').animate({
+          height:'67vh'},1000, "linear", function() {});
+      } else {
+        // alert('notvisibleeee');
+        $( ".b" ).addClass("topic");
+        $('.a').animate({
+          height:'0'},1000, "linear", function() {});
+        $('.pant').css('margin-top', 'calc(72.5vh - 29.5vh)')
+        $('.pant').css('margin-right', '-13vw')
+          setTimeout(function(){
+            $( ".a" ).fadeOut();
+            $( ".info" ).fadeIn();
+          }, 800);
+      }
+    });
+}
+else {
 
     $(document).mousemove(function(e) {
     let balls = document.getElementsByClassName("pupil");
@@ -105,6 +123,38 @@
           });
       }, 1000);
     });
+}
+
+    // mobile
+    // $(".lines").click(function(){
+    //   $(".rooms").slideToggle();
+    //   $(".lina, .linb, .linc, .lind, .linee, .linf").toggleClass("zero");
+    //   setTimeout(function(){
+    //     $(".razdel").toggle();
+    //     $(".lina, .linb, .linc, .lind, .linee, .linf").toggle();
+    //     $(".trick").toggleClass("ten");
+    //   }, 300);
+    // });
+    //
+    //
+    // $('body').click(function(e) {
+    //         var target = $(e.target);
+    //         if ($('.razdel').is(':visible')) {
+    //           if(target.is(".appear a, .lines")){
+    //           }else{
+    //               $('.rooms').slideUp();
+    //               $(".lina, .linb, .linc, .lind, .linee, .linf").toggle();
+    //               setTimeout(function(){
+    //                 $(".razdel").hide();
+    //                 $(".lina, .linb, .linc, .lind, .linee, .linf").toggleClass("zero");
+    //                 $(".trick").toggleClass("ten");
+    //               }, 300);
+    //           }
+    //         }
+    //     });
+
+        // mobile
+
 });
   </script>
 
@@ -141,9 +191,11 @@
             <h2 class="s1">1.</h2>
             <div class="info none" id="hehe">
               <h3>история Бога Вулкана</h3>
-              <p>Вулкан&nbsp;&mdash; античный бог разрушительного и&nbsp;очистительного огня. Не&nbsp;являясь одним из&nbsp;12&nbsp;главных богов Пантеона, обладает тем не&nbsp;менее богатой историей. Он&nbsp;&mdash; покровитель этого ресторана и&nbsp;наше вдохновение.
+              <p id="desk">Вулкан&nbsp;&mdash; античный бог разрушительного и&nbsp;очистительного огня. Не&nbsp;являясь одним из&nbsp;12&nbsp;главных богов Пантеона, обладает тем не&nbsp;менее богатой историей. Он&nbsp;&mdash; покровитель этого ресторана и&nbsp;наше вдохновение.
               <br> Каждое лето ресторан Boomshh проводит фестиваль &laquo;Vulcanalia&raquo; в&nbsp;честь бога Вулкана.
              </p>
+             <p id="mob">Вулкан&nbsp;&mdash; античный бог разрушительного и&nbsp;очистительного огня. Он&nbsp;&mdash; покровитель этого ресторана и&nbsp;наше вдохновение.
+            </p>
              <div class="more">
                <div class="open" id="right"></div>
                <h4><a href="https://takie-dela-tovarisch.github.io/MAP/">Узнать больше</a></h4>
@@ -157,8 +209,12 @@
         <div class="step b">
           <h2>2.</h2>
           <div class="info none" id="haha">
-            <h3>история кузниц Вулкана</h3>
-            <p>С&nbsp;приходом римской культуры роль бога Вулкана сильно изменилась. Многие&nbsp;его функции перешли к&nbsp;Гефесту. Сам Вулкан стал покровителем кузнецов. Наша подземная кухня с&nbsp;магматическим шаром вдохновленна историей о&nbsp;кузницах Бога, находящихся под каждой горой. Римляне верили, что вулкан извергается, когда работа кипит.</p>
+            <h3 id="desk">история кузниц Вулкана</h3>
+            <h3 id="mobb">история кузниц</h3>
+
+            <p id="desk">С&nbsp;приходом римской культуры роль бога Вулкана сильно изменилась. Многие&nbsp;его функции перешли к&nbsp;Гефесту. Сам Вулкан стал покровителем кузнецов. Наша подземная кухня с&nbsp;магматическим шаром вдохновленна историей о&nbsp;кузницах Бога, находящихся под каждой горой. Римляне верили, что вулкан извергается, когда работа кипит.</p>
+            <p id="mob">С&nbsp;приходом римской культуры Вулкан стал покровителем кузнецов. Наша подземная кухня с&nbsp;магматическим шаром вдохновленна историей о&nbsp;кузницах Вулкана.</p>
+
            <div class="more">
              <div class="open"></div>
              <h4><a href="https://takie-dela-tovarisch.github.io/MAP/">Узнать больше</a></h4>
