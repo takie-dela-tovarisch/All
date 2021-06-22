@@ -829,4 +829,24 @@ animation: spin infinite linear 5s;
   body {
     overflow: auto;
   }
+  body::before {
+    background: url(../images/mainphone.png);
+    opacity: 0.2;
+    width: 2000%;
+    height: 2000%;
+    background-attachment: fixed;
+  }
+  .one {
+    left: 191px;
+  }
+  #one {
+    left: 191px;
+  }
+  h1 {
+    opacity: 1;
+    width: 46vw;
+  }
+  #thirtyone, #thirty, #thirtyseven, #thirtythree, #twelve, #eleven, #twentyseven, #twentythree, #ten, #nine, #sixteen {
+    display: none;
+  }
   }
