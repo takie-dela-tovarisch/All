@@ -278,8 +278,8 @@ transition: transform 0.5s ease;
 #sudba:hover .mur {
 background: url("../images/openactive.svg");
 background-size: contain;
-width: 0.9vw;
-height: 0.9vw;
+width: 0.6rem;
+height: 0.6rem;
 background-size: contain;
 background-repeat: no-repeat;
 transition: transform 0.5s ease;

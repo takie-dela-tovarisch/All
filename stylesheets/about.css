@@ -639,7 +639,11 @@ background-attachment: fixed;
 
 @media only screen and (max-width: 768px) and (min-width: 376px) {
   .razdel {
-    right: -11vw;
+      position: absolute;
+      right: 4vw;
+      display: none;
+      transition: 1s all ease;
+      text-align: right;
   }
    .m {
      display: none;
