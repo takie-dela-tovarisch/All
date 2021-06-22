@@ -237,7 +237,6 @@ z-index: 10;
 width: 100%;
 position: absolute;
 box-sizing: border-box;
-
 }
 .none {
 display: none;
@@ -556,7 +555,7 @@ cursor: pointer;
 content: '';
 position: absolute;
 top: 0;
-left: -1.6vw;
+left: -11%;
 width: 3.67vh;
 height: 3.67vh;
 text-align: center;
