@@ -832,8 +832,8 @@ animation: spin infinite linear 5s;
   body::before {
     background: url(../images/mainphone.png);
     opacity: 0.2;
-    width: 2000%;
-    height: 2000%;
+    width: 476%;
+    height: 250%;
     background-attachment: fixed;
   }
   .one {
