@@ -1,5 +1,5 @@
 
-if (screen.width < 768) {
+if (screen.width < 769) {
 	$('.svede').click(function(){
 			$('#ustal').slideDown();
 			$(this).css('height', '13.92vh');

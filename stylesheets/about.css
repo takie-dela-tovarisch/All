@@ -578,9 +578,9 @@ background-attachment: fixed;
   color: #8C56B6;
   font-family: 'PT Mono', monospace;
 }
-.appear a:active {
-  color: #FFCD00;
-}
+  .appear a:active {
+    color: #FFCD00;
+  }
   .razdel {
       position: absolute;
       right: 4vw;

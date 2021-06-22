@@ -443,10 +443,11 @@ display: inline-block;
   color: #FFCD00;
 }
 .razdel {
-  position: absolute;
-  right: -18vw;
-  display: none;
-  transition: 1s all ease;
+    position: absolute;
+    right: 4vw;
+    display: none;
+    transition: 1s all ease;
+    text-align: right;
 }
 .rooms {
   position: fixed;
@@ -490,14 +491,24 @@ display: inline-block;
   width: 10%;
 }
 
+
 /* responsive */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 376px) {
+  .header {
+    padding-left: 0;
+  }
+  .black2, .appear, .razdel {
+    font-size: 2rem;
+  }
+  .black2, .razdel {
+    line-height: 8vh;
+  }
    .m {
      display: none;
    }
    html {
-     font-size: 14px;
+     font-size: 15px;
    }
    .square {
      display: none;
@@ -577,3 +588,94 @@ display: inline-block;
     display: none;
   }
  }
+
+ /* iphone */
+
+ @media only screen and (max-width: 375px) {
+    .m {
+      display: none;
+    }
+    html {
+      font-size: 14px;
+    }
+    .square {
+      display: none;
+     width: 12.8vh;
+   }
+    .game {
+      width: 51.3vh;
+    }
+    #desk {
+      display: none;
+    }
+    #mobik {
+      display: block;
+    }
+    .moreinfo p {
+      line-height: 4.5vw;
+      margin-top: calc(1.835vh - 1vw);
+      font-size: 1rem;
+    }
+    .events {
+     margin-left: 4vw;
+     margin-right: 4vw;
+   }
+   .roww {
+     display: flex;
+     flex-direction: row;
+     height: 50%;
+     width: 51.3vh;
+   }
+   .m1 {
+     width: 50%;
+     height: 100%;
+     background: url("../images/m1.png");
+     background-size: cover;
+     transform: rotate(180deg);
+
+   }
+   .m2 {
+     width: 50%;
+     height: 100%;
+     background: url("../images/m2.png");
+     background-size: cover;
+     transform: rotate(180deg);
+
+   }
+   .m3 {
+     width: 50%;
+     height: 100%;
+     background: url("../images/m3.png");
+     background-size: cover;
+     transform: rotate(180deg);
+
+   }
+   .m4 {
+     width: 50%;
+     height: 100%;
+     background: url("../images/m4.png");
+     background-size: cover;
+     transform: rotate(180deg);
+   }
+   .mobdeg {
+     transform: rotate(0deg);
+   }
+   .score {
+     height: 100%;
+     width: 100%;
+   }
+   .redo {
+     width: 51vh;
+   }
+   .redo h1 {
+     width: 52.88vh;
+     line-height: 43.5vw;
+     font-size: 1.9rem;
+   }
+   .ups h4 {
+     display: none;
+   }
+   .header {
+     padding-left: 0;
+   }
+  }

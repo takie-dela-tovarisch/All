@@ -866,7 +866,7 @@ margin-bottom: 7vh;
 top: 19.74vh;
 width: 94.1%;;
 position: absolute;
-height: 54%;
+height: 59%;
 }
 .yandex {
 width: 100%;
@@ -1039,10 +1039,11 @@ transform: scale(2);
   color: #FFCD00;
 }
 .razdel {
-  position: absolute;
-  right: -18vw;
-  display: none;
-  transition: 1s all ease;
+    position: absolute;
+    right: 4vw;
+    display: none;
+    transition: 1s all ease;
+    text-align: right;
 }
 .rooms {
   position: fixed;
@@ -1088,7 +1089,7 @@ transform: scale(2);
 
 /* responsive */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 375px) {
   .marginal {
     display: none;
   }
@@ -1119,6 +1120,112 @@ transform: scale(2);
    }
    html {
      font-size: 14px;
+   }
+   .kids {
+     display: none;
+   }
+   #mobik {
+     display: flex;
+   }
+   #desk {
+     display: none;
+   }
+   .desk {
+     display: none;
+   }
+   .mobik {
+     display: flex;
+   }
+   .container {
+     margin-left: 4vw;
+    margin-right: 4vw;
+   }
+   .tele {
+    margin-right: 0;
+    width: 100%;
+  }
+  .zozoo {
+    width: 100%;
+  }
+  .maybe {
+    width: 93.8%;
+  }
+  #secondone {
+    margin-bottom: 11.89vw;
+}
+.aaaaa {
+  display: block;
+}
+.instagram {
+    width: 96.5%;
+  }
+  .gmail {
+    width: 100%;
+    margin-right: 0;
+  }
+  .telegram, .messanger {
+    width: 100%;
+  }
+  .telegram {
+    margin-right: 2.22vw;
+  }
+  .telegram p {
+    margin-right: auto;
+    margin-left: 18px;
+  }
+  .crosspic {
+    display: none;
+  }
+  .popup {
+    width: 90vw;
+    height: 48vh;
+    left: calc(50% - 45vw);
+    top: calc(52% - 24vh);
+}
+.popup p {
+  line-height: 6vw;
+}
+}
+
+/* ipad */
+
+@media only screen and (max-width: 768px) and (min-width: 376px) {
+  .black2, .appear, .razdel {
+    font-size: 2rem;
+  }
+  .black2, .razdel {
+    line-height: 8vh;
+  }
+  .marginal {
+    display: none;
+  }
+  #hehe {
+    margin-bottom: 0;
+  }
+  .header {
+    height: 42vh;
+  }
+  .header h1 {
+    line-height: 42vh;
+    margin-top: 0;
+    margin-left: 0;
+    text-align: center;
+    transition: all 0.5s ease;
+  }
+  .communism {
+    line-height: 13.92vh !important;
+    margin-top: 0 !important;
+    margin-left: 2.78vw !important;
+    text-align: left !important;
+  }
+  .timing {
+    width: 11vw;
+  }
+   .m {
+     display: none;
+   }
+   html {
+     font-size: 15px;
    }
    .kids {
      display: none;

@@ -354,10 +354,11 @@
   }
   .razdel {
     position: absolute;
-    right: -18vw;
+    right: 4vw;
     display: none;
     transition: 1s all ease;
-  }
+    text-align: right;
+}
   .rooms {
     position: fixed;
     top: 0;
@@ -402,7 +403,7 @@
 
   /* responsive */
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 375px) {
      .m {
        display: none;
      }
@@ -466,4 +467,78 @@
     .tabs {
     height: 10.9vw;
   }
+  }
+
+  /* ipad */
+
+  @media only screen and (max-width: 768px) and (min-width: 376px) {
+     .m {
+       display: none;
+     }
+     html {
+       font-size: 15px;
+     }
+     .menu {
+      margin-left: 4vw;
+      margin-right: 4vw;
+    }
+    .content h3 {
+      width: 85.82vw;
+      margin-bottom: 0;
+    }
+    .header h1 {
+      left: 4vw;
+    }
+    .open {
+      right: 4vw;
+    }
+    .food h2 {
+    line-height: 5.67vw;
+    }
+    .name p, .price p {
+    line-height: 6.2vw;
+    }
+    .content {
+    position: relative;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    }
+    .mobfood {
+    display: block;
+    font-family: PT Mono;
+    font-weight: normal;
+    font-size: 1.1rem;
+    color: #E0E0E0;
+    margin-bottom: 8.3vw;
+    width: 100%;
+    margin-top: 10vw;
+  }
+    .food h2 {
+      display: none;
+    }
+    .food {
+      justify-content: space-between;
+    }
+    .name {
+    width: 68.82vw;
+    }
+    .tab {
+    height: 7.1vw;
+    }
+    #phone {
+    height: 5vh;
+    }
+    #phones {
+      display: block;
+      height: 3vh;
+    }
+    .tabs {
+    height: 0.9vw;
+    }
+    .black2, .appear, .razdel {
+    font-size: 2rem;
+    }
+    .black2, .razdel {
+    line-height: 8vh;
+    }
   }

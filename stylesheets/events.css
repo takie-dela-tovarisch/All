@@ -405,10 +405,11 @@ color: #E0E0E0;
   color: #FFCD00;
 }
 .razdel {
-  position: absolute;
-  right: -18vw;
-  display: none;
-  transition: 1s all ease;
+    position: absolute;
+    right: 4vw;
+    display: none;
+    transition: 1s all ease;
+    text-align: right;
 }
 .rooms {
   position: fixed;
@@ -454,7 +455,7 @@ color: #E0E0E0;
 
 /* responsive */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 375px) {
    .m {
      display: none;
    }
@@ -480,3 +481,35 @@ color: #E0E0E0;
     margin-right: 4vw;
   }
  }
+ @media only screen and (max-width: 768px) and (min-width: 376px) {
+    .m {
+      display: none;
+    }
+    html {
+      font-size: 15px;
+    }
+    #left, #right {
+      display: none;
+    }
+    .p {
+     position: relative;
+     height: auto;
+     width: 100%;
+   }
+   .header h1 {
+     font-size: 1.5rem;
+   }
+   .y_1 p, .y_2 p, .y_3 p, .y_4 p {
+    font-size: 1.5rem;
+    }
+   .events {
+     margin-left: 4vw;
+     margin-right: 4vw;
+   }
+     .black2, .appear, .razdel {
+      font-size: 2rem;
+    }
+    .black2, .razdel {
+      line-height: 8vh;
+    }
+}

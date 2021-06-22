@@ -404,10 +404,11 @@ line-height: 1.5em;
       color: #FFCD00;
     }
     .razdel {
-      position: absolute;
-      right: -18vw;
-      display: none;
-      transition: 1s all ease;
+        position: absolute;
+        right: 4vw;
+        display: none;
+        transition: 1s all ease;
+        text-align: right;
     }
     .rooms {
       position: fixed;
@@ -453,7 +454,7 @@ line-height: 1.5em;
 
     /* responsive */
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 375px) {
        .m {
          display: none;
        }
@@ -532,6 +533,96 @@ line-height: 1.5em;
         left: 8.81vw;
         top: 72%;
       }
-
-
      }
+
+     /* ipad */
+
+ @media only screen and (max-width: 768px) and (min-width: 376px) {
+   .m {
+     display: none;
+   }
+   html {
+     font-size: 15px;
+   }
+
+   .header h1 {
+     margin-left: 4vw;
+   }
+   #ph {
+     display: block;
+   }
+   #desk {
+     display: none;
+   }
+   .container {
+      position: relative;
+      margin-left: 4vw;
+      margin-right: 4vw;
+    }
+  .steps {
+      margin-right: 4vw;
+      margin-left: 4vw;
+      flex-direction: column;
+      height: 86%;
+  }
+  .wrapper {
+      margin-top: 0;
+  }
+  .b {
+    border-top: 0;
+    margin-bottom: 2vh;
+  }
+  .bog {
+    width: 25.4vw;
+    height: 29vh;
+    margin-top: calc(33.5vh - 29.5vh);
+  }
+  .pant {
+    width: 46.4vw;
+    height: 29vh;
+    margin-right: calc(50% - 23.2vw);
+  }
+  .apple {
+    width: 15.5vw;
+    height: 15.44vh;
+    left: calc(22.2vw - 4.75vw);
+    bottom: calc(7.5vh - 4.72vh);
+  }
+  .movement {
+    position: relative;
+    height: 4vh;
+    width: 8vh;
+    margin-top: 8.2vw;
+    margin-left: calc(8.75vw - 4vh);
+    border-radius: 50%;
+  }
+  .info h3, .info p {
+  left: 13.81vw;
+  }
+  .info p {
+  font-size: 1.5em;
+  }
+  #desk {
+    /* display: none; */
+  }
+  #mob {
+    display: block;
+    width: 60.67vw;
+    top: calc(8% + 2.89vh);
+  }
+  #mobb {
+    display: block;
+    width: 60.67vw;
+    top: 3vh;
+  }
+  .more {
+    left: 8.81vw;
+    top: 45%;
+  }
+  .black2, .appear, .razdel {
+    font-size: 2rem;
+  }
+  .black2, .razdel {
+    line-height: 8vh;
+  }
+}
