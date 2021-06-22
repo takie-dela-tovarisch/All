@@ -1,0 +1,824 @@
+
+html {
+  /* overflow:  hidden; */
+}
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: black;
+    /* cursor: none; */
+    position: relative;
+  }
+  * {
+    text-decoration: none;
+  }
+  a:hover {
+    color: #FFCD00;
+  }
+  .menu {
+height: 57px;
+width: 100vw;
+position: fixed;
+font-family: 'PT Mono', monospace;
+display: flex;
+justify-content: space-around;
+font-size: 21px;
+  }
+  .menu p {
+    margin-top: 18px;
+    color: #8C56B6;
+  }
+  a {
+    color: #8C56B6;
+  }
+  .one {
+    position: absolute;
+    width: 402px;
+    height: 226px;
+    left: 315px;
+    top: 188px;
+    background-image: url("../images/1.png");
+    background-size: contain;
+    animation: spin infinite linear 4s;
+  }
+  .two {
+    position: absolute;
+    width: 323px;
+    height: 182px;
+    left: 608px;
+    top: 360px;
+    background-size: contain;
+    background-image: url("../images/2.png");
+    animation: spin infinite linear 6s;
+  }
+  .cursor {
+    background-image: url("../images/arrow.svg");
+    display: block;
+    position: absolute;
+    width: 1.5vw;
+    height: 3.6vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .left {
+    transform: rotate(90deg);
+  }
+  .three {
+    position: absolute;
+    width: 248px;
+    height: 152px;
+    left: 1541px;
+    top: 761px;
+    background-size: contain;
+    background-image: url("../images/3.png");
+    animation: spin infinite linear 6s;
+  }
+  .four {
+    position: absolute;
+    width: 372px;
+    height: 264px;
+    left: 3290px;
+    top: 1182px;
+    background-size: contain;
+    background-image: url("../images/4.png");
+  }
+  .five {
+    position: absolute;
+width: 319px;
+height: 226px;
+left: 1346px;
+top: 504px;
+background-size: contain;
+background-image: url("../images/5.png");
+animation: spin infinite linear 7s;
+  }
+  .six {
+    position: absolute;
+width: 143px;
+height: 213px;
+left: 1075px;
+top: 11px;
+background-size: contain;
+background-image: url("../images/p3.png");
+animation: spin infinite linear 5s;
+  }
+  .seven {
+    position: absolute;
+    width: 102px;
+    height: 148px;
+    left: 1295px;
+    top: 399px;
+    background-size: contain;
+    background-image: url("../images/p6.png");
+    opacity: 0.5;
+    animation: spin infinite linear 2s;
+  }
+  .eight {
+    position: absolute;
+    width: 392px;
+    height: 246px;
+    left: 1796px;
+    top: 90px;
+    background-size: contain;
+    background-image: url("../images/7.png");
+    animation: spin infinite linear 7s;
+  }
+  .eightt {
+    position: absolute;
+    width: 413px;
+    height: 208px;
+    left: 2103px;
+    top: 399px;
+    background-size: contain;
+    background-image: url("../images/8.png");
+    animation: spin infinite linear 8s;
+  }
+  .nine {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    left: 2309px;
+    top: 294px;
+    background-size: contain;
+    background-image: url("../images/p2.png");
+    animation: spin infinite linear 2s;
+    opacity: 0.6;
+  }
+  .ten {
+    position: absolute;
+    width: 94px;
+    height: 132px;
+    left: 2947px;
+    top: 95px;
+    background-size: contain;
+    background-image: url("../images/10.png");
+    animation: spin infinite linear 2s;
+    opacity: 0.8 ;
+  }
+  .eleven {
+    position: absolute;
+    width: 252px;
+    height: 179px;
+    left: 3000px;
+    top: -18px;
+    background-size: cover;
+    background-image: url("../images/11.png");
+    animation: spin infinite linear 2s;
+  }
+  .twelve {
+    position: absolute;
+    width: 297px;
+    height: 214px;
+    left: 3194px;
+    top: 582px;
+    background-size: contain;
+    background-image: url("../images/12.png");
+    animation: spin infinite linear 2s;
+    opacity: 0.8;
+  }
+  .thirteen {
+    position: absolute;
+    width: 324px;
+    height: 182px;
+    left: 2218px;
+    top: 830px;
+    background-size: contain;
+    background-image: url("../images/13.png");
+    animation: spin infinite linear 4s;
+  }
+  .fourteen {
+    position: absolute;
+    width: 94px;
+    height: 132px;
+    left: 2389px;
+    top: 935px;
+    background-size: contain;
+    background-image: url("../images/14.png");
+    animation: spin infinite linear 6s;
+  }
+  .sixteen {
+    position: absolute;
+    width: 268px;
+    height: 134px;
+    left: 3157px;
+    top: 1340px;
+    background-size: contain;
+    background-image: url("../images/16.png");
+    animation: spin infinite linear 6s;
+    opacity: 0.8;
+  }
+  .seventeen {
+    position: absolute;
+    width: 438px;
+    height: 247px;
+    left: 1692px;
+    top: 1226px;
+    background-size: contain;
+    background-image: url("../images/17.png");
+    animation: spin infinite linear 6s;
+  }
+  .eighteen {
+    position: absolute;
+    width: 102px;
+    height: 153px;
+    left: 2067px;
+    top: 1350px;
+    background-size: contain;
+    background-image: url("../images/p4.png");
+    animation: spin infinite linear 4s;
+    opacity: 0.8;
+  }
+  .nineteen {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    left: 1642px;
+    top: 1151px;
+    background-size: contain;
+    background-image: url("../images/p5.png");
+    animation: spin infinite linear 5s;
+    opacity: 0.8;
+  }
+  .twenty {
+    position: absolute;
+    width: 172px;
+    height: 179px;
+    left: 2201px;
+    top: 1790px;
+    background-size: contain;
+    background-image: url("../images/a_1.png");
+    animation: spin infinite linear 6s;
+    opacity: 0.8;
+  }
+  .twentyone {
+    position: absolute;
+    width: 237px;
+    height: 152px;
+    left: 2333px;
+    top: 1900px;
+    background-size: contain;
+    background-image: url("../images/21.png");
+    animation: spin infinite linear 6s;
+    opacity: 0.8;
+  }
+  .twentytwo {
+    position: absolute;
+    width: 132px;
+    height: 198px;
+    left: 1692px;
+    top: 1922px;
+    background-size: contain;
+    background-image: url("../images/p8.png");
+    animation: spin infinite linear 6s;
+    opacity: 0.8;
+  }
+  .twentythree {
+    position: absolute;
+    width: 132px;
+    height: 198px;
+    left: 1333px;
+    top: 1576px;
+    background-size: contain;
+    background-image: url("../images/23.png");
+    animation: spin infinite linear 6s;
+    opacity: 0.8;
+  }
+  .twentyfour {
+    position: absolute;
+    width: 240px;
+    height: 148px;
+    left: 1275px;
+    top: 1700px;
+    background-size: cover;
+    background-image: url("../images/p6b.png");
+    animation: spin infinite linear 9s;
+    opacity: 0.8;
+  }
+  .twentyfive {
+    position: absolute;
+    width: 238px;
+    height: 169px;
+    left: 892px;
+    top: 1450px;
+    background-size: contain;
+    background-image: url("../images/p7b.png");
+    animation: spin infinite linear 9s;
+    opacity: 0.8;
+  }
+  .twentysix {
+    position: absolute;
+    width: 372px;
+    height: 200px;
+    left: 354px;
+    top: 1736px;
+    background-size: cover;
+    background-image: url("../images/26.png");
+    animation: spin infinite linear 6s;
+  }
+  .twentyseven {
+    position: absolute;
+    width: 124px;
+    height: 186px;
+    left: 0px;
+    top: 2000px;
+    background-size: cover;
+    background-image: url("../images/p11.png");
+    animation: spin infinite linear 6s;
+    opacity: 0.8;
+  }
+  .twentyeight {
+    position: absolute;
+    width: 369px;
+    height: 207px;
+    left: 89px;
+    top: 1300px;
+    background-size: cover;
+    background-image: url("../images/28.png");
+    animation: spin infinite linear 5s;
+    opacity: 0.8;
+  }
+  .twentynine {
+    position: absolute;
+    width: 262px;
+    height: 144px;
+    left: 257px;
+    top: 1220px;
+    background-size: cover;
+    background-image: url("../images/29.png");
+    animation: spin infinite linear 6s;
+    opacity: 0.9;
+  }
+  .thirty {
+    position: absolute;
+    width: 132px;
+    height: 198px;
+    left: -75px;
+    top: 1127px;
+    background-size: cover;
+    background-image: url("../images/p7.png");
+    animation: spin infinite linear 6s;
+    opacity: 0.8;
+  }
+  .thirtyone {
+    position: absolute;
+    width: 300px;
+    height: 179px;
+    left: -5px;
+    top: 617px;
+    background-size: cover;
+    background-image: url("../images/31.png");
+    animation: spin infinite linear 6s;
+    opacity: 0.8;
+  }
+  .thirtytwo {
+    position: absolute;
+    width: 117px;
+    height: 166px;
+    left: 258px;
+    top: 747px;
+    background-size: cover;
+    background-image: url("../images/32.png");
+    animation: spin infinite linear 6s;
+  }
+  .thirtythree {
+    position: absolute;
+    width: 324px;
+    height: 182px;
+    left: 935px;
+    top: 889px;
+    background-size: cover;
+    background-image: url("../images/33.png");
+    animation: spin infinite linear 6s;
+  }
+  .thirtyfour {
+    position: absolute;
+    width: 84px;
+    height: 159px;
+    left: 888px;
+    top: 1039px;
+    background-size: cover;
+    background-image: url("../images/34.png");
+    animation: spin infinite linear 6s;
+    opacity: 0.7;
+  }
+  .up {
+    top: 0;
+  }
+  .down {
+    bottom: 0;
+  }
+  .square {
+    width: 200px;
+    height: 200px;
+    background: pink;
+    position: absolute;
+  }
+  @keyframes spin {
+0% {
+  transform: translate(2%, 0%);
+}
+9% {
+  transform: translate(1.8%, 1.4%);
+}
+18% {
+  transform: translate(1.4%, 1.8%);
+}
+27% {
+  transform: translate(0%, 2%);
+}
+36% {
+  transform: translate(-1.4%, 1.8%);
+}
+45% {
+  transform: translate(-1.8%, 1.4%);
+}
+54% {
+  transform: translate(-2%, 0%);
+}
+63% {
+  transform: translate(-1.8%, -1.4%);
+}
+72% {
+  transform: translate(-1.4%, -1.8%);
+}
+81% {
+  transform: translate(0%, -2%);
+}
+90% {
+  transform: translate(1.4%, -1.8%);
+
+}
+100% {
+  transform: translate(2%, 0%);
+}
+}
+  .a {
+    left: 110vw;
+    top: 110vh;
+  }
+  .b {
+    left: 150vw;
+    top: 120vh;
+  }
+  .back {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-play-state: paused;
+  }
+  .hov, .hovv, .hovvv {
+    position: absolute;
+    transition: all 0.5s ease;
+  }
+  .hov:hover {
+    transform: scale(1.09);
+    transition: all 0.5s ease;
+  }
+  .hovv:hover {
+    transform: scale(1.02);
+    transition: all 0.5s ease;
+  }
+  .hovvv:hover {
+    transform: scale(1.01);
+    transition: all 0.5s ease;
+  }
+  .one:hover {
+    transform: scale(1.1);
+  }
+  .t {
+    position: absolute;
+    width: 1440px;
+    height: 91.35px;
+    background-image: url("../images/text.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 0;
+    /* WARNING:  */
+  }
+  .d {
+    position: absolute;
+    width: 1440px;
+    height: 91.35px;
+    background-image: url("../images/text.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 100px;
+    /* WARNING:  */
+  }
+  .k {
+    position: absolute;
+    width: 1440px;
+    height: 91.35px;
+    background-image: url("../images/text.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 200px;
+    /* WARNING:  */
+  }
+  .o {
+    position: absolute;
+    width: 1440px;
+    height: 91.35px;
+    background-image: url("../images/text.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 300px;
+    /* WARNING:  */
+  }
+  .p {
+    position: absolute;
+    width: 1440px;
+    height: 91.35px;
+    background-image: url("../images/text.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 400px;
+    /* WARNING:  */
+  }
+  .e {
+    position: absolute;
+    width: 1440px;
+    height: 91.35px;
+    background-image: url("../images/text.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 500px;
+    /* WARNING:  */
+  }
+  .s {
+    position: absolute;
+    width: 1440px;
+    height: 91.35px;
+    background-image: url("../images/text.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 600px;
+    /* WARNING:  */
+  }
+  .j {
+    position: absolute;
+    width: 1440px;
+    height: 91.35px;
+    background-image: url("../images/text.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 700px;
+    /* WARNING:  */
+  }
+  .n {
+    position: absolute;
+    width: 1440px;
+    height: 91.35px;
+    background-image: url("../images/text.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 800px;
+    /* WARNING:  */
+  }
+  .a {
+    animation: text 3s infinite linear;
+    left: 0;
+    /* top: 0; */
+  }
+  .b {
+    left: -100%;
+    animation: tex 6s infinite linear;
+  }
+  .c {
+    animation: textt 3s infinite linear;
+    left: 0;
+    /* top: 0; */
+  }
+  .z {
+    left: 100%;
+    animation: texx 6s infinite linear;
+  }
+  @keyframes tex {
+    0% {left: -100%;}
+    100% {left: 100%;}
+  }
+  @keyframes text {
+0% {left: 0;}
+100% {left: 100%;}
+  }
+  @keyframes texx {
+    0% {left: 100%;}
+    100% {left: -100%;}
+  }
+  @keyframes textt {
+0% {left: 0;}
+100% {left: -100%;}
+  }
+  .score {
+    color: white;
+  }
+
+  body,html {
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+  body::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 0;
+    z-index: -1;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background: url('../images/main.png');
+    opacity: 0.1;
+    filter: blur(1px);
+  }
+  .ops {
+    position: absolute;
+    top: 0; left: 0;
+    height: 1890px;
+    width: 2000px;
+    /* width: 200%; height: 250%; */
+  }
+  h1 {
+    position: absolute;
+    font-family: Open Sans;
+    font-weight: 300;
+    font-size: 1em;
+    line-height: 1.4em;
+    color: #8C8C8C;
+    width: 8vw;
+    opacity: 0;
+    transition: all 0.5s linear;
+  }
+  #one {
+    left: 315px;
+    top: 426px;
+  }
+  #two {
+    left: 608px;
+    top: 552px;
+  }
+  #three {
+    left: 1541px;
+    top: 926px;
+  }
+  #five {
+    left: 1346px;
+    top: 745px;
+  }
+  #six {
+    left: 1075px;
+    top: 234px;
+  }
+  #seven {
+    left: 1295px;
+    top: 556px;
+  }
+  #eight {
+    left: 1796px;
+    top: 348px;
+  }
+  #eightt {
+    left: 2103px;
+    top: 623px;
+  }
+  #thirteen {
+    left: 2218px;
+    top: 1020px;
+  }
+  #fourteen {
+    left: 2389px;
+    top: 1090px;
+  }
+  #seventeen {
+    left: 1692px;
+    top: 1483px;
+  }
+  #eighteen {
+    left: 2067px;
+    top: 1512px;
+  }
+  #nineteen {
+    left: 1642px;
+    top: 1310px;
+  }
+  #twenty {
+    left: 2201px;
+    top: 1983px;
+  }
+  #twentyone {
+    left: 2333px;
+    top: 2064px;
+  }
+  #twentytwo {
+    left: 1692px;
+    top: 2132px;
+  }
+  #twentyfour {
+    left: 1275px;
+    top: 1859px;
+  }
+  #twentyfive {
+    left: 892px;
+    top: 1624px;
+  }
+  #twentysix {
+    left: 354px;
+    top: 1948px;
+  }
+  #twentyeight {
+    left: 89px;
+    top: 1520px;
+  }
+  #twentynine {
+    left: 257px;
+    top: 1373px;
+  }
+  #thirtytwo {
+    left: 258px;
+    top: 925px;
+  }
+  #thirtythree {
+    left: 935px;
+    top: 1080px;
+  }
+  #thirtyfour {
+    left: 888px;
+    top: 1209px;
+  }
+  .one:hover ~ #one {
+    opacity: 1;
+  }
+  .two:hover ~ #two {
+    opacity: 1;
+  }
+  .three:hover ~ #three {
+    opacity: 1;
+  }
+  .five:hover ~ #five {
+    opacity: 1;
+  }
+  .six:hover ~ #six {
+    opacity: 1;
+  }
+  .seven:hover ~ #seven {
+    opacity: 1;
+  }
+  .eight:hover ~ #eight {
+    opacity: 1;
+  }
+  .eightt:hover ~ #eightt {
+    opacity: 1;
+  }
+  .thirteen:hover ~ #thirteen {
+    opacity: 1;
+  }
+  .fourteen:hover ~ #fourteen {
+    opacity: 1;
+  }
+  .seventeen:hover ~ #seventeen {
+    opacity: 1;
+  }
+  .eighteen:hover ~ #eighteen {
+    opacity: 1;
+  }
+  .nineteen:hover ~ #nineteen {
+    opacity: 1;
+  }
+  .twenty:hover ~ #twenty {
+    opacity: 1;
+  }
+  .twentyone:hover ~ #twentyone {
+    opacity: 1;
+  }
+  .twentytwo:hover ~ #twentytwo {
+    opacity: 1;
+  }
+  .twentyfour:hover ~ #twentyfour {
+    opacity: 1;
+  }
+  .twentyfive:hover ~ #twentyfive {
+    opacity: 1;
+  }
+  .twentysix:hover ~ #twentysix {
+    opacity: 1;
+  }
+  .twentyeight:hover ~ #twentyeight {
+    opacity: 1;
+  }
+  .twentynine:hover ~ #twentynine {
+    opacity: 1;
+  }
+  .thirtytwo:hover ~ #thirtytwo {
+    opacity: 1;
+  }
+  .thirtythree:hover ~ #thirtythree {
+    opacity: 1;
+  }
+  .thirtyfour:hover ~ #thirtyfour {
+    opacity: 1;
+  }
