@@ -1,4 +1,4 @@
-
+if (screen.width > 768) {
   $(document).mousemove(function(e) {
 
     let docWidth = $('body').width(),
@@ -32,6 +32,12 @@
       });
     });
   });
+
+}
+else {
+
+}
+
 
 // second
 

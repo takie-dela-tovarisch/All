@@ -822,3 +822,11 @@ animation: spin infinite linear 5s;
   .thirtyfour:hover ~ #thirtyfour {
     opacity: 1;
   }
+
+  /* responsive */
+
+  @media only screen and (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+  }
