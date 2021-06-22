@@ -41,15 +41,15 @@
         // mobile
 
 
-        // $(function(){
-        //     $(window).bind("resize",function(){
-        //         if (screen.width < 769) {
-        //           $(".ornament, .test, .bon").addClass("none");
-        //       } else if (screen.width > 769) {
-        //       $(".ornament, .test, .bon").removeClass("none");
-        //       }
-        //     })
-        // })
+        $(function(){
+            $(window).bind("resize",function(){
+                if (screen.width < 769) {
+                  $(".ornament, .test, .bon").addClass("none");
+              } else if (screen.width > 769) {
+              $(".ornament, .test, .bon").removeClass("none");
+              }
+            })
+        })
 
 
 
@@ -304,11 +304,8 @@
         <p class="razdel">разделы</p>
         <div class="lines">
           <div class="line lina"></div>
-          <div class="line linb"></div>
           <div class="line linc"></div>
-          <div class="line lind"></div>
           <div class="line linee"></div>
-          <div class="line linf"></div>
         </div>
       </div>
     </div>

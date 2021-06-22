@@ -581,12 +581,13 @@ background-attachment: fixed;
 .appear a:active {
   color: #FFCD00;
 }
-.razdel {
-  position: absolute;
-  right: -18vw;
-  display: none;
-  transition: 1s all ease;
-}
+  .razdel {
+      position: absolute;
+      right: 4vw;
+      display: none;
+      transition: 1s all ease;
+      text-align: right;
+  }
 .rooms {
   position: fixed;
   top: 0;
@@ -636,7 +637,7 @@ background-attachment: fixed;
 }
 /* responsive */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) and (min-width: 376px) {
   .razdel {
     right: -11vw;
   }
