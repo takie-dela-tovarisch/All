@@ -24,7 +24,7 @@ position: fixed;
 font-family: 'PT Mono', monospace;
 display: flex;
 justify-content: space-around;
-font-size: 21px;
+font-size: 1.2rem;
   }
   .menu p {
     margin-top: 18px;
@@ -848,5 +848,14 @@ animation: spin infinite linear 5s;
   }
   #thirtyone, #thirty, #thirtyseven, #thirtythree, #twelve, #eleven, #twentyseven, #twentythree, #ten, #nine, #sixteen {
     display: none;
+  }
+  }
+
+  @media only screen and (min-width: 1442px) {
+    html {
+      font-size: 23px;
+    }
+    .menu {
+    height: 66px;
   }
   }

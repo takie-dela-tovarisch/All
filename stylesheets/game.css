@@ -679,3 +679,8 @@ display: inline-block;
      padding-left: 0;
    }
   }
+  @media only screen and (min-width: 1442px) {
+    html {
+      font-size: 23px;
+    }
+  }

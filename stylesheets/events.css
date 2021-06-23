@@ -513,3 +513,8 @@ color: #E0E0E0;
       line-height: 8vh;
     }
 }
+@media only screen and (min-width: 1442px) {
+  html {
+    font-size: 23px;
+  }
+}

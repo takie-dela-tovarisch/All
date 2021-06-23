@@ -782,5 +782,9 @@ background-attachment: fixed;
    .h {
      line-height: 20.96vh !important;
    }
-
+  }
+  @media only screen and (min-width: 1442px) {
+    html {
+      font-size: 23px;
+    }
   }

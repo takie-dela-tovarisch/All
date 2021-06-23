@@ -1291,3 +1291,14 @@ transform: scale(2);
   line-height: 6vw;
 }
 }
+@media only screen and (min-width: 1442px) {
+  html {
+    font-size: 23px;
+  }
+  .custom_radio_2 input[type="checkbox"] + label:before, .custom_radio_2 input[type="checkbox"] + label:after {
+    left: -7%;
+  }
+  .custom_radio_2 input[type="checkbox"] + label {
+    padding-left: 5vh;
+  }
+}

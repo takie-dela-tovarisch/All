@@ -8,6 +8,9 @@
     padding-top: 8.89vh;
     padding-bottom: 0;
   }
+  .show {
+    height: 3.2vw;
+  }
   * {
     text-decoration: none;
   }
@@ -242,7 +245,7 @@
     height: 1.5vw;
   }
   .update {
-    height: 4.9vw;
+    height: 5.5vw;
 }
 .update2 {
     height: 2.5vw;
@@ -541,4 +544,24 @@
     .black2, .razdel {
     line-height: 8vh;
     }
+  }
+  @media only screen and (min-width: 1442px) {
+    html {
+      font-size: 23px;
+    }
+    #banana {
+      height: 3.5vw;
+    }
+    .update2 {
+    height: 3.5vw;
+}
+    .show {
+      height: 4vw;
+    }
+    .update {
+        height: 3.9vw;
+    }
+    #update3 {
+    height: 2.4vw;
+}
   }
