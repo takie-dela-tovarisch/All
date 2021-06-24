@@ -1085,6 +1085,11 @@ transform: scale(2);
 .ten {
   width: 10%;
 }
+.mobilearrow {
+  display: none;
+}
+
+
 
 /* responsive */
 
@@ -1201,6 +1206,20 @@ transform: scale(2);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    border-radius: 0;
+  }
+  .mobilearrow {
+    display: block;
+        /* z-index: -1; */
+        /* content: ""; */
+        position: absolute;
+        top: 34%;
+        right: 5%;
+        width: 0.5rem;
+        height: 0.5rem;
+        background: url(../images/open.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
   }
   #nights, #sudba {
     display: none;
