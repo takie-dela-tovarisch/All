@@ -1085,9 +1085,6 @@ transform: scale(2);
 .ten {
   width: 10%;
 }
-.mobilearrow {
-  display: none;
-}
 
 
 
@@ -1108,22 +1105,7 @@ transform: scale(2);
     appearance: none;
     border-radius: 0;
   }
-  .mobilearrow {
-    display: block;
-    position: absolute;
-    top: 34%;
-    right: 11%;
-    width: 0.5rem;
-    height: 0.5rem;
-    background: url(../images/open.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-  }
-  .killme {
-    top: 63.5%;
-    right: 58%;
-  }
+
   #nights, #sudba {
     display: none;
   }
@@ -1245,22 +1227,7 @@ transform: scale(2);
     appearance: none;
     border-radius: 0;
   }
-  .mobilearrow {
-    display: block;
-    position: absolute;
-    top: 34%;
-    right: 5%;
-    width: 0.5rem;
-    height: 0.5rem;
-    background: url(../images/open.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-  }
-  .killme {
-    top: 65%;
-    right: 54%;
-  }
+
   #nights, #sudba {
     display: none;
   }
