@@ -1112,12 +1112,17 @@ transform: scale(2);
     display: block;
     position: absolute;
     top: 34%;
-    right: 5%;
+    right: 11%;
     width: 0.5rem;
     height: 0.5rem;
     background: url(../images/open.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center center;
+  }
+  .killme {
+    top: 65%;
+    right: 58%;
   }
   #nights, #sudba {
     display: none;
@@ -1218,6 +1223,9 @@ transform: scale(2);
 .popup p {
   line-height: 6vw;
 }
+#appt {
+-webkit-appearance: none;
+}
 }
 
 /* ipad */
@@ -1247,11 +1255,19 @@ transform: scale(2);
     background: url(../images/open.svg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center center;
+  }
+  .killme {
+    top: 65%;
+    right: 54%;
   }
   #nights, #sudba {
     display: none;
   }
   /* select */
+  #appt {
+-webkit-appearance: none;
+  }
   .black2, .appear, .razdel {
     font-size: 2rem;
   }
